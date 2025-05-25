@@ -1,20 +1,24 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import Hero from "@/components/hero"
-import AboutSection from "@/components/about-section"
-import SkillsSection from "@/components/skills-section"
-import ProjectsSection from "@/components/projects-section"
-import InternshipsSection from "@/components/internships-section"
-import CertificationsSection from "@/components/certifications-section"
-import ContactSection from "@/components/contact-section"
-import TechWatchSection from "@/components/tech-watch-section"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Hero from "@/components/hero";
+import AboutSection from "@/components/about-section";
+import SkillsSection from "@/components/skills-section";
+import ProjectsSection from "@/components/projects-section";
+import InternshipsSection from "@/components/internships-section";
+import CertificationsSection from "@/components/certifications-section";
+import ContactSection from "@/components/contact-section";
+import TechWatchSection from "@/components/tech-watch-section";
+import ProfessionalRealizationsSection from "@/components/professional-realizations-section";
+import SynthesisTableSection from "@/components/synthesis-table-section";
 
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
       <Hero />
 
-      <Tabs defaultValue="about" className="mt-12">
-        <TabsList className="grid w-full grid-cols-2 md:grid-cols-7">
+      <Tabs defaultValue="synthesis" className="mt-12">
+        <TabsList className="grid w-full grid-cols-3 md:grid-cols-9">
+          <TabsTrigger value="synthesis">Synthèse E6</TabsTrigger>
+          <TabsTrigger value="realizations">Réalisations E6</TabsTrigger>
           <TabsTrigger value="about">À propos</TabsTrigger>
           <TabsTrigger value="internships">Stages</TabsTrigger>
           <TabsTrigger value="skills">Compétences</TabsTrigger>
@@ -23,6 +27,14 @@ export default function Home() {
           <TabsTrigger value="tech-watch">Veille</TabsTrigger>
           <TabsTrigger value="contact">Contact</TabsTrigger>
         </TabsList>
+
+        <TabsContent value="synthesis" className="mt-6">
+          <SynthesisTableSection />
+        </TabsContent>
+
+        <TabsContent value="realizations" className="mt-6">
+          <ProfessionalRealizationsSection />
+        </TabsContent>
 
         <TabsContent value="about" className="mt-6">
           <AboutSection />
@@ -53,5 +65,5 @@ export default function Home() {
         </TabsContent>
       </Tabs>
     </div>
-  )
+  );
 }
