@@ -7,18 +7,16 @@ import InternshipsSection from "@/components/internships-section";
 import CertificationsSection from "@/components/certifications-section";
 import ContactSection from "@/components/contact-section";
 import TechWatchSection from "@/components/tech-watch-section";
-import ProfessionalRealizationsSection from "@/components/professional-realizations-section";
-import SynthesisTableSection from "@/components/synthesis-table-section";
+import DocumentsSection from "@/components/documents-section";
 
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
       <Hero />
 
-      <Tabs defaultValue="synthesis" className="mt-12">
-        <TabsList className="grid w-full grid-cols-3 md:grid-cols-9">
-          <TabsTrigger value="synthesis">Synthèse E6</TabsTrigger>
-          <TabsTrigger value="realizations">Réalisations E6</TabsTrigger>
+      <Tabs defaultValue="documents" className="mt-12">
+        <TabsList className="grid w-full grid-cols-3 md:grid-cols-8">
+          <TabsTrigger value="documents">Documents E6</TabsTrigger>
           <TabsTrigger value="about">À propos</TabsTrigger>
           <TabsTrigger value="internships">Stages</TabsTrigger>
           <TabsTrigger value="skills">Compétences</TabsTrigger>
@@ -28,12 +26,8 @@ export default function Home() {
           <TabsTrigger value="contact">Contact</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="synthesis" className="mt-6">
-          <SynthesisTableSection />
-        </TabsContent>
-
-        <TabsContent value="realizations" className="mt-6">
-          <ProfessionalRealizationsSection />
+        <TabsContent value="documents" className="mt-6">
+          <DocumentsSection />
         </TabsContent>
 
         <TabsContent value="about" className="mt-6">
