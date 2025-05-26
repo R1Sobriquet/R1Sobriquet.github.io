@@ -153,7 +153,7 @@ export default function ContactSection() {
                 <Mail className="h-6 w-6 text-muted-foreground" />
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-sm text-muted-foreground mt-1">erwannn.lerouzic@gmail.com</p>
+                  <p className="text-sm text-muted-foreground mt-1">erwannn.pro@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">

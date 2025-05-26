@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     // Contenu de l'email
     const mailOptions = {
       from: process.env.EMAIL_FROM,
-      to: "erwannn.lerouzic@gmail.com",
+      to: "erwannn.pro@gmail.com",
       replyTo: email,
       subject: `Contact Portfolio: ${subject}`,
       text: `
