@@ -125,27 +125,10 @@ export default function AboutSection() {
             </CardHeader>
             <CardContent>
               <p className="leading-7">
-                Actuellement étudiant au Campus Numérique 47 à Agen en BTS SIO option SLAM (Solutions Logicielles et
-                Applications Métier), je suis en alternance chez MyDesyn où je développe des applications métier avec
-                Windev, Webdev et Windev Mobile.
+                Actuellement étudiant au Campus Numérique 47 à Agen en BTS SIO option SLAM, je suis en alternance chez MyDesyn où je développe des applications métier avec Windev et Webdev.
               </p>
               <p className="leading-7 mt-4">
-                Mon parcours académique diversifié, incluant des études en langues étrangères appliquées et en
-                psychologie, m&apos;a permis de développer une approche polyvalente et une bonne capacité
-                d&apos;adaptation. J&apos;ai récemment effectué un stage chez D2Comm où j&apos;ai travaillé sur des
-                projets React.
-              </p>
-              <p className="leading-7 mt-4">
-                Je souhaite poursuivre mes études avec une licence en informatique orientée vers l&apos;Intelligence
-                Artificielle après l&apos;obtention de mon BTS. Ma formation et mes expériences professionnelles
-                m&apos;ont permis d&apos;acquérir des compétences techniques solides en développement web et
-                applications, ainsi qu&apos;une bonne compréhension des enjeux liés à la production de services
-                informatiques.
-              </p>
-              <p className="leading-7 mt-4">
-                Je suis particulièrement intéressé par le développement d&apos;applications web modernes et
-                performantes, ainsi que par les technologies émergentes comme l&apos;IA et l&apos;apprentissage
-                automatique.
+                Mon parcours diversifié m&apos;a permis de développer une approche polyvalente et une bonne capacité d&apos;adaptation. Je souhaite poursuivre mes études vers l&apos;Intelligence Artificielle après l&apos;obtention de mon BTS.
               </p>
             </CardContent>
           </Card>

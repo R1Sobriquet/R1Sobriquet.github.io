@@ -49,29 +49,9 @@ export default function ProjectsSection() {
         "Travailler en mode projet",
       ],
     },
+    
     {
       id: "project3",
-      title: "Application de gestion de bibliothèque",
-      description: "Application web permettant la gestion des emprunts et des retours de livres pour une médiathèque.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["PHP", "MySQL", "HTML/CSS", "JavaScript"],
-      category: "web",
-      github: "https://github.com/erwannlerouzic/library-management",
-      demo: null,
-      context:
-        "Projet réalisé dans le cadre de mon stage à la médiathèque du Tampon. L'objectif était de simplifier la gestion des emprunts et des retours de livres.",
-      problem:
-        "La médiathèque avait besoin d'un système informatisé pour gérer les emprunts et les retours de livres, ainsi que pour suivre l'état du stock.",
-      solution:
-        "Développement d'une application web avec PHP et MySQL, permettant aux bibliothécaires de gérer facilement les emprunts et les retours, ainsi que de consulter l'état du stock.",
-      skills: [
-        "Concevoir et développer une solution applicative",
-        "Gérer les données",
-        "Mettre à disposition des utilisateurs un service informatique",
-      ],
-    },
-    {
-      id: "project4",
       title: "Portfolio personnel",
       description: "Site web personnel présentant mon parcours, mes compétences et mes réalisations.",
       image: "/placeholder.svg?height=400&width=600",

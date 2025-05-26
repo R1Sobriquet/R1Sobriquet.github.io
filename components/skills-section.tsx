@@ -16,6 +16,7 @@ export default function SkillsSection() {
   const frameworkSkills = [
     { name: "React", level: 75 },
     { name: "Bootstrap", level: 80 },
+    { name: "Symfony", level: 65 },
   ]
 
   const toolSkills = [
@@ -91,28 +92,30 @@ $conn->close();
 ?>`,
     },
     {
-      language: "python",
-      title: "Exemple Python - Analyse de données",
-      code: `import pandas as pd
-import matplotlib.pyplot as plt
+      language: "windev",
+      title: "Exemple Windev - Boucle pour remplir un tableau d'objets",
+      code: `// Déclaration du tableau d'objets
+tabClients est un tableau de stClient
 
-# Charger les données
-data = pd.read_csv('donnees.csv')
+// Déclaration d'une variable client
+unClient est un stClient
 
-# Afficher les premières lignes
-print(data.head())
+// Boucle pour remplir le tableau avec 10 clients
+POUR i = 1 À 10
+	// Initialisation de l'objet client
+	unClient.nID = i
+	unClient.sNom = "Client " + i
+	unClient.sEmail = "client" + i + "@exemple.com"
+	unClient.dDateCreation = DateSys()
+	
+	// Ajout de l'objet dans le tableau
+	Ajoute(tabClients, unClient)
+FIN
 
-# Statistiques descriptives
-print(data.describe())
-
-# Créer un graphique
-plt.figure(figsize=(10, 6))
-data['valeur'].plot(kind='hist', bins=20)
-plt.title('Distribution des valeurs')
-plt.xlabel('Valeur')
-plt.ylabel('Fréquence')
-plt.savefig('distribution.png')
-plt.show()`,
+// Affichage du contenu du tableau
+POUR TOUT unClient DE tabClients
+	Trace("ID: " + unClient.nID + " - Nom: " + unClient.sNom)
+FIN`,
     },
   ]
 
@@ -210,42 +213,7 @@ plt.show()`,
           </Card>
         </div>
 
-        <div className="mt-12">
-          <Card>
-            <CardHeader>
-              <CardTitle>Compétences du référentiel BTS SIO SLAM</CardTitle>
-              <CardDescription>Compétences acquises selon le référentiel officiel</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-6 md:grid-cols-2">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">
-                    Bloc 1: Support et mise à disposition de services informatiques
-                  </h3>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Gérer le patrimoine informatique</li>
-                    <li>Répondre aux incidents et aux demandes d&apos;assistance</li>
-                    <li>Développer la présence en ligne de l&apos;organisation</li>
-                    <li>Travailler en mode projet</li>
-                    <li>Mettre à disposition des utilisateurs un service informatique</li>
-                    <li>Organiser son développement professionnel</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">
-                    Bloc 2: Conception et développement d&apos;applications
-                  </h3>
-                  <ul className="list-disc pl-5 space-y-1">
-                    <li>Concevoir et développer une solution applicative</li>
-                    <li>Assurer la maintenance corrective ou évolutive d&apos;une solution applicative</li>
-                    <li>Gérer les données</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        
 
         <div className="mt-12">
           <Card>
@@ -258,7 +226,7 @@ plt.show()`,
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="javascript">JavaScript/React</TabsTrigger>
                   <TabsTrigger value="php">PHP</TabsTrigger>
-                  <TabsTrigger value="python">Python</TabsTrigger>
+                  <TabsTrigger value="windev">Windev</TabsTrigger>
                 </TabsList>
                 {codeExamples.map((example) => (
                   <TabsContent key={example.language} value={example.language} className="mt-4">

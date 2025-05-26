@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="flex items-center justify-center">
             <div className="relative aspect-square overflow-hidden rounded-full border w-[300px] h-[300px]">
               <Image
-                src="/placeholder.svg?height=300&width=300"
+                src="/erwann-profile.jpg"
                 alt="Erwann LE ROUZIC"
                 fill
                 className="object-cover"
