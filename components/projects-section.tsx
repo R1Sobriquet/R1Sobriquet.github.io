@@ -12,7 +12,7 @@ export default function ProjectsSection() {
       id: "project1",
       title: "Application métier Windev",
       description: "Application de gestion développée avec Windev pour un client de MyDesyn.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/mydesyn-logo.png",
       technologies: ["Windev", "HFSQL", "SQL"],
       category: "desktop",
       github: "https://github.com/erwannlerouzic/windev-app",
@@ -33,7 +33,7 @@ export default function ProjectsSection() {
       id: "project2",
       title: "Interface utilisateur React",
       description: "Développement de composants React pour un site web d'entreprise.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/d2comm-logo.png",
       technologies: ["React", "JavaScript", "HTML/CSS", "Bootstrap"],
       category: "web",
       github: "https://github.com/erwannlerouzic/react-components",
@@ -49,12 +49,12 @@ export default function ProjectsSection() {
         "Travailler en mode projet",
       ],
     },
-    
+
     {
       id: "project3",
       title: "Portfolio personnel",
       description: "Site web personnel présentant mon parcours, mes compétences et mes réalisations.",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/images/bibliotheque-logo.png",
       technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
       category: "web",
       github: "https://github.com/erwannlerouzic/portfolio",

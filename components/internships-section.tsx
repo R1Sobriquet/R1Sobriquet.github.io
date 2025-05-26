@@ -41,7 +41,7 @@ export default function InternshipsSection() {
       period: "Septembre - Décembre 2024",
       duration: "3 mois",
       location: "Le Passage d'Agen, France",
-      logo: "/placeholder.svg?height=100&width=100",
+      logo: "/images/d2comm-logo.png",
       description:
         "Stage de développement web axé sur React pour la création d'interfaces utilisateur modernes et réactives.",
       organization: {
