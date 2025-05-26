@@ -20,30 +20,7 @@ export default function SynthesisTableSection() {
           </div>
         </div>
 
-        {/* En-tête officiel */}
-        <Card className="mb-6">
-          <CardHeader className="bg-primary text-primary-foreground">
-            <CardTitle className="text-center">
-              BTS SERVICES INFORMATIQUES AUX ORGANISATIONS - SESSION 2025
-            </CardTitle>
-            <div className="text-center space-y-2">
-              <p className="text-primary-foreground/90">
-                <strong>NOM et prénom :</strong> LE ROUZIC Erwann
-              </p>
-              <p className="text-primary-foreground/90">
-                <strong>Centre de formation :</strong> Campus Ermitage, 156
-                Avenue Jean JAURÈS, 47000 AGEN
-              </p>
-              <p className="text-primary-foreground/90">
-                <strong>Option :</strong> ☐ SISR ☑ SLAM
-              </p>
-              <p className="text-primary-foreground/90">
-                <strong>Adresse URL du portfolio :</strong>{" "}
-                https://erwann-lerouzic.vercel.app
-              </p>
-            </div>
-          </CardHeader>
-        </Card>
+        
 
         {/* Boutons d'action */}
         <div className="flex justify-center gap-4 mb-8">
