@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Download, FileText } from "lucide-react";
@@ -11,38 +10,13 @@ export default function DocumentsSection() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Documents E6 - BTS SIO
+              Documents E5 et E6 - BTS SIO
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Téléchargez les documents officiels pour l'épreuve E6
+              Téléchargez les documents officiels pour l'épreuve E5 et E6 du BTS
             </p>
           </div>
         </div>
-
-        {/* En-tête officiel */}
-        <Card className="mb-8">
-          <CardHeader className="bg-primary text-primary-foreground">
-            <CardTitle className="text-center">
-              BTS SERVICES INFORMATIQUES AUX ORGANISATIONS - SESSION 2025
-            </CardTitle>
-            <div className="text-center space-y-2">
-              <p className="text-primary-foreground/90">
-                <strong>NOM et prénom :</strong> LE ROUZIC Erwann
-              </p>
-              <p className="text-primary-foreground/90">
-                <strong>Centre de formation :</strong> Campus Ermitage, 156
-                Avenue Jean JAURÈS, 47000 AGEN
-              </p>
-              <p className="text-primary-foreground/90">
-                <strong>Option :</strong> ☐ SISR ☑ SLAM
-              </p>
-              <p className="text-primary-foreground/90">
-                <strong>Adresse URL du portfolio :</strong>{" "}
-                https://erwann-lerouzic.vercel.app
-              </p>
-            </div>
-          </CardHeader>
-        </Card>
 
         {/* Documents PDF */}
         <div className="grid gap-6 md:grid-cols-2">
@@ -52,9 +26,11 @@ export default function DocumentsSection() {
                 <FileText className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold">Tableau de synthèse complet</h3>
+                <h3 className="text-xl font-semibold">
+                  Tableau de synthèse complet
+                </h3>
                 <p className="text-sm text-muted-foreground">
-                  Matrice des compétences
+                  Fiche E5 - Tableau de synthèse
                 </p>
               </div>
             </div>
@@ -76,7 +52,9 @@ export default function DocumentsSection() {
                 <FileText className="h-6 w-6 text-secondary-foreground" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold">Réalisations détaillées</h3>
+                <h3 className="text-xl font-semibold">
+                  Réalisations détaillées
+                </h3>
                 <p className="text-sm text-muted-foreground">
                   Fiches descriptives E6
                 </p>
