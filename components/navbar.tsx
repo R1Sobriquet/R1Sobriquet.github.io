@@ -6,35 +6,67 @@ import { Button } from "@/components/ui/button"
 import { ModeToggle } from "./mode-toggle"
 import { Menu, X } from "lucide-react"
 
-export default function Navbar() {
+interface NavbarProps {
+  onTabChange?: (tab: string) => void;
+}
+
+export default function Navbar({ onTabChange }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const handleTabClick = (tab: string) => {
+    if (onTabChange) {
+      onTabChange(tab);
+    }
+    setIsMenuOpen(false);
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+        <button 
+          onClick={() => handleTabClick('documents')} 
+          className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+        >
           <span className="font-bold text-xl">Erwann LE ROUZIC</span>
-        </Link>
+        </button>
 
         <nav className="hidden md:flex items-center gap-6">
-          <Link href="#about" className="text-sm font-medium transition-colors hover:text-primary">
+          <button 
+            onClick={() => handleTabClick('about')} 
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
             À propos
-          </Link>
-          <Link href="#skills" className="text-sm font-medium transition-colors hover:text-primary">
+          </button>
+          <button 
+            onClick={() => handleTabClick('skills')} 
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
             Compétences
-          </Link>
-          <Link href="#projects" className="text-sm font-medium transition-colors hover:text-primary">
+          </button>
+          <button 
+            onClick={() => handleTabClick('projects')} 
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
             Projets
-          </Link>
-          <Link href="#internships" className="text-sm font-medium transition-colors hover:text-primary">
+          </button>
+          <button 
+            onClick={() => handleTabClick('internships')} 
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
             Stages
-          </Link>
-          <Link href="#certifications" className="text-sm font-medium transition-colors hover:text-primary">
+          </button>
+          <button 
+            onClick={() => handleTabClick('certifications')} 
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
             Certifications
-          </Link>
-          <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
+          </button>
+          <button 
+            onClick={() => handleTabClick('contact')} 
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
             Contact
-          </Link>
+          </button>
           <ModeToggle />
         </nav>
 
@@ -48,48 +80,42 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="container md:hidden py-4">
           <nav className="flex flex-col space-y-4">
-            <Link
-              href="#about"
-              className="text-sm font-medium transition-colors hover:text-primary"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              onClick={() => handleTabClick('about')}
+              className="text-sm font-medium transition-colors hover:text-primary text-left"
             >
               À propos
-            </Link>
-            <Link
-              href="#skills"
-              className="text-sm font-medium transition-colors hover:text-primary"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() => handleTabClick('skills')}
+              className="text-sm font-medium transition-colors hover:text-primary text-left"
             >
               Compétences
-            </Link>
-            <Link
-              href="#projects"
-              className="text-sm font-medium transition-colors hover:text-primary"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() => handleTabClick('projects')}
+              className="text-sm font-medium transition-colors hover:text-primary text-left"
             >
               Projets
-            </Link>
-            <Link
-              href="#internships"
-              className="text-sm font-medium transition-colors hover:text-primary"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() => handleTabClick('internships')}
+              className="text-sm font-medium transition-colors hover:text-primary text-left"
             >
               Stages
-            </Link>
-            <Link
-              href="#certifications"
-              className="text-sm font-medium transition-colors hover:text-primary"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() => handleTabClick('certifications')}
+              className="text-sm font-medium transition-colors hover:text-primary text-left"
             >
               Certifications
-            </Link>
-            <Link
-              href="#contact"
-              className="text-sm font-medium transition-colors hover:text-primary"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() => handleTabClick('contact')}
+              className="text-sm font-medium transition-colors hover:text-primary text-left"
             >
               Contact
-            </Link>
+            </button>
             <div className="pt-2">
               <ModeToggle />
             </div>
