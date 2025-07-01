@@ -39,7 +39,7 @@ export default function DocumentsSection() {
               réalisation professionnelle selon le référentiel BTS SIO.
             </p>
             <Button asChild className="w-full" size="lg">
-              <Link href="/docs/tableau-synthese-complet.pdf.pdf" download>
+              <Link href="/docs/E5_1751374731937.pdf" download>
                 <Download className="h-4 w-4 mr-2" />
                 Télécharger le tableau de synthèse
               </Link>
@@ -76,7 +76,7 @@ export default function DocumentsSection() {
         {/* Actions rapides */}
         <div className="flex justify-center gap-4 mt-8">
           <Button asChild>
-            <Link href="/docs/tableau-synthese-complet.pdf.pdf" download>
+            <Link href="/docs/E5_1751374731937.pdf" download>
               <Download className="h-4 w-4 mr-2" />
               Tableau complet
             </Link>
