@@ -133,6 +133,62 @@ export default function AboutSection() {
             </CardContent>
           </Card>
         </div>
+
+        <div className="mt-12">
+          <Card>
+            <CardHeader>
+              <CardTitle>Campus Numérique 47 & Campus Ermitage</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Campus Numérique 47</h3>
+                  <p className="leading-7">
+                    Le Campus Numérique 47, situé à Agen, est un lieu dédié à la formation, à l&apos;innovation et à l&apos;inclusion dans le domaine du numérique. Créé en 2017 et devenu Groupement d&apos;Intérêt Public en 2021, il regroupe des acteurs publics et économiques du Lot-et-Garonne.
+                  </p>
+                  <div className="mt-4">
+                    <p className="font-semibold mb-2">Il propose :</p>
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                      <li>Des formations du bac au bac+5 (développement web, IA, cybersécurité…)</li>
+                      <li>Un incubateur pour start-up numériques</li>
+                      <li>Un tiers-lieu et des ateliers gratuits pour favoriser l&apos;inclusion numérique</li>
+                    </ul>
+                  </div>
+                  <p className="leading-7 mt-4">
+                    Installé dans un bâtiment moderne avec espaces de coworking, FabLab, et amphithéâtre, le Campus est un moteur de la transformation numérique locale.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Campus Ermitage</h3>
+                  <p className="leading-7">
+                    Le Campus Ermitage, situé à Agen, est un établissement d&apos;enseignement supérieur privé qui propose des formations en alternance de niveau Bac+2 à Bac+3, notamment dans les domaines du tertiaire et du numérique.
+                  </p>
+                  <p className="leading-7 mt-4">
+                    Le BTS Services Informatiques aux Organisations (SIO) proposé par Ermitage Sup&apos; est une formation en alternance de deux ans, axée sur les métiers de l&apos;informatique. Il propose deux spécialités :
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 text-muted-foreground mt-2">
+                    <li><span className="font-semibold">SISR</span> (Solutions d&apos;Infrastructure, Systèmes et Réseaux), orientée vers l&apos;administration des réseaux et systèmes</li>
+                    <li><span className="font-semibold">SLAM</span> (Solutions Logicielles et Applications Métiers), centrée sur le développement de logiciels et d&apos;applications</li>
+                  </ul>
+                  <p className="leading-7 mt-4">
+                    Ce BTS forme à des postes comme technicien réseau, développeur web ou administrateur système.
+                  </p>
+                </div>
+
+                {/* Placeholder for campus image */}
+                <div className="mt-6 border-2 border-dashed border-muted rounded-lg p-8 text-center">
+                  <p className="text-muted-foreground">
+                    Espace réservé pour l&apos;image du campus
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    (Image à intégrer)
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </section>
   )
