@@ -23,11 +23,11 @@ export default function Home() {
   return (
     <div>
       <Navbar onTabChange={handleTabChange} />
-      
-      <div className="container mx-auto px-4 py-8">
-        <Hero />
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-12">
+      <div className="container mx-auto px-4 py-8">
+        {activeTab === "documents" && <Hero />}
+
+        <Tabs value={activeTab} onValueChange={setActiveTab} className={activeTab === "documents" ? "mt-12" : "mt-0"}>
           <TabsList className="grid w-full grid-cols-3 md:grid-cols-8">
             <TabsTrigger value="documents">Documents E6</TabsTrigger>
             <TabsTrigger value="about">À propos</TabsTrigger>
