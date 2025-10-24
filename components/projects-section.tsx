@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -5,6 +7,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Image from "next/image"
 import Link from "next/link"
 import { ExternalLink, Github } from "lucide-react"
+import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
+import { motion } from "framer-motion"
 
 export default function ProjectsSection() {
   const projects = [
@@ -72,14 +76,16 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-12">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mes projets</h2>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Découvrez les projets que j&apos;ai réalisés pendant ma formation
-            </p>
+        <AnimatedSection>
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mes projets</h2>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                Découvrez les projets que j&apos;ai réalisés pendant ma formation
+              </p>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
 
         <Tabs defaultValue="all" className="mt-8">
           <TabsList className="grid w-full grid-cols-4">
@@ -90,41 +96,49 @@ export default function ProjectsSection() {
           </TabsList>
 
           <TabsContent value="all" className="mt-6">
-            <div className="grid gap-6 md:grid-cols-2">
+            <StaggerContainer className="grid gap-6 md:grid-cols-2">
               {projects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+                <StaggerItem key={project.id}>
+                  <ProjectCard project={project} />
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </TabsContent>
 
           <TabsContent value="web" className="mt-6">
-            <div className="grid gap-6 md:grid-cols-2">
+            <StaggerContainer className="grid gap-6 md:grid-cols-2">
               {projects
                 .filter((p) => p.category === "web")
                 .map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                  <StaggerItem key={project.id}>
+                    <ProjectCard project={project} />
+                  </StaggerItem>
                 ))}
-            </div>
+            </StaggerContainer>
           </TabsContent>
 
           <TabsContent value="mobile" className="mt-6">
-            <div className="grid gap-6 md:grid-cols-2">
+            <StaggerContainer className="grid gap-6 md:grid-cols-2">
               {projects
                 .filter((p) => p.category === "mobile")
                 .map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                  <StaggerItem key={project.id}>
+                    <ProjectCard project={project} />
+                  </StaggerItem>
                 ))}
-            </div>
+            </StaggerContainer>
           </TabsContent>
 
           <TabsContent value="desktop" className="mt-6">
-            <div className="grid gap-6 md:grid-cols-2">
+            <StaggerContainer className="grid gap-6 md:grid-cols-2">
               {projects
                 .filter((p) => p.category === "desktop")
                 .map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                  <StaggerItem key={project.id}>
+                    <ProjectCard project={project} />
+                  </StaggerItem>
                 ))}
-            </div>
+            </StaggerContainer>
           </TabsContent>
         </Tabs>
       </div>
@@ -151,10 +165,14 @@ interface ProjectCardProps {
 
 function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="overflow-hidden">
-      <div className="relative aspect-video">
+    <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
+      <motion.div
+        className="relative aspect-video overflow-hidden"
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
+      >
         <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-      </div>
+      </motion.div>
       <CardHeader>
         <CardTitle>{project.title}</CardTitle>
         <CardDescription>{project.description}</CardDescription>

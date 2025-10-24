@@ -1,9 +1,11 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CodeBlock } from "@/components/code-block"
+import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
+import { AnimatedProgress } from "@/components/animated-progress"
+import { SkillRadarChart } from "@/components/skill-radar-chart"
 
 export default function SkillsSection() {
   const programmingSkills = [
@@ -119,103 +121,126 @@ FIN`,
     },
   ]
 
+  // Combine all skills for radar chart
+  const allSkills = [
+    ...programmingSkills.slice(0, 4),
+    ...frameworkSkills.slice(0, 3),
+    ...toolSkills.slice(0, 3),
+  ]
+
   return (
     <section id="skills" className="py-12">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mes compétences</h2>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Les technologies et outils que je maîtrise
-            </p>
+        <AnimatedSection>
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mes compétences</h2>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                Les technologies et outils que je maîtrise
+              </p>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
 
-        <div className="grid gap-6 md:grid-cols-2 mt-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>Langages de programmation</CardTitle>
-              <CardDescription>Mes compétences en langages de programmation</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {programmingSkills.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
+        <StaggerContainer className="grid gap-6 md:grid-cols-2 mt-8">
+          <StaggerItem>
+            <Card>
+              <CardHeader>
+                <CardTitle>Langages de programmation</CardTitle>
+                <CardDescription>Mes compétences en langages de programmation</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {programmingSkills.map((skill) => (
+                    <div key={skill.name} className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-medium">{skill.name}</span>
+                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                      </div>
+                      <AnimatedProgress value={skill.level} />
                     </div>
-                    <Progress value={skill.level} className="h-2" />
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </StaggerItem>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Frameworks et bibliothèques</CardTitle>
-              <CardDescription>Mes compétences en frameworks et bibliothèques</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {frameworkSkills.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
+          <StaggerItem>
+            <Card>
+              <CardHeader>
+                <CardTitle>Frameworks et bibliothèques</CardTitle>
+                <CardDescription>Mes compétences en frameworks et bibliothèques</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {frameworkSkills.map((skill) => (
+                    <div key={skill.name} className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-medium">{skill.name}</span>
+                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                      </div>
+                      <AnimatedProgress value={skill.level} />
                     </div>
-                    <Progress value={skill.level} className="h-2" />
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </StaggerItem>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Outils et environnements</CardTitle>
-              <CardDescription>Mes compétences en outils et environnements de développement</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {toolSkills.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
+          <StaggerItem>
+            <Card>
+              <CardHeader>
+                <CardTitle>Outils et environnements</CardTitle>
+                <CardDescription>Mes compétences en outils et environnements de développement</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {toolSkills.map((skill) => (
+                    <div key={skill.name} className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-medium">{skill.name}</span>
+                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                      </div>
+                      <AnimatedProgress value={skill.level} />
                     </div>
-                    <Progress value={skill.level} className="h-2" />
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </StaggerItem>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Compétences transversales</CardTitle>
-              <CardDescription>Mes compétences non techniques</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {softSkills.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
+          <StaggerItem>
+            <Card>
+              <CardHeader>
+                <CardTitle>Compétences transversales</CardTitle>
+                <CardDescription>Mes compétences non techniques</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {softSkills.map((skill) => (
+                    <div key={skill.name} className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-medium">{skill.name}</span>
+                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                      </div>
+                      <AnimatedProgress value={skill.level} />
                     </div>
-                    <Progress value={skill.level} className="h-2" />
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </StaggerItem>
+        </StaggerContainer>
 
-        
+        <AnimatedSection className="mt-12">
+          <SkillRadarChart
+            skills={allSkills}
+            title="Vue d'ensemble des compétences techniques"
+            description="Visualisation graphique de mes principales compétences techniques"
+          />
+        </AnimatedSection>
 
-        <div className="mt-12">
+        <AnimatedSection className="mt-12">
           <Card>
             <CardHeader>
               <CardTitle>Exemples de code</CardTitle>
@@ -237,7 +262,7 @@ FIN`,
               </Tabs>
             </CardContent>
           </Card>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   )

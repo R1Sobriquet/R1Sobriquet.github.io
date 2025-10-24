@@ -1,28 +1,34 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Briefcase, GraduationCap, MapPin } from "lucide-react"
+import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
 
 export default function AboutSection() {
   return (
     <section id="about" className="py-12">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">À propos de moi</h2>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Étudiant en BTS SIO option SLAM au Campus Ermitage (Campus Numérique 47 à Agen)
-            </p>
+        <AnimatedSection>
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">À propos de moi</h2>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                Étudiant en BTS SIO option SLAM au Campus Ermitage (Campus Numérique 47 à Agen)
+              </p>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <GraduationCap className="h-8 w-8" />
-              <div className="grid gap-1">
-                <CardTitle>Formation</CardTitle>
-                <CardDescription>Mon parcours académique</CardDescription>
-              </div>
-            </CardHeader>
+        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+          <StaggerItem>
+            <Card className="h-full">
+              <CardHeader className="flex flex-row items-center gap-4">
+                <GraduationCap className="h-8 w-8" />
+                <div className="grid gap-1">
+                  <CardTitle>Formation</CardTitle>
+                  <CardDescription>Mon parcours académique</CardDescription>
+                </div>
+              </CardHeader>
             <CardContent>
               <ul className="space-y-4">
                 <li>
@@ -48,10 +54,12 @@ export default function AboutSection() {
               </ul>
             </CardContent>
           </Card>
+          </StaggerItem>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <Briefcase className="h-8 w-8" />
+          <StaggerItem>
+            <Card className="h-full">
+              <CardHeader className="flex flex-row items-center gap-4">
+                <Briefcase className="h-8 w-8" />
               <div className="grid gap-1">
                 <CardTitle>Expérience</CardTitle>
                 <CardDescription>Mon parcours professionnel</CardDescription>
@@ -82,10 +90,12 @@ export default function AboutSection() {
               </ul>
             </CardContent>
           </Card>
+          </StaggerItem>
 
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <MapPin className="h-8 w-8" />
+          <StaggerItem>
+            <Card className="h-full">
+              <CardHeader className="flex flex-row items-center gap-4">
+                <MapPin className="h-8 w-8" />
               <div className="grid gap-1">
                 <CardTitle>Informations</CardTitle>
                 <CardDescription>Mes coordonnées</CardDescription>
@@ -116,9 +126,10 @@ export default function AboutSection() {
               </ul>
             </CardContent>
           </Card>
-        </div>
+          </StaggerItem>
+        </StaggerContainer>
 
-        <div className="mt-12">
+        <AnimatedSection className="mt-12">
           <Card>
             <CardHeader>
               <CardTitle>Présentation</CardTitle>
@@ -132,9 +143,9 @@ export default function AboutSection() {
               </p>
             </CardContent>
           </Card>
-        </div>
+        </AnimatedSection>
 
-        <div className="mt-12">
+        <AnimatedSection className="mt-12">
           <Card>
             <CardHeader>
               <CardTitle>Campus Numérique 47 & Campus Ermitage</CardTitle>
@@ -188,7 +199,7 @@ export default function AboutSection() {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   )
