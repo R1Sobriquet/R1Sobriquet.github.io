@@ -126,14 +126,23 @@ export default function InternshipsSection() {
               <div className="space-y-6">
                 {/* Bannière de l'entreprise */}
                 <Card className="overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
-                  <div className="relative h-32 w-full bg-gradient-to-r from-primary/10 to-secondary/10 flex items-center justify-center p-6">
-                    <div className="relative h-20 w-full max-w-md">
-                      <img
-                        src={internship.banner}
-                        alt={`Logo ${internship.company}`}
-                        className="object-contain w-full h-full"
-                      />
-                    </div>
+                  <div className={`relative h-40 w-full overflow-hidden ${
+                    internship.company.includes("Médiathèque")
+                      ? ""
+                      : "bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900"
+                  }`}>
+                    <img
+                      src={internship.banner}
+                      alt={`Logo ${internship.company}`}
+                      className={`w-full h-full ${
+                        internship.company.includes("Médiathèque")
+                          ? "object-cover"
+                          : "object-contain p-8"
+                      }`}
+                    />
+                    {internship.company.includes("Médiathèque") && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                    )}
                   </div>
                   <CardHeader>
                     <CardTitle className="text-2xl">{internship.position}</CardTitle>
