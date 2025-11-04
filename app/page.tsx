@@ -25,7 +25,7 @@ export default function Home() {
       <Navbar onTabChange={handleTabChange} />
 
       <div className="container mx-auto px-4 py-8">
-        {activeTab === "documents" && <Hero />}
+        {activeTab === "documents" && <Hero onContactClick={() => setActiveTab("contact")} />}
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className={activeTab === "documents" ? "mt-12" : "mt-0"}>
           <TabsList className="grid w-full grid-cols-3 md:grid-cols-8">
