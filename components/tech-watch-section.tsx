@@ -1,80 +1,137 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link"
 import { ExternalLink, Calendar } from "lucide-react"
+import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
 
 export default function TechWatchSection() {
   const techNews = [
     {
       id: "news1",
-      title: "Les avancées de l'IA générative en 2024",
-      date: "15 mai 2024",
-      source: "Le Monde Informatique",
-      category: "intelligence-artificielle",
+      title: "ANSSI : Recommandations pour sécuriser les applications web en 2025",
+      date: "Janvier 2025",
+      source: "ANSSI - Agence Nationale de la Sécurité des Systèmes d'Information",
+      category: "securite",
       summary:
-        "Les modèles d'IA générative continuent d'évoluer rapidement en 2024, avec des capacités de plus en plus impressionnantes en matière de génération de texte, d'images et de code. Les entreprises adoptent ces technologies pour automatiser certaines tâches et améliorer leur productivité.",
-      link: "https://www.lemondeinformatique.fr/",
-      tags: ["IA", "Machine Learning", "Automatisation"],
+        "L'ANSSI publie ses recommandations actualisées pour la sécurisation des applications web, incluant les nouvelles menaces liées aux API REST, l'authentification moderne et la protection contre les attaques par LLM.",
+      link: "https://www.ssi.gouv.fr/",
+      tags: ["Cybersécurité", "ANSSI", "Web Security"],
       impact:
-        "Ces avancées pourraient transformer de nombreux métiers du développement, en automatisant certaines tâches répétitives et en permettant aux développeurs de se concentrer sur des problèmes plus complexes.",
+        "Ces recommandations sont essentielles pour mes développements web (EsportApp, LeedCar). J'applique notamment les principes de defense-in-depth et les pratiques OWASP Top 10 dans mes projets professionnels.",
     },
     {
       id: "news2",
-      title: "React 19 : les nouvelles fonctionnalités qui vont changer le développement front-end",
-      date: "3 avril 2024",
-      source: "Medium",
-      category: "developpement-web",
+      title: "Python et Machine Learning : Pandas 2.2 optimise le traitement de grandes données",
+      date: "Décembre 2024",
+      source: "Python Software Foundation",
+      category: "intelligence-artificielle",
       summary:
-        "La version 19 de React apporte des améliorations significatives, notamment en termes de performance et de gestion de l'état. Les nouveaux hooks et les optimisations du rendu promettent de simplifier le développement d'applications complexes.",
-      link: "https://medium.com/",
-      tags: ["React", "JavaScript", "Front-end"],
+        "La nouvelle version de Pandas améliore considérablement les performances de traitement de datasets volumineux avec le support natif d'Apache Arrow et des optimisations mémoire avancées.",
+      link: "https://pandas.pydata.org/",
+      tags: ["Python", "Data Science", "Machine Learning"],
       impact:
-        "Ces nouvelles fonctionnalités vont me permettre d'optimiser mes développements React et d'adopter de nouvelles pratiques pour améliorer la performance de mes applications.",
+        "Directement applicable à mon projet de pipeline d'enrichissement de données IA chez MyDesyn. Les optimisations mémoire permettent de traiter des volumes plus importants et d'accélérer les étapes de nettoyage et modélisation.",
     },
     {
       id: "news3",
-      title: "La sécurité des applications web en 2024 : les meilleures pratiques",
-      date: "20 mars 2024",
-      source: "OWASP",
+      title: "EBIOS Risk Manager : Nouvelle méthodologie d'analyse de risques cyber",
+      date: "Novembre 2024",
+      source: "ANSSI",
       category: "securite",
       summary:
-        "L'OWASP a publié sa nouvelle liste des 10 vulnérabilités les plus critiques pour les applications web. Les attaques par injection et les failles d'authentification restent des menaces majeures, tandis que de nouvelles vulnérabilités liées aux API et aux microservices émergent.",
-      link: "https://owasp.org/",
-      tags: ["Sécurité", "Web", "OWASP"],
+        "L'ANSSI met à jour sa méthode EBIOS Risk Manager pour intégrer les nouvelles menaces liées au cloud, à l'IA et aux chaînes d'approvisionnement numériques. Cette approche permet une analyse structurée des risques cyber.",
+      link: "https://www.ssi.gouv.fr/ebios",
+      tags: ["EBIOS", "Gestion des risques", "Cybersécurité"],
       impact:
-        "Je dois intégrer ces recommandations dans mes développements pour garantir la sécurité des applications que je crée, notamment en mettant en place des pratiques de validation des entrées et de gestion des sessions plus robustes.",
+        "En cours de certification EBIOS Risk Manager, cette méthodologie me permet d'identifier et prioriser les risques dans mes projets professionnels. Particulièrement utile pour analyser la sécurité de l'application de taxi LeedCar.",
     },
     {
       id: "news4",
-      title: "WinDev 29 : les nouvelles fonctionnalités pour le développement d'applications métier",
-      date: "10 février 2024",
+      title: "Next.js 15 et React 19 : Le futur du développement web moderne",
+      date: "Octobre 2024",
+      source: "Vercel / React Team",
+      category: "developpement-web",
+      summary:
+        "Next.js 15 intègre React 19 avec des améliorations majeures : Server Components stables, nouvelles APIs de cache, amélioration des performances et meilleure expérience développeur avec Turbopack.",
+      link: "https://nextjs.org/",
+      tags: ["Next.js", "React", "Front-end"],
+      impact:
+        "Mon portfolio utilise Next.js 15 et React 19, ce qui me permet d'expérimenter avec les dernières technologies. J'applique ces patterns modernes dans mes projets web comme EsportApp et LeedCar.",
+    },
+    {
+      id: "news5",
+      title: "Stormshield : Nouvelles solutions de protection des infrastructures critiques",
+      date: "Octobre 2024",
+      source: "Stormshield",
+      category: "securite",
+      summary:
+        "Stormshield dévoile ses nouvelles solutions de cybersécurité pour protéger les infrastructures critiques, avec des pare-feu de nouvelle génération et des outils d'analyse comportementale avancés.",
+      link: "https://www.stormshield.com/",
+      tags: ["Stormshield", "Firewall", "Infrastructure"],
+      impact:
+        "En cours de certification Stormshield, j'étudie ces solutions pour comprendre la protection réseau et applicative. Ces connaissances sont essentielles pour sécuriser les applications métier que je développe chez MyDesyn.",
+    },
+    {
+      id: "news6",
+      title: "WinDev 2024 : Nouvelles fonctionnalités pour applications métier",
+      date: "Septembre 2024",
       source: "PC Soft",
       category: "developpement-logiciel",
       summary:
-        "La nouvelle version de WinDev apporte des améliorations significatives pour le développement d'applications métier, notamment en termes d'interface utilisateur, de performance et d'intégration avec les services cloud.",
+        "WinDev 2024 apporte des améliorations majeures : intégration cloud native, nouveaux composants UI modernes, optimisations HFSQL et meilleure compatibilité avec les API REST modernes.",
       link: "https://www.pcsoft.fr/",
-      tags: ["WinDev", "Applications métier", "AGL"],
+      tags: ["WinDev", "HFSQL", "Applications métier"],
       impact:
-        "Ces nouvelles fonctionnalités vont me permettre d'améliorer mes développements chez MyDesyn, en particulier pour l'intégration de services cloud et l'amélioration des interfaces utilisateur.",
+        "J'utilise quotidiennement WinDev dans mon alternance chez MyDesyn pour développer des applications métier. Ces nouvelles fonctionnalités améliorent significativement la productivité et la qualité des applications de gestion.",
+    },
+    {
+      id: "news7",
+      title: "Cisco Python Certification : Automatisation réseau avec Python",
+      date: "Août 2024",
+      source: "Cisco Networking Academy",
+      category: "developpement-logiciel",
+      summary:
+        "Cisco renforce son programme de certification Python axé sur l'automatisation réseau, le scripting et l'intégration avec les API Cisco. Focus sur NetDevOps et Infrastructure as Code.",
+      link: "https://www.netacad.com/",
+      tags: ["Python", "Cisco", "Automatisation"],
+      impact:
+        "En cours de certification Cisco Python, j'apprends à automatiser les tâches réseau et à utiliser Python pour la gestion d'infrastructure. Ces compétences sont complémentaires à mon travail sur les pipelines de données.",
+    },
+    {
+      id: "news8",
+      title: "Retour sur le Cybermois 2024 : Sensibilisation et formation en cybersécurité",
+      date: "Octobre 2024",
+      source: "Cybermoi/s - Campagne nationale",
+      category: "securite",
+      summary:
+        "Le Cybermois 2024 a rassemblé professionnels et grand public autour de la sensibilisation à la cybersécurité. Focus sur les nouvelles menaces, le phishing et la protection des données personnelles.",
+      link: "https://www.cybermois.fr/",
+      tags: ["Sensibilisation", "Cybersécurité", "Formation"],
+      impact:
+        "Participation en tant que professionnel au Cybermois 2024, j'ai contribué à sensibiliser le public aux enjeux de cybersécurité. Cette expérience renforce ma compréhension des risques et ma capacité à développer des applications sécurisées.",
     },
   ]
 
   return (
     <section id="tech-watch" className="py-12">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Veille technologique</h2>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Je reste constamment informé des dernières évolutions dans mon domaine
-            </p>
+        <AnimatedSection>
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Veille technologique</h2>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                Je reste constamment informé des dernières évolutions dans mon domaine
+              </p>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
 
         <div className="mt-8">
-          <Card>
+          <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
               <CardTitle>Ma méthode de veille</CardTitle>
               <CardDescription>Comment je reste à jour dans un domaine en constante évolution</CardDescription>
@@ -121,23 +178,27 @@ export default function TechWatchSection() {
             </TabsList>
 
             <TabsContent value="all" className="mt-6">
-              <div className="grid gap-6 md:grid-cols-2">
+              <StaggerContainer className="grid gap-6 md:grid-cols-2">
                 {techNews.map((news) => (
-                  <TechNewsCard key={news.id} news={news} />
+                  <StaggerItem key={news.id}>
+                    <TechNewsCard news={news} />
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             </TabsContent>
 
             {["intelligence-artificielle", "developpement-web", "securite", "developpement-logiciel"].map(
               (category) => (
                 <TabsContent key={category} value={category} className="mt-6">
-                  <div className="grid gap-6 md:grid-cols-2">
+                  <StaggerContainer className="grid gap-6 md:grid-cols-2">
                     {techNews
                       .filter((news) => news.category === category)
                       .map((news) => (
-                        <TechNewsCard key={news.id} news={news} />
+                        <StaggerItem key={news.id}>
+                          <TechNewsCard news={news} />
+                        </StaggerItem>
                       ))}
-                  </div>
+                  </StaggerContainer>
                 </TabsContent>
               ),
             )}
@@ -164,7 +225,7 @@ interface TechNewsCardProps {
 
 function TechNewsCard({ news }: TechNewsCardProps) {
   return (
-    <Card>
+    <Card className="bg-gradient-to-br from-background via-background to-primary/5">
       <CardHeader>
         <CardTitle>{news.title}</CardTitle>
         <CardDescription className="flex items-center gap-2">

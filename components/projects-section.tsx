@@ -238,7 +238,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
+    <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br from-background via-background to-primary/5">
       <motion.div
         className="relative aspect-video overflow-hidden"
         whileHover={{ scale: 1.05 }}

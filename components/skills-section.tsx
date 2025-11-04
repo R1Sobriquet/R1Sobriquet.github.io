@@ -241,7 +241,7 @@ FIN`,
         </AnimatedSection>
 
         <AnimatedSection className="mt-12">
-          <Card>
+          <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
               <CardTitle>Exemples de code</CardTitle>
               <CardDescription>Quelques exemples de code dans différents langages</CardDescription>
