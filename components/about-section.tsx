@@ -111,14 +111,16 @@ export default function AboutSection() {
                   </p>
                 </div>
 
-                {/* Placeholder for campus image */}
-                <div className="mt-6 border-2 border-dashed border-muted rounded-lg p-8 text-center">
-                  <p className="text-muted-foreground">
-                    Espace réservé pour l&apos;image du campus
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    (Image à intégrer)
-                  </p>
+                {/* Image du campus */}
+                <div className="mt-6 rounded-lg overflow-hidden">
+                  <Image
+                    src="https://www.vie-economique.com/wp-content/uploads/sites/13/2024/09/Campus_num_vie_eco_julien_mivielle_20231-scaled-928x484-c-default.jpg"
+                    alt="Campus Numérique 47 - Campus Ermitage à Agen"
+                    width={928}
+                    height={484}
+                    className="object-cover w-full"
+                    unoptimized
+                  />
                 </div>
               </div>
             </CardContent>

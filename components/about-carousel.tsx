@@ -1,31 +1,13 @@
 "use client"
 
-import { useCallback, useEffect, useState } from "react"
-import useEmblaCarousel from "embla-carousel-react"
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Briefcase, GraduationCap, MapPin } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 export function AboutCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
-  const [selectedIndex, setSelectedIndex] = useState(0)
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return
-    setSelectedIndex(emblaApi.selectedScrollSnap())
-  }, [emblaApi])
-
-  useEffect(() => {
-    if (!emblaApi) return
-    onSelect()
-    emblaApi.on("select", onSelect)
-    return () => {
-      emblaApi.off("select", onSelect)
-    }
-  }, [emblaApi, onSelect])
+  const [activeIndex, setActiveIndex] = useState(0)
 
   const slides = [
     {
@@ -117,13 +99,71 @@ export function AboutCarousel() {
     },
   ]
 
+  const scrollPrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
+  }
+
+  const scrollNext = () => {
+    setActiveIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+  }
+
+  const getSlideStyle = (index: number) => {
+    const diff = index - activeIndex
+    const isActive = diff === 0
+    const isLeft = diff === -1 || (activeIndex === 0 && index === slides.length - 1)
+    const isRight = diff === 1 || (activeIndex === slides.length - 1 && index === 0)
+
+    if (isActive) {
+      return {
+        scale: 1,
+        opacity: 1,
+        zIndex: 30,
+        x: "0%",
+      }
+    } else if (isLeft) {
+      return {
+        scale: 0.75,
+        opacity: 0.5,
+        zIndex: 10,
+        x: "-60%",
+      }
+    } else if (isRight) {
+      return {
+        scale: 0.75,
+        opacity: 0.5,
+        zIndex: 10,
+        x: "60%",
+      }
+    } else {
+      return {
+        scale: 0.5,
+        opacity: 0,
+        zIndex: 0,
+        x: "0%",
+      }
+    }
+  }
+
   return (
-    <div className="relative">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {slides.map((slide, index) => (
-            <div key={index} className="flex-[0_0_100%] min-w-0">
-              <Card className="h-full mx-2">
+    <div className="relative py-12">
+      <div className="relative h-[500px] flex items-center justify-center">
+        {slides.map((slide, index) => {
+          const style = getSlideStyle(index)
+          return (
+            <motion.div
+              key={index}
+              className="absolute w-full max-w-md"
+              initial={false}
+              animate={style}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+              style={{
+                pointerEvents: style.zIndex === 30 ? "auto" : "none",
+              }}
+            >
+              <Card className="h-full bg-gradient-to-br from-background via-background to-primary/5">
                 <CardHeader className="flex flex-row items-center gap-4">
                   {slide.icon}
                   <div className="grid gap-1">
@@ -133,15 +173,15 @@ export function AboutCarousel() {
                 </CardHeader>
                 <CardContent>{slide.content}</CardContent>
               </Card>
-            </div>
-          ))}
-        </div>
+            </motion.div>
+          )
+        })}
       </div>
 
       <Button
         variant="outline"
         size="icon"
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-40"
         onClick={scrollPrev}
       >
         <ChevronLeft className="h-4 w-4" />
@@ -150,20 +190,20 @@ export function AboutCarousel() {
       <Button
         variant="outline"
         size="icon"
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-40"
         onClick={scrollNext}
       >
         <ChevronRight className="h-4 w-4" />
       </Button>
 
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-2 mt-8">
         {slides.map((_, index) => (
           <button
             key={index}
             className={`h-2 w-2 rounded-full transition-all ${
-              index === selectedIndex ? "bg-primary w-8" : "bg-muted-foreground/30"
+              index === activeIndex ? "bg-primary w-8" : "bg-muted-foreground/30"
             }`}
-            onClick={() => emblaApi && emblaApi.scrollTo(index)}
+            onClick={() => setActiveIndex(index)}
           />
         ))}
       </div>

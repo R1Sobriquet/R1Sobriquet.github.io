@@ -13,7 +13,7 @@ export default function CertificationsSection() {
       date: "2024",
       score: "Obtenu",
       description: "Formation en ligne sur les fondamentaux de la cybersécurité.",
-      logo: "/placeholder.svg?height=80&width=80",
+      logo: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=200&h=200&fit=crop",
     },
     {
       title: "Certification RGPD",
@@ -21,7 +21,7 @@ export default function CertificationsSection() {
       date: "2024",
       score: "Obtenu",
       description: "Formation sur la protection des données personnelles et la conformité au RGPD.",
-      logo: "/placeholder.svg?height=80&width=80",
+      logo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=200&h=200&fit=crop",
     },
     {
       title: "Certification Stormshield",
@@ -29,7 +29,7 @@ export default function CertificationsSection() {
       date: "2024",
       score: "En cours",
       description: "Certification sur les solutions de cybersécurité et pare-feu Stormshield.",
-      logo: "/placeholder.svg?height=80&width=80",
+      logo: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=200&h=200&fit=crop",
     },
     {
       title: "Cisco Python Certification",
@@ -37,7 +37,7 @@ export default function CertificationsSection() {
       date: "2024",
       score: "En cours",
       description: "Certification en programmation Python pour le réseau et l'automatisation.",
-      logo: "/placeholder.svg?height=80&width=80",
+      logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=200&h=200&fit=crop",
     },
     {
       title: "EBIOS Risk Manager",
@@ -45,7 +45,7 @@ export default function CertificationsSection() {
       date: "2024",
       score: "En cours",
       description: "Certification sur la méthode EBIOS Risk Manager pour l'analyse des risques cyber.",
-      logo: "/placeholder.svg?height=80&width=80",
+      logo: "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=200&h=200&fit=crop",
     },
   ]
 
