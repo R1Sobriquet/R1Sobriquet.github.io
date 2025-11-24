@@ -24,6 +24,7 @@ export default function Home() {
   const navOrder = ["documents", "about", "internships", "skills", "projects", "certifications", "tech-watch", "contact"];
   const currentIndex = navOrder.indexOf(activeTab);
   const nextTab = currentIndex < navOrder.length - 1 ? navOrder[currentIndex + 1] : null;
+  const prevTab = currentIndex > 0 ? navOrder[currentIndex - 1] : null;
 
   return (
     <div>
@@ -53,7 +54,21 @@ export default function Home() {
 
         {activeTab === "contact" && <ContactSection />}
 
-        {nextTab && <NavigationArrow onNext={() => setActiveTab(nextTab)} />}
+        {/* Navigation arrows */}
+        {prevTab && (
+          <NavigationArrow
+            onClick={() => setActiveTab(prevTab)}
+            direction="prev"
+            scrollToTop={false}
+          />
+        )}
+        {nextTab && (
+          <NavigationArrow
+            onClick={() => setActiveTab(nextTab)}
+            direction="next"
+            scrollToTop={true}
+          />
+        )}
       </div>
     </div>
   );
