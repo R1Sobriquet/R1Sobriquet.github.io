@@ -210,4 +210,3 @@ export function AboutCarousel() {
     </div>
   )
 }
-
