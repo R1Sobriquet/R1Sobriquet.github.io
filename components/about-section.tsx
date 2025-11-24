@@ -60,7 +60,7 @@ export default function AboutSection() {
             </CardHeader>
             <CardContent>
               <p className="leading-7">
-                Actuellement étudiant au Campus Numérique 47 à Agen en BTS SIO option SLAM, je suis en alternance chez MyDesyn où je développe des applications métier avec Windev et Webdev.
+                Actuellement étudiant au Campus Ermitage à Agen en BTS SIO option SLAM, je suis en alternance chez MyDesyn où je développe des applications métier avec Windev et Webdev et Python.
               </p>
               <p className="leading-7 mt-4">
                 Mon parcours diversifié m&apos;a permis de développer une approche polyvalente et une bonne capacité d&apos;adaptation. Je souhaite poursuivre mes études vers l&apos;Intelligence Artificielle après l&apos;obtention de mon BTS.
