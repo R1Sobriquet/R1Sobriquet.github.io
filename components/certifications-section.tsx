@@ -113,6 +113,7 @@ export default function CertificationsSection() {
       duration: "20 heures",
       description: "Formation sur la gestion de projet avec la méthode Agile.",
       logo: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop",
+      schemaImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
     },
   ]
 
@@ -230,6 +231,18 @@ export default function CertificationsSection() {
                         <Badge variant="outline">{training.duration}</Badge>
                       </div>
                       <p className="text-sm text-muted-foreground mt-2">{training.description}</p>
+                      {training.schemaImage && (
+                        <div className="mt-4 rounded-lg overflow-hidden">
+                          <Image
+                            src={training.schemaImage}
+                            alt={`Schéma ${training.title}`}
+                            width={400}
+                            height={200}
+                            className="object-cover w-full"
+                            unoptimized
+                          />
+                        </div>
+                      )}
                     </div>
                   </CardContent>
                 </Card>

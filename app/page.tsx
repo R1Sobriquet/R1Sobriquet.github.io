@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Hero from "@/components/hero";
 import AboutSection from "@/components/about-section";
 import SkillsSection from "@/components/skills-section";
@@ -12,6 +11,7 @@ import ContactSection from "@/components/contact-section";
 import TechWatchSection from "@/components/tech-watch-section";
 import DocumentsSection from "@/components/documents-section";
 import Navbar from "@/components/navbar";
+import NavigationArrow from "@/components/navigation-arrow";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("documents");
@@ -20,57 +20,40 @@ export default function Home() {
     setActiveTab(tab);
   };
 
+  // Ordre de navigation
+  const navOrder = ["documents", "about", "internships", "skills", "projects", "certifications", "tech-watch", "contact"];
+  const currentIndex = navOrder.indexOf(activeTab);
+  const nextTab = currentIndex < navOrder.length - 1 ? navOrder[currentIndex + 1] : null;
+
   return (
     <div>
       <Navbar onTabChange={handleTabChange} />
 
       <div className="container mx-auto px-4 py-8">
-        {activeTab === "documents" && <Hero onContactClick={() => setActiveTab("contact")} />}
+        {activeTab === "documents" && (
+          <>
+            <Hero onContactClick={() => setActiveTab("contact")} />
+            <div className="mt-12">
+              <DocumentsSection />
+            </div>
+          </>
+        )}
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className={activeTab === "documents" ? "mt-12" : "mt-0"}>
-          <TabsList className="grid w-full grid-cols-3 md:grid-cols-8">
-            <TabsTrigger value="documents">Documents E6</TabsTrigger>
-            <TabsTrigger value="about">À propos</TabsTrigger>
-            <TabsTrigger value="internships">Stages</TabsTrigger>
-            <TabsTrigger value="skills">Compétences</TabsTrigger>
-            <TabsTrigger value="projects">Projets</TabsTrigger>
-            <TabsTrigger value="certifications">Certifications</TabsTrigger>
-            <TabsTrigger value="tech-watch">Veille</TabsTrigger>
-            <TabsTrigger value="contact">Contact</TabsTrigger>
-          </TabsList>
+        {activeTab === "about" && <AboutSection />}
 
-          <TabsContent value="documents" className="mt-6">
-            <DocumentsSection />
-          </TabsContent>
+        {activeTab === "internships" && <InternshipsSection />}
 
-          <TabsContent value="about" className="mt-6">
-            <AboutSection />
-          </TabsContent>
+        {activeTab === "skills" && <SkillsSection />}
 
-          <TabsContent value="internships" className="mt-6">
-            <InternshipsSection />
-          </TabsContent>
+        {activeTab === "projects" && <ProjectsSection />}
 
-          <TabsContent value="skills" className="mt-6">
-            <SkillsSection />
-          </TabsContent>
+        {activeTab === "certifications" && <CertificationsSection />}
 
-          <TabsContent value="projects" className="mt-6">
-            <ProjectsSection />
-          </TabsContent>
+        {activeTab === "tech-watch" && <TechWatchSection />}
 
-          <TabsContent value="certifications" className="mt-6">
-            <CertificationsSection />
-          </TabsContent>
+        {activeTab === "contact" && <ContactSection />}
 
-          <TabsContent value="tech-watch" className="mt-6">
-            <TechWatchSection />
-          </TabsContent>
-
-          <TabsContent value="contact" className="mt-6">
-            <ContactSection />
-          </TabsContent>
-        </Tabs>
+        {nextTab && <NavigationArrow onNext={() => setActiveTab(nextTab)} />}
       </div>
     </div>
   );

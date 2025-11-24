@@ -31,38 +31,50 @@ export default function Navbar({ onTabChange }: NavbarProps) {
         </button>
 
         <nav className="hidden md:flex items-center gap-6">
-          <button 
-            onClick={() => handleTabClick('about')} 
+          <button
+            onClick={() => handleTabClick('documents')}
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
+            Documents E6
+          </button>
+          <button
+            onClick={() => handleTabClick('about')}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             À propos
           </button>
-          <button 
-            onClick={() => handleTabClick('skills')} 
-            className="text-sm font-medium transition-colors hover:text-primary"
-          >
-            Compétences
-          </button>
-          <button 
-            onClick={() => handleTabClick('projects')} 
-            className="text-sm font-medium transition-colors hover:text-primary"
-          >
-            Projets
-          </button>
-          <button 
-            onClick={() => handleTabClick('internships')} 
+          <button
+            onClick={() => handleTabClick('internships')}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Stages
           </button>
-          <button 
-            onClick={() => handleTabClick('certifications')} 
+          <button
+            onClick={() => handleTabClick('skills')}
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
+            Compétences
+          </button>
+          <button
+            onClick={() => handleTabClick('projects')}
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
+            Projets
+          </button>
+          <button
+            onClick={() => handleTabClick('certifications')}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Certifications
           </button>
-          <button 
-            onClick={() => handleTabClick('contact')} 
+          <button
+            onClick={() => handleTabClick('tech-watch')}
+            className="text-sm font-medium transition-colors hover:text-primary"
+          >
+            Veille
+          </button>
+          <button
+            onClick={() => handleTabClick('contact')}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Contact
@@ -81,10 +93,22 @@ export default function Navbar({ onTabChange }: NavbarProps) {
         <div className="container md:hidden py-4">
           <nav className="flex flex-col space-y-4">
             <button
+              onClick={() => handleTabClick('documents')}
+              className="text-sm font-medium transition-colors hover:text-primary text-left"
+            >
+              Documents E6
+            </button>
+            <button
               onClick={() => handleTabClick('about')}
               className="text-sm font-medium transition-colors hover:text-primary text-left"
             >
               À propos
+            </button>
+            <button
+              onClick={() => handleTabClick('internships')}
+              className="text-sm font-medium transition-colors hover:text-primary text-left"
+            >
+              Stages
             </button>
             <button
               onClick={() => handleTabClick('skills')}
@@ -99,16 +123,16 @@ export default function Navbar({ onTabChange }: NavbarProps) {
               Projets
             </button>
             <button
-              onClick={() => handleTabClick('internships')}
-              className="text-sm font-medium transition-colors hover:text-primary text-left"
-            >
-              Stages
-            </button>
-            <button
               onClick={() => handleTabClick('certifications')}
               className="text-sm font-medium transition-colors hover:text-primary text-left"
             >
               Certifications
+            </button>
+            <button
+              onClick={() => handleTabClick('tech-watch')}
+              className="text-sm font-medium transition-colors hover:text-primary text-left"
+            >
+              Veille
             </button>
             <button
               onClick={() => handleTabClick('contact')}
