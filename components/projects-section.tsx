@@ -121,6 +121,69 @@ export default function ProjectsSection() {
     },
     {
       id: "project6",
+      title: "Projet de Prévision de Commandes",
+      description: "Système professionnel de prévision de demande basé sur l'analyse de données historiques.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+      technologies: ["Python", "Pandas", "Machine Learning", "Data Analysis"],
+      category: "desktop",
+      github: "https://github.com/R1Sobriquet/PredictionProject",
+      demo: null,
+      context:
+        "Projet professionnel de prévision de demande pour optimiser la gestion des stocks et la planification des ressources.",
+      problem:
+        "Besoin d'anticiper les commandes futures pour améliorer la gestion des stocks et réduire les coûts.",
+      solution:
+        "Développement d'un système de prévision basé sur l'analyse de données historiques de commandes 2024 pour prédire les commandes 2025 avec des techniques de machine learning.",
+      skills: [
+        "Concevoir et développer une solution applicative",
+        "Gérer les données",
+        "Analyser et optimiser les processus",
+      ],
+    },
+    {
+      id: "project7",
+      title: "Projet RPG - Gestion des Personnages",
+      description: "Système de gestion des personnages pour un jeu de rôle (RPG).",
+      image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=400&fit=crop",
+      technologies: ["Python", "POO", "Game Design"],
+      category: "desktop",
+      github: "https://github.com/R1Sobriquet/rpg_project",
+      demo: null,
+      context:
+        "Projet de création d'un système de gestion des personnages pour un nouveau jeu de rôle. Les joueurs doivent pouvoir créer et gérer leurs personnages avec différentes caractéristiques et capacités.",
+      problem:
+        "Créer un système flexible et extensible pour gérer les personnages d'un RPG avec leurs statistiques, compétences et équipements.",
+      solution:
+        "Développement d'un système orienté objet en Python permettant la création, la gestion et l'évolution des personnages de jeu.",
+      skills: [
+        "Concevoir et développer une solution applicative",
+        "Programmation orientée objet",
+        "Modélisation de données",
+      ],
+    },
+    {
+      id: "project8",
+      title: "Gestion de Bar - Java UML POO",
+      description: "Simulation de gestion de bar en Java avec modélisation UML.",
+      image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=400&fit=crop",
+      technologies: ["Java", "UML", "POO", "Design Patterns"],
+      category: "desktop",
+      github: "https://github.com/R1Sobriquet/Gestion-de-bar-Java_UML_POO-",
+      demo: null,
+      context:
+        "Projet académique de simulation d'un système de gestion de bar avec modélisation UML complète et implémentation en Java.",
+      problem:
+        "Modéliser et implémenter un système de gestion complet pour un bar incluant la gestion des stocks, des commandes et du personnel.",
+      solution:
+        "Développement d'une application Java suivant les principes de la POO avec une modélisation UML préalable (diagrammes de classes, séquences, cas d'utilisation).",
+      skills: [
+        "Concevoir et développer une solution applicative",
+        "Modélisation UML",
+        "Programmation orientée objet",
+      ],
+    },
+    {
+      id: "project9",
       title: "Jeu mobile (En développement)",
       description: "Application mobile d'un jeu simple - Projet à venir.",
       image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
