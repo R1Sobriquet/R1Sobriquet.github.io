@@ -1,7 +1,11 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
+import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
+import { Building2, MapPin, Calendar, Clock } from "lucide-react"
 
 export default function InternshipsSection() {
   const internships = [
@@ -12,7 +16,7 @@ export default function InternshipsSection() {
       period: "Décembre 2024 - Présent",
       duration: "En cours",
       location: "Agen, France",
-      logo: "/images/mydesyn-logo.png",
+      banner: "https://mydesyn.fr/wp-content/uploads/2020/10/FACTURE_M_2022_200_BLANC.png",
       description:
         "Alternance dans une entreprise spécialisée dans le développement d'applications métier avec Windev, Webdev et Windev Mobile.",
       organization: {
@@ -41,7 +45,7 @@ export default function InternshipsSection() {
       period: "Septembre - Décembre 2024",
       duration: "3 mois",
       location: "Le Passage d'Agen, France",
-      logo: "/images/d2comm-logo.png",
+      banner: "https://d2com.fr/wp-content/uploads/2025/03/D2COM-LOGO-V-1024x217.webp",
       description:
         "Stage de développement web axé sur React pour la création d'interfaces utilisateur modernes et réactives.",
       organization: {
@@ -70,7 +74,7 @@ export default function InternshipsSection() {
       period: "Octobre - Novembre 2023",
       duration: "2 mois",
       location: "Le Tampon, Réunion",
-      logo: "/images/bibliotheque-logo.png",
+      banner: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1200&h=300&fit=crop",
       description:
         "Stage au secteur informatique d'une médiathèque municipale, axé sur le support utilisateur et la maintenance.",
       organization: {
@@ -95,19 +99,21 @@ export default function InternshipsSection() {
   ]
 
   return (
-    <section id="internships" className="py-12">
+    <section id="internships" className="py-12 bg-muted/30">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mes stages professionnels</h2>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Découvrez mes expériences professionnelles en entreprise
-            </p>
+        <AnimatedSection>
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mes stages professionnels</h2>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                Découvrez mes expériences professionnelles en entreprise
+              </p>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
 
         <Tabs defaultValue={internships[0].id} className="mt-8">
-          <TabsList className="grid w-full grid-cols-3">
+          <TabsList className="grid w-full grid-cols-3 mb-8">
             {internships.map((internship) => (
               <TabsTrigger key={internship.id} value={internship.id}>
                 {internship.company}
@@ -116,98 +122,146 @@ export default function InternshipsSection() {
           </TabsList>
 
           {internships.map((internship) => (
-            <TabsContent key={internship.id} value={internship.id} className="mt-6">
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card>
-                  <CardHeader className="flex flex-row items-center gap-4">
-                    <div className="relative h-16 w-16 overflow-hidden rounded-md">
-                      <Image
-                        src={internship.logo || "/placeholder.svg"}
-                        alt={internship.company}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <div>
-                      <CardTitle>{internship.position}</CardTitle>
-                      <CardDescription>{internship.company}</CardDescription>
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        <Badge variant="outline">{internship.period}</Badge>
-                        <Badge variant="outline">{internship.duration}</Badge>
-                        <Badge variant="outline">{internship.location}</Badge>
-                      </div>
+            <TabsContent key={internship.id} value={internship.id}>
+              <div className="space-y-6">
+                {/* Bannière de l'entreprise */}
+                <Card className="overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+                  <div className={`relative h-40 w-full overflow-hidden ${
+                    internship.company.includes("Médiathèque")
+                      ? ""
+                      : "bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-800 dark:to-slate-900"
+                  }`}>
+                    <img
+                      src={internship.banner}
+                      alt={`Logo ${internship.company}`}
+                      className={`w-full h-full ${
+                        internship.company.includes("Médiathèque")
+                          ? "object-cover"
+                          : "object-contain p-8"
+                      }`}
+                    />
+                    {internship.company.includes("Médiathèque") && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                    )}
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-2xl">{internship.position}</CardTitle>
+                    <CardDescription className="text-lg">{internship.company}</CardDescription>
+                    <div className="flex flex-wrap gap-3 mt-4">
+                      <Badge variant="outline" className="gap-1">
+                        <Calendar className="h-3 w-3" />
+                        {internship.period}
+                      </Badge>
+                      <Badge variant="outline" className="gap-1">
+                        <Clock className="h-3 w-3" />
+                        {internship.duration}
+                      </Badge>
+                      <Badge variant="outline" className="gap-1">
+                        <MapPin className="h-3 w-3" />
+                        {internship.location}
+                      </Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{internship.description}</p>
-
-                    <div className="mt-6">
-                      <h4 className="font-semibold text-lg">Technologies utilisées</h4>
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        {internship.technologies.map((tech) => (
-                          <Badge key={tech}>{tech}</Badge>
-                        ))}
-                      </div>
-                    </div>
+                    <p className="text-muted-foreground leading-7">{internship.description}</p>
                   </CardContent>
                 </Card>
 
-                <div className="space-y-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>L&apos;organisation</CardTitle>
-                      <CardDescription>Présentation de l&apos;entreprise d&apos;accueil</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-2">
-                        <div className="flex justify-between">
-                          <span className="font-medium">Nom:</span>
-                          <span>{internship.organization.name}</span>
+                {/* Grille d'informations */}
+                <StaggerContainer className="grid gap-6 md:grid-cols-2">
+                  <StaggerItem>
+                    <Card className="h-full bg-gradient-to-br from-background via-background to-primary/5">
+                      <CardHeader>
+                        <div className="flex items-center gap-2">
+                          <Building2 className="h-5 w-5" />
+                          <CardTitle>L&apos;organisation</CardTitle>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="font-medium">Secteur:</span>
-                          <span>{internship.organization.sector}</span>
+                        <CardDescription>Présentation de l&apos;entreprise d&apos;accueil</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-3">
+                          <div className="flex justify-between">
+                            <span className="font-medium">Nom:</span>
+                            <span className="text-right">{internship.organization.name}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Secteur:</span>
+                            <span className="text-right">{internship.organization.sector}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Taille:</span>
+                            <span className="text-right">{internship.organization.size}</span>
+                          </div>
+                          <div className="mt-4 pt-4 border-t">
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {internship.organization.description}
+                            </p>
+                          </div>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="font-medium">Taille:</span>
-                          <span>{internship.organization.size}</span>
-                        </div>
-                        <div className="mt-4">
-                          <p className="text-sm text-muted-foreground">{internship.organization.description}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                      </CardContent>
+                    </Card>
+                  </StaggerItem>
 
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Services informatiques fournis</CardTitle>
-                      <CardDescription>Missions et tâches réalisées</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="list-disc pl-5 space-y-2">
-                        {internship.services.map((service, index) => (
-                          <li key={index} className="text-sm">
-                            {service}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
+                  <StaggerItem>
+                    <Card className="h-full bg-gradient-to-br from-background via-background to-primary/5">
+                      <CardHeader>
+                        <CardTitle>Technologies utilisées</CardTitle>
+                        <CardDescription>Stack technique et outils</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex flex-wrap gap-2">
+                          {internship.technologies.map((tech) => (
+                            <Badge key={tech} variant="secondary" className="text-sm">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </StaggerItem>
 
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>Analyse et solutions</CardTitle>
-                      <CardDescription>Analyse de la demande et solutions proposées</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground">{internship.analysis}</p>
+                  <StaggerItem>
+                    <Card className="h-full bg-gradient-to-br from-background via-background to-primary/5">
+                      <CardHeader>
+                        <CardTitle>Missions réalisées</CardTitle>
+                        <CardDescription>Services informatiques fournis</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <ul className="space-y-2">
+                          {internship.services.map((service, index) => (
+                            <li key={index} className="flex items-start gap-2">
+                              <span className="text-primary mt-1">•</span>
+                              <span className="text-sm">{service}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </StaggerItem>
 
-                      <h4 className="font-semibold mt-4">Contraintes et adaptations</h4>
-                      <p className="text-sm text-muted-foreground mt-1">{internship.constraints}</p>
-                    </CardContent>
-                  </Card>
-                </div>
+                  <StaggerItem>
+                    <Card className="h-full bg-gradient-to-br from-background via-background to-primary/5">
+                      <CardHeader>
+                        <CardTitle>Analyse et solutions</CardTitle>
+                        <CardDescription>Contexte et problématiques rencontrées</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold mb-2">Contexte</h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {internship.analysis}
+                          </p>
+                        </div>
+                        <div className="pt-4 border-t">
+                          <h4 className="font-semibold mb-2">Contraintes et adaptations</h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {internship.constraints}
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </StaggerItem>
+                </StaggerContainer>
               </div>
             </TabsContent>
           ))}

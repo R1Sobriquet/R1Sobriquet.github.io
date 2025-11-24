@@ -20,7 +20,7 @@ export default function DocumentsSection() {
 
         {/* Documents PDF */}
         <div className="grid gap-6 md:grid-cols-2">
-          <Card className="p-6 border-2 border-primary/20 hover:border-primary transition-colors">
+          <Card className="p-6 border-2 border-primary/20 hover:border-primary transition-colors bg-gradient-to-br from-background via-background to-primary/5">
             <div className="flex items-center gap-4 mb-4">
               <div className="p-3 bg-primary/10 rounded-lg">
                 <FileText className="h-6 w-6 text-primary" />
@@ -39,14 +39,14 @@ export default function DocumentsSection() {
               réalisation professionnelle selon le référentiel BTS SIO.
             </p>
             <Button asChild className="w-full" size="lg">
-              <Link href="/docs/E5_1751374731937.pdf" download>
+              <Link href="/docs/tableau-synthese-realisations.pdf" download>
                 <Download className="h-4 w-4 mr-2" />
                 Télécharger le tableau de synthèse
               </Link>
             </Button>
           </Card>
 
-          <Card className="p-6 border-2 border-secondary/20 hover:border-secondary transition-colors">
+          <Card className="p-6 border-2 border-secondary/20 hover:border-secondary transition-colors bg-gradient-to-br from-background via-background to-secondary/5">
             <div className="flex items-center gap-4 mb-4">
               <div className="p-3 bg-secondary/10 rounded-lg">
                 <FileText className="h-6 w-6 text-secondary-foreground" />
@@ -65,7 +65,7 @@ export default function DocumentsSection() {
               contexte, technologies utilisées et compétences mobilisées.
             </p>
             <Button asChild variant="secondary" className="w-full" size="lg">
-              <Link href="/docs/tableau-synthese-realisations.pdf" download>
+              <Link href="/docs/E5_1751374731937.pdf" download>
                 <Download className="h-4 w-4 mr-2" />
                 Télécharger les réalisations
               </Link>
@@ -76,13 +76,13 @@ export default function DocumentsSection() {
         {/* Actions rapides */}
         <div className="flex justify-center gap-4 mt-8">
           <Button asChild>
-            <Link href="/docs/E5_1751374731937.pdf" download>
+            <Link href="/docs/tableau-synthese-realisations.pdf" download>
               <Download className="h-4 w-4 mr-2" />
               Tableau complet
             </Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/docs/tableau-synthese-realisations.pdf" download>
+            <Link href="/docs/E5_1751374731937.pdf" download>
               <Download className="h-4 w-4 mr-2" />
               Réalisations
             </Link>

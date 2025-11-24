@@ -14,62 +14,132 @@ export default function ProjectsSection() {
   const projects = [
     {
       id: "project1",
-      title: "Application métier Windev",
-      description: "Application de gestion développée avec Windev pour un client de MyDesyn.",
-      image: "/images/mydesyn-logo.png",
-      technologies: ["Windev", "HFSQL", "SQL"],
+      title: "Application de planning WinDev",
+      description: "Application métier de gestion de planning développée en WinDev pour MyDesyn.",
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
+      technologies: ["WinDev", "HFSQL", "WLangage"],
       category: "desktop",
-      github: "https://github.com/erwannlerouzic/windev-app",
+      github: null,
       demo: null,
       context:
-        "Projet réalisé dans le cadre de mon alternance chez MyDesyn. L'objectif était de développer une application métier pour la gestion interne d'une entreprise.",
+        "Projet professionnel réalisé dans le cadre de mon alternance chez MyDesyn. Application métier pour la gestion et l'optimisation des plannings.",
       problem:
-        "Le client avait besoin d'une application sur mesure pour gérer ses processus internes, avec une interface adaptée à ses besoins spécifiques.",
+        "Besoin d'un outil de planification robuste et adapté aux processus métier spécifiques de l'entreprise.",
       solution:
-        "Développement d'une application Windev avec une interface intuitive et des fonctionnalités personnalisées pour répondre aux besoins du client.",
+        "Développement d'une application desktop WinDev avec gestion de base de données HFSQL, interface intuitive et fonctionnalités avancées de planification.",
       skills: [
         "Concevoir et développer une solution applicative",
         "Gérer les données",
         "Mettre à disposition des utilisateurs un service informatique",
       ],
+      isPrivate: true,
     },
     {
       id: "project2",
-      title: "Interface utilisateur React",
-      description: "Développement de composants React pour un site web d'entreprise.",
-      image: "/images/d2comm-logo.png",
-      technologies: ["React", "JavaScript", "HTML/CSS", "Bootstrap"],
-      category: "web",
-      github: "https://github.com/erwannlerouzic/react-components",
-      demo: "https://react-components-demo.vercel.app",
+      title: "Pipeline d'enrichissement de données IA",
+      description: "Projet d'IA axé sur le nettoyage, l'enrichissement et la modélisation de données.",
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop",
+      technologies: ["Python", "Pandas", "Machine Learning", "Data Science"],
+      category: "desktop",
+      github: "https://github.com/R1Sobriquet/pythonPipelineEnrichissement",
+      demo: null,
       context:
-        "Projet réalisé lors de mon stage chez D2Comm. L'objectif était de créer des composants React réutilisables pour un site web d'entreprise.",
-      problem: "Le client souhaitait moderniser son site web avec une interface plus interactive et responsive.",
+        "Projet professionnel d'intelligence artificielle pour automatiser le traitement et l'enrichissement de grandes quantités de données.",
+      problem:
+        "Nécessité de nettoyer, enrichir et modéliser efficacement des données brutes pour analyse et prise de décision.",
       solution:
-        "Création de composants React modulaires et réutilisables, avec une attention particulière à l'expérience utilisateur et à la compatibilité mobile.",
+        "Développement d'un pipeline Python utilisant des techniques de data science et machine learning pour le traitement automatisé des données.",
+      skills: [
+        "Concevoir et développer une solution applicative",
+        "Gérer les données",
+        "Analyser et optimiser les processus",
+      ],
+    },
+    {
+      id: "project3",
+      title: "EsportApp - Plateforme e-sport",
+      description: "Application web de rencontre entre joueurs d'e-sport.",
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&h=400&fit=crop",
+      technologies: ["React", "Node.js", "API REST", "MongoDB"],
+      category: "web",
+      github: "https://github.com/R1Sobriquet/Esportapp/tree/DirectAPI",
+      demo: null,
+      context:
+        "Projet personnel visant à créer une plateforme pour connecter les joueurs d'e-sport et faciliter la création d'équipes.",
+      problem:
+        "Les joueurs d'e-sport ont du mal à trouver des coéquipiers de niveau similaire et partageant les mêmes objectifs.",
+      solution:
+        "Développement d'une application web avec système de matching, profils joueurs, et API REST pour la gestion des données.",
       skills: [
         "Concevoir et développer une solution applicative",
         "Développer la présence en ligne de l'organisation",
         "Travailler en mode projet",
       ],
     },
-
     {
-      id: "project3",
-      title: "Portfolio personnel",
-      description: "Site web personnel présentant mon parcours, mes compétences et mes réalisations.",
-      image: "/images/bibliotheque-logo.png",
-      technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+      id: "project4",
+      title: "LeedCar - Application de taxi",
+      description: "Application web professionnelle de services de taxi (en production).",
+      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=400&fit=crop",
+      technologies: ["React", "Node.js", "Express", "PostgreSQL"],
       category: "web",
-      github: "https://github.com/erwannlerouzic/portfolio",
-      demo: "https://erwann-lerouzic.vercel.app",
+      github: "https://github.com/R1Sobriquet/LeedCarFinished",
+      demo: null,
       context:
-        "Projet personnel réalisé dans le cadre de ma formation BTS SIO. L'objectif était de créer un portfolio professionnel pour présenter mon parcours et mes compétences.",
+        "Projet professionnel encore en phase de production. Application complète de gestion de courses de taxi.",
       problem:
-        "Besoin de mettre en valeur mon parcours, mes compétences et mes réalisations de manière professionnelle et accessible.",
+        "Besoin d'une plateforme moderne et fiable pour la gestion des courses, chauffeurs et clients.",
       solution:
-        "Développement d'un site web responsive avec Next.js et Tailwind CSS, présentant de manière claire et structurée mon parcours, mes compétences et mes réalisations.",
-      skills: ["Développer la présence en ligne de l'organisation", "Organiser son développement professionnel"],
+        "Application web full-stack avec interface utilisateur intuitive, système de réservation en temps réel et tableau de bord administrateur.",
+      skills: [
+        "Concevoir et développer une solution applicative",
+        "Gérer les données",
+        "Mettre à disposition des utilisateurs un service informatique",
+      ],
+      isProduction: true,
+    },
+    {
+      id: "project5",
+      title: "WildZone - Site vitrine chasse",
+      description: "Site vitrine ambiance 'Club privé' pour un magasin de chasse.",
+      image: "https://images.unsplash.com/photo-1545453001-5d7c2f2a6e50?w=800&h=400&fit=crop",
+      technologies: ["HTML", "CSS", "JavaScript", "Design UX/UI"],
+      category: "web",
+      github: "https://github.com/R1Sobriquet/WildZone",
+      demo: null,
+      context:
+        "Projet de site vitrine pour un magasin de chasse, avec une ambiance exclusive et haut de gamme.",
+      problem:
+        "Créer une identité web forte pour un magasin de chasse visant une clientèle premium.",
+      solution:
+        "Développement d'un site web au design soigné, avec une atmosphère 'club privé' et une présentation élégante des produits.",
+      skills: [
+        "Développer la présence en ligne de l'organisation",
+        "Concevoir une interface utilisateur",
+        "Travailler en mode projet",
+      ],
+    },
+    {
+      id: "project6",
+      title: "Jeu mobile (En développement)",
+      description: "Application mobile d'un jeu simple - Projet à venir.",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
+      technologies: ["React Native", "Mobile", "Game Dev"],
+      category: "mobile",
+      github: null,
+      demo: null,
+      context:
+        "Projet en cours de conception. Application mobile ludique pour découvrir le développement de jeux mobiles.",
+      problem:
+        "Apprentissage du développement mobile et des mécaniques de jeu.",
+      solution:
+        "Développement d'une application mobile simple avec React Native pour se familiariser avec le développement de jeux.",
+      skills: [
+        "Concevoir et développer une solution applicative",
+        "Développement mobile",
+        "Créativité et innovation",
+      ],
+      isComingSoon: true,
     },
   ]
 
@@ -154,18 +224,21 @@ interface ProjectCardProps {
     image: string
     technologies: string[]
     category: string
-    github: string
+    github: string | null
     demo: string | null
     context: string
     problem: string
     solution: string
     skills: string[]
+    isPrivate?: boolean
+    isProduction?: boolean
+    isComingSoon?: boolean
   }
 }
 
 function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
+    <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br from-background via-background to-primary/5">
       <motion.div
         className="relative aspect-video overflow-hidden"
         whileHover={{ scale: 1.05 }}
@@ -177,6 +250,21 @@ function ProjectCard({ project }: ProjectCardProps) {
         <CardTitle>{project.title}</CardTitle>
         <CardDescription>{project.description}</CardDescription>
         <div className="flex flex-wrap gap-2 mt-2">
+          {project.isPrivate && (
+            <Badge variant="outline" className="bg-yellow-500/10 text-yellow-700 dark:text-yellow-400">
+              Code privé
+            </Badge>
+          )}
+          {project.isProduction && (
+            <Badge variant="outline" className="bg-green-500/10 text-green-700 dark:text-green-400">
+              En production
+            </Badge>
+          )}
+          {project.isComingSoon && (
+            <Badge variant="outline" className="bg-blue-500/10 text-blue-700 dark:text-blue-400">
+              À venir
+            </Badge>
+          )}
           {project.technologies.map((tech) => (
             <Badge key={tech} variant="secondary">
               {tech}
@@ -205,13 +293,20 @@ function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button variant="outline" asChild>
-          <Link href={project.github} target="_blank" rel="noopener noreferrer">
+      <CardFooter className="flex justify-between gap-2">
+        {project.github ? (
+          <Button variant="outline" asChild>
+            <Link href={project.github} target="_blank" rel="noopener noreferrer">
+              <Github className="mr-2 h-4 w-4" />
+              Code source
+            </Link>
+          </Button>
+        ) : (
+          <Button variant="outline" disabled>
             <Github className="mr-2 h-4 w-4" />
-            Code source
-          </Link>
-        </Button>
+            {project.isPrivate ? "Code privé" : "Pas de lien"}
+          </Button>
+        )}
         {project.demo && (
           <Button asChild>
             <Link href={project.demo} target="_blank" rel="noopener noreferrer">

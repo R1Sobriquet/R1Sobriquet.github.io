@@ -6,9 +6,13 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
-export default function Hero() {
+interface HeroProps {
+  onContactClick?: () => void
+}
+
+export default function Hero({ onContactClick }: HeroProps) {
   return (
-    <section className="py-12 md:py-24">
+    <section className="py-12 md:py-24 bg-gradient-to-b from-primary/5 via-background to-background">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <motion.div
@@ -32,8 +36,8 @@ export default function Hero() {
                   Télécharger mon CV
                 </Link>
               </Button>
-              <Button variant="outline" asChild>
-                <a href="#contact">Me contacter</a>
+              <Button variant="outline" onClick={onContactClick}>
+                Me contacter
               </Button>
             </div>
           </motion.div>

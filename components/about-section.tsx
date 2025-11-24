@@ -1,8 +1,9 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Briefcase, GraduationCap, MapPin } from "lucide-react"
-import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
+import { AnimatedSection } from "@/components/animated-section"
+import { AboutCarousel } from "@/components/about-carousel"
+import Image from "next/image"
 
 export default function AboutSection() {
   return (
@@ -19,118 +20,41 @@ export default function AboutSection() {
           </div>
         </AnimatedSection>
 
-        <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
-          <StaggerItem>
-            <Card className="h-full">
-              <CardHeader className="flex flex-row items-center gap-4">
-                <GraduationCap className="h-8 w-8" />
-                <div className="grid gap-1">
-                  <CardTitle>Formation</CardTitle>
-                  <CardDescription>Mon parcours académique</CardDescription>
-                </div>
-              </CardHeader>
-            <CardContent>
-              <ul className="space-y-4">
-                <li>
-                  <div className="font-semibold">BTS SIO option SLAM</div>
-                  <div className="text-sm text-muted-foreground">2023 - 2025</div>
-                  <div className="text-sm">Campus Numérique 47, Agen</div>
-                </li>
-                <li>
-                  <div className="font-semibold">Licence de Langues Étrangères Appliquées</div>
-                  <div className="text-sm text-muted-foreground">2021 - 2022</div>
-                  <div className="text-sm">INU Champollion, Albi, Occitanie</div>
-                </li>
-                <li>
-                  <div className="font-semibold">Licence de psychologie</div>
-                  <div className="text-sm text-muted-foreground">2019 - 2020</div>
-                  <div className="text-sm">Université de Bretagne Occidentale, Brest</div>
-                </li>
-                <li>
-                  <div className="font-semibold">Baccalauréat Littéraire</div>
-                  <div className="text-sm text-muted-foreground">2014 - 2018</div>
-                  <div className="text-sm">Lycée Pierre Lagourgue, Le Tampon, Réunion</div>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-          </StaggerItem>
-
-          <StaggerItem>
-            <Card className="h-full">
-              <CardHeader className="flex flex-row items-center gap-4">
-                <Briefcase className="h-8 w-8" />
-              <div className="grid gap-1">
-                <CardTitle>Expérience</CardTitle>
-                <CardDescription>Mon parcours professionnel</CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-4">
-                <li>
-                  <div className="font-semibold">Alternance - Développeur d&apos;applications</div>
-                  <div className="text-sm text-muted-foreground">Décembre 2024 - Présent</div>
-                  <div className="text-sm">MyDesyn, Développement d&apos;applications métier Windev/Webdev</div>
-                </li>
-                <li>
-                  <div className="font-semibold">Stage - Développement Web</div>
-                  <div className="text-sm text-muted-foreground">Septembre - Décembre 2024</div>
-                  <div className="text-sm">D2Comm, Le Passage d&apos;Agen, Développement React</div>
-                </li>
-                <li>
-                  <div className="font-semibold">Agent de centre d&apos;appels</div>
-                  <div className="text-sm text-muted-foreground">Janvier - Mars 2024</div>
-                  <div className="text-sm">Orange, Le Tampon, Réunion</div>
-                </li>
-                <li>
-                  <div className="font-semibold">Stage - Secteur informatique</div>
-                  <div className="text-sm text-muted-foreground">Octobre - Novembre 2023</div>
-                  <div className="text-sm">Médiathèque, Mairie du Tampon, Réunion</div>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-          </StaggerItem>
-
-          <StaggerItem>
-            <Card className="h-full">
-              <CardHeader className="flex flex-row items-center gap-4">
-                <MapPin className="h-8 w-8" />
-              <div className="grid gap-1">
-                <CardTitle>Informations</CardTitle>
-                <CardDescription>Mes coordonnées</CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-2">
-                  <span className="font-semibold">Localisation:</span>
-                  <span>48 Cours du 14 Juillet, Agen</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="font-semibold">Email:</span>
-                  <span>erwannn.lerouzic@gmail.com</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="font-semibold">LinkedIn:</span>
-                  <span>linkedin.com/in/erwann-le-rouzic-a09b64219</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="font-semibold">GitHub:</span>
-                  <span>github.com/R1Sobriquet</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="font-semibold">Téléphone:</span>
-                  <span>+262 692 35 72 64</span>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-          </StaggerItem>
-        </StaggerContainer>
+        <AnimatedSection className="mt-8">
+          <AboutCarousel />
+        </AnimatedSection>
 
         <AnimatedSection className="mt-12">
-          <Card>
+          <Card className="bg-gradient-to-br from-background via-background to-primary/5">
+            <CardHeader>
+              <CardTitle>Statistiques GitHub</CardTitle>
+              <CardDescription>Mon activité sur GitHub</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-center flex-wrap">
+                <Image
+                  src="https://github-readme-stats.vercel.app/api?username=R1Sobriquet&show_icons=true&theme=radical&hide_border=true&bg_color=00000000"
+                  alt="GitHub Stats"
+                  width={495}
+                  height={195}
+                  className="rounded-lg"
+                  unoptimized
+                />
+                <Image
+                  src="https://github-readme-streak-stats.herokuapp.com/?user=R1Sobriquet&theme=radical&hide_border=true&background=00000000"
+                  alt="GitHub Streak"
+                  width={495}
+                  height={195}
+                  className="rounded-lg"
+                  unoptimized
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedSection>
+
+        <AnimatedSection className="mt-12">
+          <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
               <CardTitle>Présentation</CardTitle>
             </CardHeader>
@@ -146,7 +70,7 @@ export default function AboutSection() {
         </AnimatedSection>
 
         <AnimatedSection className="mt-12">
-          <Card>
+          <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
               <CardTitle>Campus Numérique 47 & Campus Ermitage</CardTitle>
             </CardHeader>
@@ -187,14 +111,16 @@ export default function AboutSection() {
                   </p>
                 </div>
 
-                {/* Placeholder for campus image */}
-                <div className="mt-6 border-2 border-dashed border-muted rounded-lg p-8 text-center">
-                  <p className="text-muted-foreground">
-                    Espace réservé pour l&apos;image du campus
-                  </p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    (Image à intégrer)
-                  </p>
+                {/* Image du campus */}
+                <div className="mt-6 rounded-lg overflow-hidden">
+                  <Image
+                    src="https://www.vie-economique.com/wp-content/uploads/sites/13/2024/09/Campus_num_vie_eco_julien_mivielle_20231-scaled-928x484-c-default.jpg"
+                    alt="Campus Numérique 47 - Campus Ermitage à Agen"
+                    width={928}
+                    height={484}
+                    className="object-cover w-full"
+                    unoptimized
+                  />
                 </div>
               </div>
             </CardContent>

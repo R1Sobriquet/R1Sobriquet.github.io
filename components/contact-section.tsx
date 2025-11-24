@@ -75,7 +75,7 @@ export default function ContactSection() {
         </AnimatedSection>
 
         <div className="grid gap-6 lg:grid-cols-2 mt-8">
-          <Card>
+          <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
               <CardTitle>Formulaire de contact</CardTitle>
               <CardDescription>Envoyez-moi un message via ce formulaire</CardDescription>
@@ -111,7 +111,7 @@ export default function ContactSection() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
               <CardTitle>Informations de contact</CardTitle>
               <CardDescription>Vous pouvez également me contacter directement</CardDescription>
