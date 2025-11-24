@@ -236,17 +236,21 @@ function TechNewsCard({ news }: TechNewsCardProps) {
   return (
     <Card className="bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden">
       {news.image && (
-        <div className="relative w-full h-48 overflow-hidden">
-          <img
-            src={news.image}
-            alt={news.title}
-            className="object-cover w-full h-full"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        </div>
+        <Link href={news.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+          <div className="relative w-full h-48 overflow-hidden hover:opacity-90 transition-opacity">
+            <img
+              src={news.image}
+              alt={news.title}
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          </div>
+        </Link>
       )}
       <CardHeader>
-        <CardTitle>{news.title}</CardTitle>
+        <Link href={news.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:underline">
+          <CardTitle>{news.title}</CardTitle>
+        </Link>
         <CardDescription className="flex items-center gap-2">
           <Calendar className="h-4 w-4" />
           {news.date} - {news.source}

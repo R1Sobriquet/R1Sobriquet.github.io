@@ -100,17 +100,17 @@ export default function ProjectsSection() {
     },
     {
       id: "project5",
-      title: "WildZone - Site vitrine chasse",
-      description: "Site vitrine ambiance 'Club privé' pour un magasin de chasse.",
-      image: "https://images.unsplash.com/photo-1542223189-67a03fa0f0bd?w=800&h=400&fit=crop",
+      title: "WildZone - Site vitrine pêche",
+      description: "Site vitrine ambiance 'Club privé' pour un magasin de pêche.",
+      image: "https://images.unsplash.com/photo-1545450660-7f7ff6680e2f?w=800&h=400&fit=crop",
       technologies: ["HTML", "CSS", "JavaScript", "Design UX/UI"],
       category: "web",
       github: "https://github.com/R1Sobriquet/WildZone",
       demo: null,
       context:
-        "Projet de site vitrine pour un magasin de chasse, avec une ambiance exclusive et haut de gamme.",
+        "Projet de site vitrine pour un magasin de pêche, avec une ambiance exclusive et haut de gamme.",
       problem:
-        "Créer une identité web forte pour un magasin de chasse visant une clientèle premium.",
+        "Créer une identité web forte pour un magasin de pêche visant une clientèle premium.",
       solution:
         "Développement d'un site web au design soigné, avec une atmosphère 'club privé' et une présentation élégante des produits.",
       skills: [
@@ -300,17 +300,35 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ project }: ProjectCardProps) {
+  const primaryLink = project.github || project.demo
+
   return (
     <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow duration-300 bg-gradient-to-br from-background via-background to-primary/5">
-      <motion.div
-        className="relative aspect-video overflow-hidden"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
+      <Link
+        href={primaryLink || "#"}
+        target={primaryLink ? "_blank" : undefined}
+        rel={primaryLink ? "noopener noreferrer" : undefined}
+        className={primaryLink ? "cursor-pointer" : "cursor-default"}
+        onClick={(e) => !primaryLink && e.preventDefault()}
       >
-        <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-      </motion.div>
+        <motion.div
+          className="relative aspect-video overflow-hidden"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
+        </motion.div>
+      </Link>
       <CardHeader>
-        <CardTitle>{project.title}</CardTitle>
+        <Link
+          href={primaryLink || "#"}
+          target={primaryLink ? "_blank" : undefined}
+          rel={primaryLink ? "noopener noreferrer" : undefined}
+          className={primaryLink ? "cursor-pointer hover:underline" : "cursor-default"}
+          onClick={(e) => !primaryLink && e.preventDefault()}
+        >
+          <CardTitle>{project.title}</CardTitle>
+        </Link>
         <CardDescription>{project.description}</CardDescription>
         <div className="flex flex-wrap gap-2 mt-2">
           {project.isPrivate && (
