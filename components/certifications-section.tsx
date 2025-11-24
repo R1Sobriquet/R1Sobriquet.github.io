@@ -105,6 +105,7 @@ export default function CertificationsSection() {
       date: "2024",
       duration: "20 heures",
       description: "Formation sur la gestion de projet avec la méthode Agile.",
+      logo: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop",
     },
   ]
 
@@ -187,9 +188,21 @@ export default function CertificationsSection() {
             {additionalTrainings.map((training, index) => (
               <StaggerItem key={index}>
                 <Card className="h-full">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{training.title}</CardTitle>
-                    <CardDescription>{training.provider}</CardDescription>
+                  <CardHeader className={training.logo ? "flex flex-row items-center gap-4" : ""}>
+                    {training.logo && (
+                      <div className="relative h-12 w-12 overflow-hidden rounded-md flex-shrink-0">
+                        <Image
+                          src={training.logo}
+                          alt={training.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <CardTitle className="text-lg">{training.title}</CardTitle>
+                      <CardDescription>{training.provider}</CardDescription>
+                    </div>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
