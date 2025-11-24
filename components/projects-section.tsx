@@ -102,7 +102,7 @@ export default function ProjectsSection() {
       id: "project5",
       title: "WildZone - Site vitrine pêche",
       description: "Site vitrine ambiance 'Club privé' pour un magasin de pêche.",
-      image: "https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1542223189-67a03fa0f0bd?w=800&h=400&fit=crop",
       technologies: ["HTML", "CSS", "JavaScript", "Design UX/UI"],
       category: "web",
       github: "https://github.com/R1Sobriquet/WildZone",
@@ -186,7 +186,7 @@ export default function ProjectsSection() {
       id: "project9",
       title: "Application de quizz animé",
       description: "Application interactive de quizz avec animations et interface dynamique.",
-      image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=400&fit=crop",
       technologies: ["JavaScript", "HTML", "CSS", "Animations"],
       category: "web",
       github: "https://github.com/R1Sobriquet/Application_Quizz",
@@ -202,6 +202,70 @@ export default function ProjectsSection() {
         "Développer la présence en ligne de l'organisation",
         "Créativité et design d'interface",
       ],
+    },
+    {
+      id: "project10",
+      title: "Application de Quizz",
+      description: "Application web de quizz pour tester ses connaissances.",
+      image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&h=400&fit=crop",
+      technologies: ["JavaScript", "HTML", "CSS"],
+      category: "web",
+      github: "https://github.com/R1Sobriquet/QuizzApp",
+      demo: null,
+      context:
+        "Projet de création d'une application de quizz simple et efficace permettant aux utilisateurs de tester leurs connaissances sur différents sujets.",
+      problem:
+        "Créer une interface intuitive pour répondre à des questions et suivre son score en temps réel.",
+      solution:
+        "Développement d'une application web avec système de questions/réponses, compteur de score et interface claire.",
+      skills: [
+        "Concevoir et développer une solution applicative",
+        "Développer la présence en ligne de l'organisation",
+        "Logique de programmation",
+      ],
+    },
+    {
+      id: "project11",
+      title: "Portfolio React",
+      description: "Portfolio personnel développé avec Next.js et React.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      category: "web",
+      github: "https://github.com/R1Sobriquet/R1Sobriquet.github.io",
+      demo: null,
+      context:
+        "Projet de développement de mon portfolio personnel pour présenter mes compétences, projets et parcours professionnel.",
+      problem:
+        "Créer une vitrine professionnelle moderne et responsive pour valoriser mon profil auprès des recruteurs et clients potentiels.",
+      solution:
+        "Développement d'un site web moderne avec Next.js 15, React 19, animations fluides et design responsive adapté à tous les écrans.",
+      skills: [
+        "Concevoir et développer une solution applicative",
+        "Développer la présence en ligne de l'organisation",
+        "Design UI/UX moderne",
+      ],
+    },
+    {
+      id: "project12",
+      title: "Jeu mobile (En développement)",
+      description: "Application mobile d'un jeu simple - Projet à venir.",
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
+      technologies: ["React Native", "Mobile", "Game Dev"],
+      category: "mobile",
+      github: null,
+      demo: null,
+      context:
+        "Projet en cours de conception. Application mobile ludique pour découvrir le développement de jeux mobiles.",
+      problem:
+        "Apprentissage du développement mobile et des mécaniques de jeu.",
+      solution:
+        "Développement d'une application mobile simple avec React Native pour se familiariser avec le développement de jeux.",
+      skills: [
+        "Concevoir et développer une solution applicative",
+        "Développement mobile",
+        "Créativité et innovation",
+      ],
+      isComingSoon: true,
     },
   ]
 
