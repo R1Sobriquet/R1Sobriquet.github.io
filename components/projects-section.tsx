@@ -102,7 +102,7 @@ export default function ProjectsSection() {
       id: "project5",
       title: "WildZone - Site vitrine pêche",
       description: "Site vitrine ambiance 'Club privé' pour un magasin de pêche.",
-      image: "https://images.unsplash.com/photo-1545450660-7f7ff6680e2f?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1498654077810-12c21d4d6dc3?w=800&h=400&fit=crop",
       technologies: ["HTML", "CSS", "JavaScript", "Design UX/UI"],
       category: "web",
       github: "https://github.com/R1Sobriquet/WildZone",
@@ -168,7 +168,7 @@ export default function ProjectsSection() {
       image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=400&fit=crop",
       technologies: ["Java", "UML", "POO", "Design Patterns"],
       category: "desktop",
-      github: "https://github.com/R1Sobriquet/Gestion-de-bar-Java_UML_POO-",
+      github: "https://github.com/R1Sobriquet/JavaBarPOO/tree/master",
       demo: null,
       context:
         "Projet académique de simulation d'un système de gestion de bar avec modélisation UML complète et implémentation en Java.",
@@ -184,25 +184,24 @@ export default function ProjectsSection() {
     },
     {
       id: "project9",
-      title: "Jeu mobile (En développement)",
-      description: "Application mobile d'un jeu simple - Projet à venir.",
-      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
-      technologies: ["React Native", "Mobile", "Game Dev"],
-      category: "mobile",
-      github: null,
+      title: "Application de quizz animé",
+      description: "Application interactive de quizz avec animations et interface dynamique.",
+      image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&h=400&fit=crop",
+      technologies: ["JavaScript", "HTML", "CSS", "Animations"],
+      category: "web",
+      github: "https://github.com/R1Sobriquet/Application_Quizz",
       demo: null,
       context:
-        "Projet en cours de conception. Application mobile ludique pour découvrir le développement de jeux mobiles.",
+        "Projet de développement d'une application de quizz interactive avec des animations engageantes pour améliorer l'expérience utilisateur.",
       problem:
-        "Apprentissage du développement mobile et des mécaniques de jeu.",
+        "Créer une interface utilisateur dynamique et engageante pour rendre l'apprentissage par quizz plus attractif.",
       solution:
-        "Développement d'une application mobile simple avec React Native pour se familiariser avec le développement de jeux.",
+        "Développement d'une application web avec animations CSS et JavaScript pour une expérience utilisateur fluide et interactive.",
       skills: [
         "Concevoir et développer une solution applicative",
-        "Développement mobile",
-        "Créativité et innovation",
+        "Développer la présence en ligne de l'organisation",
+        "Créativité et design d'interface",
       ],
-      isComingSoon: true,
     },
   ]
 
