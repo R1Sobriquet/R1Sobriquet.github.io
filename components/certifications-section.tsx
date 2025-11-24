@@ -1,8 +1,11 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
+import { ExternalLink } from "lucide-react"
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
 
 export default function CertificationsSection() {
@@ -14,6 +17,7 @@ export default function CertificationsSection() {
       score: "Obtenu",
       description: "Formation en ligne sur les fondamentaux de la cybersécurité.",
       logo: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=200&h=200&fit=crop",
+      officialLink: "https://www.ssi.gouv.fr/",
     },
     {
       title: "Certification RGPD",
@@ -22,6 +26,7 @@ export default function CertificationsSection() {
       score: "Obtenu",
       description: "Formation sur la protection des données personnelles et la conformité au RGPD.",
       logo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=200&h=200&fit=crop",
+      officialLink: "https://www.cnil.fr/",
     },
     {
       title: "Certification Stormshield",
@@ -30,6 +35,7 @@ export default function CertificationsSection() {
       score: "En cours",
       description: "Certification sur les solutions de cybersécurité et pare-feu Stormshield.",
       logo: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=200&h=200&fit=crop",
+      officialLink: "https://www.stormshield.com/",
     },
     {
       title: "Cisco Python Certification",
@@ -38,6 +44,7 @@ export default function CertificationsSection() {
       score: "En cours",
       description: "Certification en programmation Python pour le réseau et l'automatisation.",
       logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=200&h=200&fit=crop",
+      officialLink: "https://www.netacad.com/",
     },
     {
       title: "EBIOS Risk Manager",
@@ -46,6 +53,7 @@ export default function CertificationsSection() {
       score: "En cours",
       description: "Certification sur la méthode EBIOS Risk Manager pour l'analyse des risques cyber.",
       logo: "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=200&h=200&fit=crop",
+      officialLink: "https://www.ssi.gouv.fr/ebios",
     },
   ]
 
@@ -56,6 +64,7 @@ export default function CertificationsSection() {
       date: "2025",
       description: "Participation à l'exercice national de cybersécurité REMPART organisé par l'ANSSI.",
       logo: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=200&h=200&fit=crop",
+      officialLink: "https://www.ssi.gouv.fr/",
     },
     {
       title: "Garonn'Hack 2024",
@@ -63,6 +72,7 @@ export default function CertificationsSection() {
       date: "2024",
       description: "Participation au challenge CTF régional de cybersécurité à Agen.",
       logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=200&h=200&fit=crop",
+      officialLink: "https://garonnhack.fr/",
     },
     {
       title: "Garonn'Hack 2025",
@@ -70,6 +80,7 @@ export default function CertificationsSection() {
       date: "2025",
       description: "Participation au challenge CTF régional de cybersécurité à Agen.",
       logo: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=200&h=200&fit=crop",
+      officialLink: "https://garonnhack.fr/",
     },
   ]
 
@@ -81,6 +92,7 @@ export default function CertificationsSection() {
       duration: "1 semaine",
       description: "Participation à un exercice de sensibilisation sur la cybersécurité.",
       logo: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200&h=200&fit=crop",
+      officialLink: "https://www.cybermois.fr/",
     },
     {
       title: "Cybermois - Professionnel",
@@ -89,6 +101,7 @@ export default function CertificationsSection() {
       duration: "1 mois",
       description: "Participation en tant que professionnel à la campagne de sensibilisation à la cybersécurité.",
       logo: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=200&h=200&fit=crop",
+      officialLink: "https://www.cybermois.fr/",
     },
     {
       title: "Cybermois - Professionnel",
@@ -97,6 +110,7 @@ export default function CertificationsSection() {
       duration: "1 mois",
       description: "Participation en tant que professionnel à la campagne de sensibilisation à la cybersécurité.",
       logo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=200&h=200&fit=crop",
+      officialLink: "https://www.cybermois.fr/",
     },
     {
       title: "Initiation à React",
@@ -105,6 +119,7 @@ export default function CertificationsSection() {
       duration: "2 semaines",
       description: "Formation interne sur le développement d'applications avec React.",
       logo: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=200&h=200&fit=crop",
+      officialLink: "https://react.dev/",
     },
     {
       title: "Méthode Agile",
@@ -114,6 +129,7 @@ export default function CertificationsSection() {
       description: "Formation sur la gestion de projet avec la méthode Agile.",
       logo: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop",
       schemaImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
+      officialLink: "https://www.agilealliance.org/",
     },
   ]
 
@@ -138,7 +154,7 @@ export default function CertificationsSection() {
           <StaggerContainer className="grid gap-6 md:grid-cols-3">
             {certifications.map((certification, index) => (
               <StaggerItem key={index}>
-                <Card className="h-full">
+                <Card className="h-full flex flex-col">
                   <CardHeader className="flex flex-row items-center gap-4">
                     <div className="relative h-12 w-12 overflow-hidden rounded-md">
                       <Image
@@ -153,7 +169,7 @@ export default function CertificationsSection() {
                       <CardDescription>{certification.issuer}</CardDescription>
                     </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-grow">
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <Badge variant="outline">{certification.date}</Badge>
@@ -162,6 +178,14 @@ export default function CertificationsSection() {
                       <p className="text-sm text-muted-foreground mt-2">{certification.description}</p>
                     </div>
                   </CardContent>
+                  <CardFooter>
+                    <Button variant="outline" asChild className="w-full">
+                      <Link href={certification.officialLink} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Site officiel
+                      </Link>
+                    </Button>
+                  </CardFooter>
                 </Card>
               </StaggerItem>
             ))}
@@ -173,7 +197,7 @@ export default function CertificationsSection() {
           <StaggerContainer className="grid gap-6 md:grid-cols-3">
             {attestations.map((attestation, index) => (
               <StaggerItem key={index}>
-                <Card className="h-full">
+                <Card className="h-full flex flex-col">
                   <CardHeader className="flex flex-row items-center gap-4">
                     {attestation.logo && (
                       <div className="relative h-12 w-12 overflow-hidden rounded-md flex-shrink-0">
@@ -190,12 +214,20 @@ export default function CertificationsSection() {
                       <CardDescription>{attestation.event}</CardDescription>
                     </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-grow">
                     <div className="space-y-2">
                       <Badge variant="outline">{attestation.date}</Badge>
                       <p className="text-sm text-muted-foreground mt-2">{attestation.description}</p>
                     </div>
                   </CardContent>
+                  <CardFooter>
+                    <Button variant="outline" asChild className="w-full">
+                      <Link href={attestation.officialLink} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Site officiel
+                      </Link>
+                    </Button>
+                  </CardFooter>
                 </Card>
               </StaggerItem>
             ))}
@@ -207,7 +239,7 @@ export default function CertificationsSection() {
           <StaggerContainer className="grid gap-6 md:grid-cols-3">
             {additionalTrainings.map((training, index) => (
               <StaggerItem key={index}>
-                <Card className="h-full">
+                <Card className="h-full flex flex-col">
                   <CardHeader className={training.logo ? "flex flex-row items-center gap-4" : ""}>
                     {training.logo && (
                       <div className="relative h-12 w-12 overflow-hidden rounded-md flex-shrink-0">
@@ -224,7 +256,7 @@ export default function CertificationsSection() {
                       <CardDescription>{training.provider}</CardDescription>
                     </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-grow">
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <Badge variant="outline">{training.date}</Badge>
@@ -245,6 +277,14 @@ export default function CertificationsSection() {
                       )}
                     </div>
                   </CardContent>
+                  <CardFooter>
+                    <Button variant="outline" asChild className="w-full">
+                      <Link href={training.officialLink} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Site officiel
+                      </Link>
+                    </Button>
+                  </CardFooter>
                 </Card>
               </StaggerItem>
             ))}
