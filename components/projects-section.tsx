@@ -102,7 +102,7 @@ export default function ProjectsSection() {
       id: "project5",
       title: "WildZone - Site vitrine chasse",
       description: "Site vitrine ambiance 'Club privé' pour un magasin de chasse.",
-      image: "https://images.unsplash.com/photo-1516934024742-b461fba47600?w=800&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1606567595334-d39972c85dfd?w=800&h=400&fit=crop",
       technologies: ["HTML", "CSS", "JavaScript", "Design UX/UI"],
       category: "web",
       github: "https://github.com/R1Sobriquet/WildZone",

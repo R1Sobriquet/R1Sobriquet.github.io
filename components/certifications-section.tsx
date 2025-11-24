@@ -55,18 +55,21 @@ export default function CertificationsSection() {
       event: "Exercice de cybersécurité",
       date: "2025",
       description: "Participation à l'exercice national de cybersécurité REMPART organisé par l'ANSSI.",
+      logo: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=200&h=200&fit=crop",
     },
     {
       title: "Garonn'Hack 2024",
       event: "Capture The Flag",
       date: "2024",
       description: "Participation au challenge CTF régional de cybersécurité à Agen.",
+      logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=200&h=200&fit=crop",
     },
     {
       title: "Garonn'Hack 2025",
       event: "Capture The Flag",
       date: "2025",
       description: "Participation au challenge CTF régional de cybersécurité à Agen.",
+      logo: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=200&h=200&fit=crop",
     },
   ]
 
@@ -77,6 +80,7 @@ export default function CertificationsSection() {
       date: "Octobre 2023",
       duration: "1 semaine",
       description: "Participation à un exercice de sensibilisation sur la cybersécurité.",
+      logo: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200&h=200&fit=crop",
     },
     {
       title: "Cybermois - Professionnel",
@@ -84,6 +88,7 @@ export default function CertificationsSection() {
       date: "Octobre 2024",
       duration: "1 mois",
       description: "Participation en tant que professionnel à la campagne de sensibilisation à la cybersécurité.",
+      logo: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=200&h=200&fit=crop",
     },
     {
       title: "Cybermois - Professionnel",
@@ -91,6 +96,7 @@ export default function CertificationsSection() {
       date: "Octobre 2025",
       duration: "1 mois",
       description: "Participation en tant que professionnel à la campagne de sensibilisation à la cybersécurité.",
+      logo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=200&h=200&fit=crop",
     },
     {
       title: "Initiation à React",
@@ -98,6 +104,7 @@ export default function CertificationsSection() {
       date: "Septembre 2024",
       duration: "2 semaines",
       description: "Formation interne sur le développement d'applications avec React.",
+      logo: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=200&h=200&fit=crop",
     },
     {
       title: "Méthode Agile",
@@ -166,9 +173,21 @@ export default function CertificationsSection() {
             {attestations.map((attestation, index) => (
               <StaggerItem key={index}>
                 <Card className="h-full">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{attestation.title}</CardTitle>
-                    <CardDescription>{attestation.event}</CardDescription>
+                  <CardHeader className="flex flex-row items-center gap-4">
+                    {attestation.logo && (
+                      <div className="relative h-12 w-12 overflow-hidden rounded-md flex-shrink-0">
+                        <Image
+                          src={attestation.logo}
+                          alt={attestation.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <CardTitle className="text-lg">{attestation.title}</CardTitle>
+                      <CardDescription>{attestation.event}</CardDescription>
+                    </div>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
