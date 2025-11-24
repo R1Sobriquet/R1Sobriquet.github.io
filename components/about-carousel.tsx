@@ -209,4 +209,8 @@ export function AboutCarousel() {
       </div>
     </div>
   )
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
