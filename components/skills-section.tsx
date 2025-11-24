@@ -152,7 +152,7 @@ FIN`,
               <CardContent>
                 <div className="space-y-4">
                   {programmingSkills.map((skill) => (
-                    <div key={skill.name} className="space-y-2">
+                    <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
                       <div className="flex items-center justify-between">
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-sm text-muted-foreground">{skill.level}%</span>
@@ -174,7 +174,7 @@ FIN`,
               <CardContent>
                 <div className="space-y-4">
                   {frameworkSkills.map((skill) => (
-                    <div key={skill.name} className="space-y-2">
+                    <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
                       <div className="flex items-center justify-between">
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-sm text-muted-foreground">{skill.level}%</span>
@@ -196,7 +196,7 @@ FIN`,
               <CardContent>
                 <div className="space-y-4">
                   {toolSkills.map((skill) => (
-                    <div key={skill.name} className="space-y-2">
+                    <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
                       <div className="flex items-center justify-between">
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-sm text-muted-foreground">{skill.level}%</span>
@@ -218,7 +218,7 @@ FIN`,
               <CardContent>
                 <div className="space-y-4">
                   {softSkills.map((skill) => (
-                    <div key={skill.name} className="space-y-2">
+                    <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
                       <div className="flex items-center justify-between">
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-sm text-muted-foreground">{skill.level}%</span>
