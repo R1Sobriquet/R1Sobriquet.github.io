@@ -11,7 +11,7 @@ export default function SkillsSection() {
   const programmingSkills = [
     { name: "HTML/CSS", level: 85 },
     { name: "JavaScript", level: 75 },
-    { name: "Python", level: 70 },
+    { name: "Python", level: 85 },
     { name: "PHP", level: 65 },
   ]
 
@@ -24,8 +24,8 @@ export default function SkillsSection() {
   const toolSkills = [
     { name: "WinDev", level: 70 },
     { name: "WebDev", level: 70 },
-    { name: "Git", level: 65 },
-    { name: "SQL", level: 60 },
+    { name: "Git", level: 90 },
+    { name: "SQL", level: 85 },
   ]
 
   const softSkills = [

@@ -72,10 +72,39 @@ export default function AboutSection() {
         <AnimatedSection className="mt-12">
           <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
-              <CardTitle>Campus Numérique 47 & Campus Ermitage</CardTitle>
+              <CardTitle>Campus Ermitage & Campus Numérique 47</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Campus Ermitage</h3>
+                  <p className="leading-7">
+                    Le Campus Ermitage, situé à Agen, est un établissement d&apos;enseignement supérieur privé qui propose des formations en alternance de niveau Bac+2 à Bac+3, notamment dans les domaines du tertiaire et du numérique.
+                  </p>
+                  <p className="leading-7 mt-4">
+                    Le BTS Services Informatiques aux Organisations (SIO) proposé par Ermitage Sup&apos; est une formation en alternance de deux ans, axée sur les métiers de l&apos;informatique. Il propose deux spécialités :
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 text-muted-foreground mt-2">
+                    <li><span className="font-semibold">SISR</span> (Solutions d&apos;Infrastructure, Systèmes et Réseaux), orientée vers l&apos;administration des réseaux et systèmes</li>
+                    <li><span className="font-semibold">SLAM</span> (Solutions Logicielles et Applications Métiers), centrée sur le développement de logiciels et d&apos;applications</li>
+                  </ul>
+                  <p className="leading-7 mt-4">
+                    Ce BTS forme à des postes comme technicien réseau, développeur web ou administrateur système.
+                  </p>
+                </div>
+
+                {/* Image aérienne du Campus Ermitage */}
+                <div className="rounded-lg overflow-hidden">
+                  <Image
+                    src="https://campusermitage.fr/wp-content/uploads/2024/11/Ermitage-2021-vu-du-ciel-logo_-copie.webp"
+                    alt="Campus Ermitage vu du ciel"
+                    width={800}
+                    height={400}
+                    className="object-cover w-full"
+                    unoptimized
+                  />
+                </div>
+
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Campus Numérique 47</h3>
                   <p className="leading-7">
@@ -94,30 +123,13 @@ export default function AboutSection() {
                   </p>
                 </div>
 
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Campus Ermitage</h3>
-                  <p className="leading-7">
-                    Le Campus Ermitage, situé à Agen, est un établissement d&apos;enseignement supérieur privé qui propose des formations en alternance de niveau Bac+2 à Bac+3, notamment dans les domaines du tertiaire et du numérique.
-                  </p>
-                  <p className="leading-7 mt-4">
-                    Le BTS Services Informatiques aux Organisations (SIO) proposé par Ermitage Sup&apos; est une formation en alternance de deux ans, axée sur les métiers de l&apos;informatique. Il propose deux spécialités :
-                  </p>
-                  <ul className="list-disc list-inside space-y-2 text-muted-foreground mt-2">
-                    <li><span className="font-semibold">SISR</span> (Solutions d&apos;Infrastructure, Systèmes et Réseaux), orientée vers l&apos;administration des réseaux et systèmes</li>
-                    <li><span className="font-semibold">SLAM</span> (Solutions Logicielles et Applications Métiers), centrée sur le développement de logiciels et d&apos;applications</li>
-                  </ul>
-                  <p className="leading-7 mt-4">
-                    Ce BTS forme à des postes comme technicien réseau, développeur web ou administrateur système.
-                  </p>
-                </div>
-
-                {/* Image du campus */}
-                <div className="mt-6 rounded-lg overflow-hidden">
+                {/* Image du Campus Numérique 47 */}
+                <div className="rounded-lg overflow-hidden max-w-2xl mx-auto">
                   <Image
                     src="https://www.vie-economique.com/wp-content/uploads/sites/13/2024/09/Campus_num_vie_eco_julien_mivielle_20231-scaled-928x484-c-default.jpg"
-                    alt="Campus Numérique 47 - Campus Ermitage à Agen"
-                    width={928}
-                    height={484}
+                    alt="Campus Numérique 47 à Agen"
+                    width={600}
+                    height={300}
                     className="object-cover w-full"
                     unoptimized
                   />
