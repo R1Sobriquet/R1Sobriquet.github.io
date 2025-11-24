@@ -135,7 +135,7 @@ export default function ContactSection() {
                 <MapPin className="h-6 w-6 text-muted-foreground" />
                 <div>
                   <h3 className="font-medium">Localisation</h3>
-                  <p className="text-sm text-muted-foreground mt-1">48 Cours du 14 Juillet, Agen</p>
+                  <p className="text-sm text-muted-foreground mt-1">25 Rue des Augustins, Agen</p>
                 </div>
               </div>
 
@@ -161,7 +161,7 @@ export default function ContactSection() {
             </CardContent>
             <CardFooter>
               <p className="text-sm text-muted-foreground">
-                Je suis disponible pour des opportunités professionnelles à partir de juillet 2024.
+                Je suis disponible pour des opportunités professionnelles à partir de Septembre 2026.
               </p>
             </CardFooter>
           </Card>
