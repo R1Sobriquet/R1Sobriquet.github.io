@@ -84,6 +84,39 @@ export default function CertificationsSection() {
     },
   ]
 
+  const agileMethodology = {
+    title: "Méthode Agile - Scrum",
+    provider: "Campus Numérique 47",
+    date: "2024",
+    duration: "20 heures",
+    description: "Formation approfondie sur la gestion de projet Agile avec focus sur le framework Scrum.",
+    logo: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=200&h=200&fit=crop",
+    schemaImage: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&h=400&fit=crop",
+    officialLink: "https://www.agilealliance.org/",
+    benefits: [
+      {
+        title: "Flexibilité et adaptabilité",
+        description: "Capacité à ajuster rapidement les priorités et à réagir aux changements du projet en cours de développement.",
+      },
+      {
+        title: "Livraisons itératives",
+        description: "Production de versions fonctionnelles régulières permettant d'obtenir des retours clients fréquents et d'améliorer continuellement le produit.",
+      },
+      {
+        title: "Collaboration renforcée",
+        description: "Travail en équipe optimisé avec des cérémonies Scrum (daily stand-ups, sprint planning, retrospectives) favorisant la communication.",
+      },
+      {
+        title: "Gestion des risques",
+        description: "Identification et résolution précoce des problèmes grâce aux sprints courts et aux revues régulières.",
+      },
+      {
+        title: "Amélioration continue",
+        description: "Culture de l'apprentissage et de l'amélioration à travers les rétrospectives de sprint et l'adaptation des processus.",
+      },
+    ],
+  }
+
   const additionalTrainings = [
     {
       title: "Cybermoi(s)",
@@ -120,16 +153,6 @@ export default function CertificationsSection() {
       description: "Formation interne sur le développement d'applications avec React.",
       logo: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=200&h=200&fit=crop",
       officialLink: "https://react.dev/",
-    },
-    {
-      title: "Méthode Agile",
-      provider: "Campus Numérique 47",
-      date: "2024",
-      duration: "20 heures",
-      description: "Formation sur la gestion de projet avec la méthode Agile.",
-      logo: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop",
-      schemaImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
-      officialLink: "https://www.agilealliance.org/",
     },
   ]
 
@@ -232,6 +255,71 @@ export default function CertificationsSection() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+
+        <div className="mt-12">
+          <h3 className="text-2xl font-bold mb-4">Méthode Agile</h3>
+          <AnimatedSection>
+            <Card className="bg-gradient-to-br from-background via-background to-primary/5">
+              <CardHeader className="flex flex-row items-center gap-4">
+                <div className="relative h-16 w-16 overflow-hidden rounded-md flex-shrink-0">
+                  <Image
+                    src={agileMethodology.logo}
+                    alt={agileMethodology.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex-grow">
+                  <CardTitle className="text-2xl">{agileMethodology.title}</CardTitle>
+                  <CardDescription className="text-base">{agileMethodology.provider}</CardDescription>
+                </div>
+                <div className="flex gap-2">
+                  <Badge variant="outline">{agileMethodology.date}</Badge>
+                  <Badge variant="outline">{agileMethodology.duration}</Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-6">{agileMethodology.description}</p>
+
+                {agileMethodology.schemaImage && (
+                  <div className="mb-6 rounded-lg overflow-hidden">
+                    <Image
+                      src={agileMethodology.schemaImage}
+                      alt={`Schéma ${agileMethodology.title}`}
+                      width={800}
+                      height={400}
+                      className="object-cover w-full"
+                      unoptimized
+                    />
+                  </div>
+                )}
+
+                <div className="space-y-4">
+                  <h4 className="text-lg font-semibold">Ce que la méthode Agile m&apos;apporte</h4>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {agileMethodology.benefits.map((benefit, index) => (
+                      <div key={index} className="p-4 rounded-lg bg-accent/50 hover:bg-accent transition-colors">
+                        <h5 className="font-semibold mb-2 flex items-center gap-2">
+                          <span className="text-primary">✓</span>
+                          {benefit.title}
+                        </h5>
+                        <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Button variant="outline" asChild>
+                  <Link href={agileMethodology.officialLink} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    En savoir plus sur Agile
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          </AnimatedSection>
         </div>
 
         <div className="mt-12">
