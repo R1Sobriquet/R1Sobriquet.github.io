@@ -145,12 +145,11 @@ export default function ContactSection() {
                   </Link>
                 </div>
               </div>
-
-              <div className="flex items-start space-x-4 p-3 rounded-lg">
-                <MapPin className="h-6 w-6 text-primary mt-0.5" />
-                <div className="flex-1">
-                  <h3 className="font-medium mb-1">Localisation</h3>
-                  <p className="text-sm text-muted-foreground">48 Cours du 14 Juillet, Agen</p>
+              <div className="flex items-start space-x-4">
+                <MapPin className="h-6 w-6 text-muted-foreground" />
+                <div>
+                  <h3 className="font-medium">Localisation</h3>
+                  <p className="text-sm text-muted-foreground mt-1">25 Rue des Augustins, Agen</p>
                 </div>
               </div>
 
