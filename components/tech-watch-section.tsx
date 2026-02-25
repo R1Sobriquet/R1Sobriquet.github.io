@@ -122,6 +122,104 @@ export default function TechWatchSection() {
       impact:
         "Participation en tant que professionnel au Cybermois 2024, j'ai contribué à sensibiliser le public aux enjeux de cybersécurité. Cette expérience renforce ma compréhension des risques et ma capacité à développer des applications sécurisées.",
     },
+    {
+      id: "news9",
+      title: "Claude 3.5 Sonnet et l'API Anthropic : Vers des agents IA autonomes",
+      date: "Décembre 2024",
+      source: "Anthropic",
+      category: "intelligence-artificielle",
+      summary:
+        "Anthropic dévoile les capacités avancées de Claude 3.5 Sonnet, notamment le Computer Use permettant à l'IA d'interagir directement avec des interfaces graphiques. L'API Anthropic s'enrichit de nouvelles fonctionnalités pour construire des agents autonomes capables d'exécuter des workflows complexes sans intervention humaine.",
+      link: "https://www.anthropic.com/claude",
+      tags: ["Claude", "LLM", "Agents IA", "API"],
+      image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=300&fit=crop",
+      impact:
+        "L'émergence des agents IA autonomes transforme les pratiques de développement logiciel. Dans mes projets personnels et mon alternance chez MyDesyn, j'explore comment intégrer ces capacités pour automatiser des tâches répétitives de traitement de données et de génération de code. La maîtrise de l'API Anthropic devient une compétence différenciante pour un développeur SLAM.",
+    },
+    {
+      id: "news10",
+      title: "DeepSeek R1 : L'IA open source chinoise qui bouscule les modèles propriétaires",
+      date: "Janvier 2025",
+      source: "DeepSeek AI",
+      category: "intelligence-artificielle",
+      summary:
+        "DeepSeek publie R1, un modèle de raisonnement open source qui rivalise avec GPT-4o et Claude 3.5 Sonnet sur les benchmarks mathématiques et de programmation, tout en étant accessible gratuitement. Ce modèle entraîné avec des ressources significativement réduites remet en question les hypothèses sur le coût de développement des LLM.",
+      link: "https://www.deepseek.com/",
+      tags: ["DeepSeek", "Open Source", "LLM", "Raisonnement"],
+      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=300&fit=crop",
+      impact:
+        "L'arrivée de modèles open source performants comme DeepSeek R1 ouvre de nouvelles possibilités pour intégrer l'IA dans des projets sans coût d'API élevé. Je surveille activement ces modèles pour mes projets Python chez MyDesyn, notamment pour des tâches d'analyse de données et d'automatisation où le déploiement local d'un LLM devient envisageable.",
+    },
+    {
+      id: "news11",
+      title: "Tailwind CSS v4 : Une refonte majeure du moteur de compilation",
+      date: "Janvier 2025",
+      source: "Tailwind Labs",
+      category: "developpement-web",
+      summary:
+        "Tailwind CSS v4 introduit un nouveau moteur basé sur Rust (Oxide) qui réduit les temps de compilation de 80%, remplace le fichier tailwind.config.js par une configuration CSS native via @theme, et adopte CSS custom properties nativement pour toutes les valeurs de design tokens. La migration depuis v3 nécessite des ajustements mais reste rétrocompatible sur les classes utilitaires principales.",
+      link: "https://tailwindcss.com/blog/tailwindcss-v4",
+      tags: ["Tailwind CSS", "CSS", "Front-end", "Performance"],
+      image: "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=600&h=300&fit=crop",
+      impact:
+        "Ce portfolio utilise Tailwind CSS et une mise à jour vers v4 apporterait des gains de performance significatifs en développement. La configuration CSS native change aussi la façon dont les thèmes (comme le système de couleurs beige/rose de ce portfolio) sont définis, ce qui me prépare à adopter des pratiques modernes de design system dans mes futurs projets web.",
+    },
+    {
+      id: "news12",
+      title: "TypeScript 5.8 : Améliorations du typage et inférence avancée",
+      date: "Février 2026",
+      source: "Microsoft / TypeScript Team",
+      category: "developpement-web",
+      summary:
+        "TypeScript 5.8 apporte des améliorations majeures dans l'inférence de types pour les génériques imbriqués, un nouveau mode strict pour les vérifications d'assignation, et des optimisations du compilateur qui réduisent de 40% les temps de build sur les très grands projets. Le support natif des decorators ECMAScript est finalisé sans flag expérimental.",
+      link: "https://devblogs.microsoft.com/typescript/",
+      tags: ["TypeScript", "JavaScript", "Typage statique", "Performance"],
+      image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&h=300&fit=crop",
+      impact:
+        "TypeScript est central dans mon stack Next.js 15. Les améliorations d'inférence de types de la v5.8 me permettent d'écrire moins de annotations manuelles tout en gardant une sécurité de type maximale. Cela accélère mon développement sur les projets EsportApp et LeedCar, où la complexité des types augmente avec les fonctionnalités.",
+    },
+    {
+      id: "news13",
+      title: "Directive NIS2 : Transposition française et nouvelles obligations pour les entreprises",
+      date: "Octobre 2024",
+      source: "ANSSI / Journal Officiel",
+      category: "securite",
+      summary:
+        "La directive européenne NIS2 entre en vigueur et étend les obligations de cybersécurité à plus de 10 000 entités françaises, incluant PME et collectivités locales, contre 500 sous NIS1. Les entreprises doivent désormais notifier les incidents de sécurité sous 24 heures, mettre en place une gestion des risques formelle et sécuriser leurs chaînes d'approvisionnement logicielles.",
+      link: "https://www.ssi.gouv.fr/entreprise/reglementation/nis2/",
+      tags: ["NIS2", "Conformité", "RGPD", "Cybersécurité"],
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=300&fit=crop",
+      impact:
+        "NIS2 impacte directement les entreprises comme MyDesyn qui développent des logiciels pour des clients potentiellement soumis à cette réglementation. En tant que développeur, comprendre ces exigences me permet d'intégrer dès la conception les pratiques de security-by-design et de documentation des risques que les clients devront justifier auprès de l'ANSSI.",
+    },
+    {
+      id: "news14",
+      title: "GitHub Copilot Workspace 2026 : L'IDE augmenté par l'IA",
+      date: "Février 2026",
+      source: "GitHub / Microsoft",
+      category: "developpement-logiciel",
+      summary:
+        "GitHub annonce Copilot Workspace 2026, une évolution majeure qui transforme l'IDE en un environnement de développement augmenté par l'IA. L'agent peut maintenant gérer des refactorisations complètes de codebase, générer des architectures système, et effectuer des revues de code contextualisées en analysant l'historique Git et les discussions d'équipe.",
+      link: "https://github.com/features/copilot",
+      tags: ["GitHub Copilot", "IA", "Productivité", "IDE"],
+      image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=300&fit=crop",
+      impact:
+        "J'utilise GitHub Copilot quotidiennement dans VS Code pour accélérer mon développement. L'évolution vers Copilot Workspace change fondamentalement mon workflow : il s'agit désormais de superviser et valider des propositions architecturales plutôt que d'écrire chaque ligne. Cette compétence de prompting et de supervision d'IA devient aussi importante que la programmation classique pour un développeur SLAM en 2026.",
+    },
+    {
+      id: "news15",
+      title: "Python 3.14 : Mode JIT par défaut et async/await amélioré",
+      date: "Janvier 2026",
+      source: "Python Software Foundation",
+      category: "developpement-logiciel",
+      summary:
+        "Python 3.14 active le compilateur JIT par défaut pour tous les utilisateurs, apportant des gains de performance de 15 à 40% sur les workloads intensifs sans modification de code. Les coroutines async/await bénéficient d'optimisations majeures et un nouveau système de type guards natif améliore la sécurité du code asynchrone.",
+      link: "https://docs.python.org/3.14/whatsnew/3.14.html",
+      tags: ["Python", "JIT", "Performances", "Async"],
+      image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&h=300&fit=crop",
+      impact:
+        "Python est mon langage principal pour les pipelines de données et l'automatisation chez MyDesyn. L'activation par défaut du JIT dans Python 3.14 apporte des gains de performance automatiques sur mes scripts de traitement de données volumineuses. La migration est planifiée dès validation de la compatibilité avec nos dépendances critiques (Pandas, SQLAlchemy, FastAPI).",
+    },
   ]
 
   return (

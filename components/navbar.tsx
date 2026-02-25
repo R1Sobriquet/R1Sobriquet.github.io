@@ -8,10 +8,22 @@ import { Menu, X } from "lucide-react"
 
 interface NavbarProps {
   onTabChange?: (tab: string) => void;
+  activeTab?: string;
 }
 
-export default function Navbar({ onTabChange }: NavbarProps) {
+export default function Navbar({ onTabChange, activeTab }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  // Helpers pour les classes CSS des boutons
+  const navBtnClass = (tab: string) =>
+    activeTab === tab
+      ? "text-sm font-semibold transition-colors text-primary border-b-2 border-primary pb-0.5"
+      : "text-sm font-medium transition-colors hover:text-primary"
+
+  const mobileNavBtnClass = (tab: string) =>
+    activeTab === tab
+      ? "text-sm font-semibold transition-colors text-primary border-l-2 border-primary pl-2 text-left"
+      : "text-sm font-medium transition-colors hover:text-primary text-left"
 
   const handleTabClick = (tab: string) => {
     if (onTabChange) {
@@ -33,49 +45,49 @@ export default function Navbar({ onTabChange }: NavbarProps) {
         <nav className="hidden md:flex items-center gap-6">
           <button
             onClick={() => handleTabClick('documents')}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className={navBtnClass('documents')}
           >
             Accueil
           </button>
           <button
             onClick={() => handleTabClick('about')}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className={navBtnClass('about')}
           >
             À propos
           </button>
           <button
             onClick={() => handleTabClick('internships')}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className={navBtnClass('internships')}
           >
             Stages
           </button>
           <button
             onClick={() => handleTabClick('skills')}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className={navBtnClass('skills')}
           >
             Compétences
           </button>
           <button
             onClick={() => handleTabClick('projects')}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className={navBtnClass('projects')}
           >
             Projets
           </button>
           <button
             onClick={() => handleTabClick('certifications')}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className={navBtnClass('certifications')}
           >
             Certifications
           </button>
           <button
             onClick={() => handleTabClick('tech-watch')}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className={navBtnClass('tech-watch')}
           >
             Veille
           </button>
           <button
             onClick={() => handleTabClick('contact')}
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className={navBtnClass('contact')}
           >
             Contact
           </button>
@@ -94,49 +106,49 @@ export default function Navbar({ onTabChange }: NavbarProps) {
           <nav className="flex flex-col space-y-4">
             <button
               onClick={() => handleTabClick('documents')}
-              className="text-sm font-medium transition-colors hover:text-primary text-left"
+              className={mobileNavBtnClass('documents')}
             >
               Accueil
             </button>
             <button
               onClick={() => handleTabClick('about')}
-              className="text-sm font-medium transition-colors hover:text-primary text-left"
+              className={mobileNavBtnClass('about')}
             >
               À propos
             </button>
             <button
               onClick={() => handleTabClick('internships')}
-              className="text-sm font-medium transition-colors hover:text-primary text-left"
+              className={mobileNavBtnClass('internships')}
             >
               Stages
             </button>
             <button
               onClick={() => handleTabClick('skills')}
-              className="text-sm font-medium transition-colors hover:text-primary text-left"
+              className={mobileNavBtnClass('skills')}
             >
               Compétences
             </button>
             <button
               onClick={() => handleTabClick('projects')}
-              className="text-sm font-medium transition-colors hover:text-primary text-left"
+              className={mobileNavBtnClass('projects')}
             >
               Projets
             </button>
             <button
               onClick={() => handleTabClick('certifications')}
-              className="text-sm font-medium transition-colors hover:text-primary text-left"
+              className={mobileNavBtnClass('certifications')}
             >
               Certifications
             </button>
             <button
               onClick={() => handleTabClick('tech-watch')}
-              className="text-sm font-medium transition-colors hover:text-primary text-left"
+              className={mobileNavBtnClass('tech-watch')}
             >
               Veille
             </button>
             <button
               onClick={() => handleTabClick('contact')}
-              className="text-sm font-medium transition-colors hover:text-primary text-left"
+              className={mobileNavBtnClass('contact')}
             >
               Contact
             </button>
