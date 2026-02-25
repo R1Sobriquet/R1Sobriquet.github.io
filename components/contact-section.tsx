@@ -5,7 +5,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react"
+import Link from "next/link"
 import { useToast } from "@/hooks/use-toast"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -78,7 +79,9 @@ export default function ContactSection() {
           <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
               <CardTitle>Formulaire de contact</CardTitle>
-              <CardDescription>Envoyez-moi un message via ce formulaire</CardDescription>
+              <CardDescription>
+                Envoyez-moi un message. Je réponds généralement sous 24-48h.
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -117,18 +120,29 @@ export default function ContactSection() {
               <CardDescription>Vous pouvez également me contacter directement</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <Mail className="h-6 w-6 text-muted-foreground" />
-                <div>
-                  <h3 className="font-medium">Email</h3>
-                  <p className="text-sm text-muted-foreground mt-1">erwannn.pro@gmail.com</p>
+              <div className="flex items-start space-x-4 p-3 rounded-lg hover:bg-accent/50 transition-colors group">
+                <Mail className="h-6 w-6 text-primary mt-0.5" />
+                <div className="flex-1">
+                  <h3 className="font-medium mb-1">Email</h3>
+                  <Link
+                    href="mailto:erwannn.pro@gmail.com"
+                    className="text-sm text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  >
+                    erwannn.pro@gmail.com
+                  </Link>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <Phone className="h-6 w-6 text-muted-foreground" />
-                <div>
-                  <h3 className="font-medium">Téléphone</h3>
-                  <p className="text-sm text-muted-foreground mt-1">+262 692 35 72 64</p>
+
+              <div className="flex items-start space-x-4 p-3 rounded-lg hover:bg-accent/50 transition-colors group">
+                <Phone className="h-6 w-6 text-primary mt-0.5" />
+                <div className="flex-1">
+                  <h3 className="font-medium mb-1">Téléphone</h3>
+                  <Link
+                    href="tel:+262692357264"
+                    className="text-sm text-muted-foreground hover:text-primary hover:underline transition-colors"
+                  >
+                    +262 692 35 72 64
+                  </Link>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -140,28 +154,33 @@ export default function ContactSection() {
               </div>
 
               <div className="mt-6 pt-6 border-t">
-                <h3 className="font-medium mb-2">Réseaux sociaux</h3>
-                <div className="flex space-x-4">
-                  <Button variant="outline" size="sm" asChild>
+                <h3 className="font-medium mb-4">Réseaux professionnels</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <Button variant="outline" size="lg" asChild className="w-full justify-start gap-2">
                     <a
                       href="https://linkedin.com/in/erwann-le-rouzic-a09b64219"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
+                      <Linkedin className="h-5 w-5" />
                       LinkedIn
                     </a>
                   </Button>
-                  <Button variant="outline" size="sm" asChild>
+                  <Button variant="outline" size="lg" asChild className="w-full justify-start gap-2">
                     <a href="https://github.com/R1Sobriquet" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-5 w-5" />
                       GitHub
                     </a>
                   </Button>
                 </div>
               </div>
             </CardContent>
-            <CardFooter>
-              <p className="text-sm text-muted-foreground">
-                Je suis disponible pour des opportunités professionnelles à partir de Septembre 2026.
+            <CardFooter className="flex-col items-start gap-2">
+              <p className="text-sm font-medium text-primary">
+                📅 Disponible à partir de juillet 2026
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Actuellement en alternance chez MyDesyn jusqu&apos;à la fin de mon BTS SIO (juin 2026). Ouvert aux opportunités professionnelles pour un CDI ou une poursuite d&apos;études.
               </p>
             </CardFooter>
           </Card>

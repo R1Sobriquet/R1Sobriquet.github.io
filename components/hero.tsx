@@ -12,7 +12,7 @@ interface HeroProps {
 
 export default function Hero({ onContactClick }: HeroProps) {
   return (
-    <section className="py-12 md:py-24 bg-gradient-to-b from-primary/5 via-background to-background">
+    <section className="py-12 md:py-24 pb-16 bg-gradient-to-b from-primary/10 via-background to-background border-b border-border">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <motion.div
@@ -30,13 +30,13 @@ export default function Hero({ onContactClick }: HeroProps) {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button className="gap-1" asChild>
+              <Button size="lg" className="gap-2" asChild>
                 <Link href="/cv-erwann-lerouzic.pdf" download>
-                  <Download className="h-4 w-4" />
+                  <Download className="h-5 w-5" />
                   Télécharger mon CV
                 </Link>
               </Button>
-              <Button variant="outline" onClick={onContactClick}>
+              <Button variant="outline" size="lg" onClick={onContactClick}>
                 Me contacter
               </Button>
             </div>
@@ -48,7 +48,7 @@ export default function Hero({ onContactClick }: HeroProps) {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <motion.div
-              className="relative aspect-square overflow-hidden rounded-full border w-[300px] h-[300px]"
+              className="relative aspect-square overflow-hidden rounded-full border-4 border-primary/20 shadow-xl w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[400px] lg:h-[400px]"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >

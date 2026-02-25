@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
 import Link from "next/link"
 import { ExternalLink, Github } from "lucide-react"
@@ -184,45 +185,47 @@ export default function ProjectsSection() {
     },
     {
       id: "project9",
-      title: "Application de quizz animé",
-      description: "Application interactive de quizz avec animations et interface dynamique.",
+      title: "QuizzApp - Version Animée",
+      description: "Application interactive de quizz avec animations avancées et thème manga/animé.",
       image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=400&fit=crop",
-      technologies: ["JavaScript", "HTML", "CSS", "Animations"],
+      technologies: ["JavaScript", "HTML", "CSS", "Animations", "Design"],
       category: "web",
       github: "https://github.com/R1Sobriquet/Application_Quizz",
       demo: null,
       context:
-        "Projet de développement d'une application de quizz interactive avec des animations engageantes pour améliorer l'expérience utilisateur.",
+        "Projet de développement d'une application de quizz interactive avec des animations engageantes pour améliorer l'expérience utilisateur. Design inspiré de l'univers manga/animé.",
       problem:
-        "Créer une interface utilisateur dynamique et engageante pour rendre l'apprentissage par quizz plus attractif.",
+        "Créer une interface utilisateur dynamique et engageante pour rendre l'apprentissage par quizz plus attractif avec une identité visuelle forte.",
       solution:
-        "Développement d'une application web avec animations CSS et JavaScript pour une expérience utilisateur fluide et interactive.",
+        "Développement d'une application web avec animations CSS/JavaScript avancées, transitions fluides, et design thématique manga pour une expérience immersive.",
       skills: [
         "Concevoir et développer une solution applicative",
         "Développer la présence en ligne de l'organisation",
         "Créativité et design d'interface",
       ],
+      isEnhanced: true,
     },
     {
       id: "project10",
-      title: "Application de Quizz",
-      description: "Application web de quizz pour tester ses connaissances.",
+      title: "QuizzApp - Version Classique",
+      description: "Application web de quizz épurée pour tester ses connaissances (version simple).",
       image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&h=400&fit=crop",
-      technologies: ["JavaScript", "HTML", "CSS"],
+      technologies: ["JavaScript", "HTML", "CSS", "DOM"],
       category: "web",
       github: "https://github.com/R1Sobriquet/QuizzApp",
       demo: null,
       context:
-        "Projet de création d'une application de quizz simple et efficace permettant aux utilisateurs de tester leurs connaissances sur différents sujets.",
+        "Projet de création d'une application de quizz simple et efficace avec une approche minimaliste, permettant aux utilisateurs de tester leurs connaissances sur différents sujets.",
       problem:
-        "Créer une interface intuitive pour répondre à des questions et suivre son score en temps réel.",
+        "Créer une interface intuitive et épurée pour répondre à des questions et suivre son score en temps réel sans distractions.",
       solution:
-        "Développement d'une application web avec système de questions/réponses, compteur de score et interface claire.",
+        "Développement d'une application web avec système de questions/réponses, compteur de score, design minimaliste et interface claire privilégiant l'ergonomie.",
       skills: [
         "Concevoir et développer une solution applicative",
         "Développer la présence en ligne de l'organisation",
         "Logique de programmation",
       ],
+      isClassic: true,
     },
     {
       id: "project11",
@@ -359,6 +362,8 @@ interface ProjectCardProps {
     isPrivate?: boolean
     isProduction?: boolean
     isComingSoon?: boolean
+    isEnhanced?: boolean
+    isClassic?: boolean
   }
 }
 
@@ -409,6 +414,16 @@ function ProjectCard({ project }: ProjectCardProps) {
               À venir
             </Badge>
           )}
+          {project.isEnhanced && (
+            <Badge variant="outline" className="bg-purple-500/10 text-purple-700 dark:text-purple-400">
+              ✨ Version Animée
+            </Badge>
+          )}
+          {project.isClassic && (
+            <Badge variant="outline" className="bg-gray-500/10 text-gray-700 dark:text-gray-400">
+              📋 Version Simple
+            </Badge>
+          )}
           {project.technologies.map((tech) => (
             <Badge key={tech} variant="secondary">
               {tech}
@@ -416,26 +431,38 @@ function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
       </CardHeader>
-      <CardContent>
-        <div className="space-y-4">
-          <div>
-            <h4 className="font-semibold">Contexte et problématique</h4>
-            <p className="text-sm text-muted-foreground mt-1">{project.context}</p>
-            <p className="text-sm text-muted-foreground mt-1">{project.problem}</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">Solution technique</h4>
-            <p className="text-sm text-muted-foreground mt-1">{project.solution}</p>
-          </div>
-          <div>
-            <h4 className="font-semibold">Compétences mobilisées</h4>
-            <ul className="list-disc pl-5 text-sm text-muted-foreground mt-1">
-              {project.skills.map((skill, index) => (
-                <li key={index}>{skill}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <CardContent className="pt-0">
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="details">
+            <AccordionTrigger className="text-sm font-semibold hover:no-underline">
+              Voir les détails du projet
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="space-y-4 pt-2">
+                <div>
+                  <h4 className="font-semibold text-sm">Contexte</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{project.context}</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm">Problématique</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{project.problem}</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm">Solution technique</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{project.solution}</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm">Compétences mobilisées</h4>
+                  <ul className="list-disc pl-5 text-sm text-muted-foreground mt-1 space-y-1">
+                    {project.skills.map((skill, index) => (
+                      <li key={index}>{skill}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </CardContent>
       <CardFooter className="flex justify-between gap-2">
         {project.github ? (

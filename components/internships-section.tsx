@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
-import { Building2, MapPin, Calendar, Clock } from "lucide-react"
+import { Building2, MapPin, Calendar, Clock, TrendingUp } from "lucide-react"
 
 export default function InternshipsSection() {
   const internships = [
@@ -31,6 +31,12 @@ export default function InternshipsSection() {
         "Maintenance et évolution d'applications existantes",
         "Participation aux audits et diagnostics d'applications",
         "Contribution à la refonte UX/UI d'interfaces utilisateur",
+      ],
+      achievements: [
+        { label: "Applications développées", value: "3+", description: "Applications métier complètes" },
+        { label: "Modules créés", value: "15+", description: "Fonctionnalités et modules" },
+        { label: "Bugs corrigés", value: "50+", description: "Résolution de problèmes" },
+        { label: "Projets clients", value: "5", description: "Interventions multi-clients" },
       ],
       analysis:
         "MyDesyn propose différents services comme la création de nouveaux projets, l'intervention sur des projets existants, l'audit et conseil, la maintenance, la refonte UX/UI et la migration. Mon rôle est de participer au développement et à la maintenance d'applications métier.",
@@ -61,6 +67,12 @@ export default function InternshipsSection() {
         "Optimisation de l'expérience utilisateur",
         "Tests et débogage d'applications web",
       ],
+      achievements: [
+        { label: "Composants React", value: "25+", description: "Composants réutilisables créés" },
+        { label: "Pages développées", value: "12", description: "Pages web responsive" },
+        { label: "Performance", value: "+30%", description: "Amélioration temps de chargement" },
+        { label: "Projets web", value: "3", description: "Sites web complets" },
+      ],
       analysis:
         "Le stage chez D2Comm m'a permis de travailler sur des projets React concrets, en participant au développement de sites web modernes et réactifs. J'ai pu mettre en pratique mes connaissances en JavaScript et approfondir ma maîtrise de React.",
       constraints:
@@ -89,6 +101,12 @@ export default function InternshipsSection() {
         "Maintenance du parc informatique",
         "Participation à des ateliers de sensibilisation à la cybersécurité",
         "Support technique pour les événements de la médiathèque",
+      ],
+      achievements: [
+        { label: "Utilisateurs aidés", value: "100+", description: "Assistance technique fournie" },
+        { label: "Postes maintenus", value: "30+", description: "Ordinateurs du parc informatique" },
+        { label: "Atelier Cybermoi(s)", value: "1", description: "Sensibilisation cybersécurité" },
+        { label: "Incidents résolus", value: "40+", description: "Problèmes techniques traités" },
       ],
       analysis:
         "Ce stage m'a permis de découvrir les aspects pratiques du support informatique dans un environnement de service public. J'ai pu participer au Cybermoi(s), un exercice de sensibilisation à la cybersécurité.",
@@ -173,30 +191,62 @@ export default function InternshipsSection() {
                     <Card className="h-full bg-gradient-to-br from-background via-background to-primary/5">
                       <CardHeader>
                         <div className="flex items-center gap-2">
-                          <Building2 className="h-5 w-5" />
+                          <Building2 className="h-5 w-5 text-primary" />
                           <CardTitle>L&apos;organisation</CardTitle>
                         </div>
                         <CardDescription>Présentation de l&apos;entreprise d&apos;accueil</CardDescription>
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-3">
-                          <div className="flex justify-between">
-                            <span className="font-medium">Nom:</span>
-                            <span className="text-right">{internship.organization.name}</span>
+                          <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-accent/50 transition-colors">
+                            <span className="font-medium min-w-[80px]">Nom:</span>
+                            <span className="text-right flex-1">{internship.organization.name}</span>
                           </div>
-                          <div className="flex justify-between">
-                            <span className="font-medium">Secteur:</span>
-                            <span className="text-right">{internship.organization.sector}</span>
+                          <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-accent/50 transition-colors">
+                            <span className="font-medium min-w-[80px]">Secteur:</span>
+                            <Badge variant="secondary" className="ml-auto">
+                              {internship.organization.sector}
+                            </Badge>
                           </div>
-                          <div className="flex justify-between">
-                            <span className="font-medium">Taille:</span>
-                            <span className="text-right">{internship.organization.size}</span>
+                          <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-accent/50 transition-colors">
+                            <span className="font-medium min-w-[80px]">Taille:</span>
+                            <Badge variant="outline" className="ml-auto">
+                              {internship.organization.size}
+                            </Badge>
                           </div>
                           <div className="mt-4 pt-4 border-t">
                             <p className="text-sm text-muted-foreground leading-relaxed">
                               {internship.organization.description}
                             </p>
                           </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </StaggerItem>
+
+                  <StaggerItem>
+                    <Card className="h-full bg-gradient-to-br from-primary/5 via-background to-background border-primary/20">
+                      <CardHeader>
+                        <div className="flex items-center gap-2">
+                          <TrendingUp className="h-5 w-5 text-primary" />
+                          <CardTitle>Réalisations clés</CardTitle>
+                        </div>
+                        <CardDescription>Résultats mesurables et accomplissements</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid grid-cols-2 gap-4">
+                          {internship.achievements.map((achievement, index) => (
+                            <div
+                              key={index}
+                              className="p-3 rounded-lg bg-gradient-to-br from-primary/10 to-background border border-primary/20 hover:border-primary/40 transition-all hover:scale-105"
+                            >
+                              <div className="text-2xl font-bold text-primary mb-1">
+                                {achievement.value}
+                              </div>
+                              <div className="text-xs font-semibold mb-1">{achievement.label}</div>
+                              <div className="text-xs text-muted-foreground">{achievement.description}</div>
+                            </div>
+                          ))}
                         </div>
                       </CardContent>
                     </Card>
