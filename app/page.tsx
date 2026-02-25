@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar onTabChange={handleTabChange} />
+      <Navbar onTabChange={handleTabChange} activeTab={activeTab} />
 
       <div className="container mx-auto px-4 py-8">
         {activeTab === "documents" && (
