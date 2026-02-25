@@ -35,7 +35,7 @@ export default function Navbar({ onTabChange }: NavbarProps) {
             onClick={() => handleTabClick('documents')}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
-            Documents E6
+            Accueil
           </button>
           <button
             onClick={() => handleTabClick('about')}
@@ -96,7 +96,7 @@ export default function Navbar({ onTabChange }: NavbarProps) {
               onClick={() => handleTabClick('documents')}
               className="text-sm font-medium transition-colors hover:text-primary text-left"
             >
-              Documents E6
+              Accueil
             </button>
             <button
               onClick={() => handleTabClick('about')}
