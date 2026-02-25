@@ -1,6 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CodeBlock } from "@/components/code-block"
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
@@ -8,15 +9,26 @@ import { AnimatedProgress } from "@/components/animated-progress"
 import { SkillRadarChart } from "@/components/skill-radar-chart"
 
 export default function SkillsSection() {
+  // Helper function to get level label
+  const getLevelLabel = (level: number): string => {
+    if (level >= 80) return "Avancé"
+    if (level >= 60) return "Intermédiaire"
+    return "Débutant"
+  }
+
   const programmingSkills = [
     { name: "HTML/CSS", level: 85 },
     { name: "JavaScript", level: 75 },
+    { name: "TypeScript", level: 70 },
     { name: "Python", level: 85 },
     { name: "PHP", level: 65 },
   ]
 
   const frameworkSkills = [
+    { name: "Next.js", level: 75 },
     { name: "React", level: 75 },
+    { name: "Node.js", level: 70 },
+    { name: "Tailwind CSS", level: 80 },
     { name: "Bootstrap", level: 80 },
     { name: "Symfony", level: 65 },
   ]
@@ -29,10 +41,12 @@ export default function SkillsSection() {
   ]
 
   const softSkills = [
-    { name: "Adaptabilité", level: 90 },
-    { name: "Capacité d'analyse", level: 85 },
-    { name: "Rigueur et sens du détail", level: 80 },
-    { name: "Sens relationnel", level: 85 },
+    "Adaptabilité",
+    "Capacité d'analyse",
+    "Rigueur et sens du détail",
+    "Sens relationnel",
+    "Travail d'équipe",
+    "Résolution de problèmes",
   ]
 
   const codeExamples = [
@@ -123,8 +137,8 @@ FIN`,
 
   // Combine all skills for radar chart
   const allSkills = [
-    ...programmingSkills.slice(0, 4),
-    ...frameworkSkills.slice(0, 3),
+    ...programmingSkills.slice(0, 5),
+    ...frameworkSkills.slice(0, 4),
     ...toolSkills.slice(0, 3),
   ]
 
@@ -155,7 +169,12 @@ FIN`,
                     <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
                       <div className="flex items-center justify-between">
                         <span className="font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                        <div className="flex items-center gap-2">
+                          <Badge variant="outline" className="text-xs">
+                            {getLevelLabel(skill.level)}
+                          </Badge>
+                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                        </div>
                       </div>
                       <AnimatedProgress value={skill.level} />
                     </div>
@@ -177,7 +196,12 @@ FIN`,
                     <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
                       <div className="flex items-center justify-between">
                         <span className="font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                        <div className="flex items-center gap-2">
+                          <Badge variant="outline" className="text-xs">
+                            {getLevelLabel(skill.level)}
+                          </Badge>
+                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                        </div>
                       </div>
                       <AnimatedProgress value={skill.level} />
                     </div>
@@ -199,7 +223,12 @@ FIN`,
                     <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
                       <div className="flex items-center justify-between">
                         <span className="font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                        <div className="flex items-center gap-2">
+                          <Badge variant="outline" className="text-xs">
+                            {getLevelLabel(skill.level)}
+                          </Badge>
+                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                        </div>
                       </div>
                       <AnimatedProgress value={skill.level} />
                     </div>
@@ -213,18 +242,18 @@ FIN`,
             <Card>
               <CardHeader>
                 <CardTitle>Compétences transversales</CardTitle>
-                <CardDescription>Mes compétences non techniques</CardDescription>
+                <CardDescription>Mes qualités professionnelles</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-3">
                   {softSkills.map((skill) => (
-                    <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
-                      <div className="flex items-center justify-between">
-                        <span className="font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <AnimatedProgress value={skill.level} />
-                    </div>
+                    <Badge
+                      key={skill}
+                      variant="secondary"
+                      className="text-sm py-2 px-4 hover:scale-105 transition-transform cursor-default"
+                    >
+                      {skill}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>

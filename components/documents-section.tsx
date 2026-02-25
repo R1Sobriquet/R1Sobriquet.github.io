@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Download, FileText } from "lucide-react";
+import { Download, FileSpreadsheet, FileCheck, File } from "lucide-react";
 import Link from "next/link";
 
 export default function DocumentsSection() {
@@ -23,15 +23,22 @@ export default function DocumentsSection() {
           <Card className="p-6 border-2 border-primary/20 hover:border-primary transition-colors bg-gradient-to-br from-background via-background to-primary/5">
             <div className="flex items-center gap-4 mb-4">
               <div className="p-3 bg-primary/10 rounded-lg">
-                <FileText className="h-6 w-6 text-primary" />
+                <FileSpreadsheet className="h-6 w-6 text-primary" />
               </div>
-              <div>
+              <div className="flex-1">
                 <h3 className="text-xl font-semibold">
                   Tableau de synthèse complet
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Fiche E5 - Tableau de synthèse
                 </p>
+                <div className="flex gap-3 mt-1 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1">
+                    <File className="h-3 w-3" />
+                    PDF • 2 pages
+                  </span>
+                  <span>~150 KB</span>
+                </div>
               </div>
             </div>
             <p className="text-muted-foreground mb-6">
@@ -49,15 +56,22 @@ export default function DocumentsSection() {
           <Card className="p-6 border-2 border-secondary/20 hover:border-secondary transition-colors bg-gradient-to-br from-background via-background to-secondary/5">
             <div className="flex items-center gap-4 mb-4">
               <div className="p-3 bg-secondary/10 rounded-lg">
-                <FileText className="h-6 w-6 text-secondary-foreground" />
+                <FileCheck className="h-6 w-6 text-secondary-foreground" />
               </div>
-              <div>
+              <div className="flex-1">
                 <h3 className="text-xl font-semibold">
                   Réalisations détaillées
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Fiches descriptives E6
                 </p>
+                <div className="flex gap-3 mt-1 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1">
+                    <File className="h-3 w-3" />
+                    PDF • 8 pages
+                  </span>
+                  <span>~580 KB</span>
+                </div>
               </div>
             </div>
             <p className="text-muted-foreground mb-6">
@@ -71,22 +85,6 @@ export default function DocumentsSection() {
               </Link>
             </Button>
           </Card>
-        </div>
-
-        {/* Actions rapides */}
-        <div className="flex justify-center gap-4 mt-8">
-          <Button asChild>
-            <Link href="/docs/tableau-synthese-realisations.pdf" download>
-              <Download className="h-4 w-4 mr-2" />
-              Tableau complet
-            </Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link href="/docs/E5_1751374731937.pdf" download>
-              <Download className="h-4 w-4 mr-2" />
-              Réalisations
-            </Link>
-          </Button>
         </div>
       </div>
     </section>

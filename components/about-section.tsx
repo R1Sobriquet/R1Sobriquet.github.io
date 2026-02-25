@@ -7,8 +7,9 @@ import Image from "next/image"
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-12">
-      <div className="container px-4 md:px-6">
+    <section id="about" className="py-16">
+      <div className="container px-4 md:px-6 space-y-16">
+        {/* Header */}
         <AnimatedSection>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -20,56 +21,71 @@ export default function AboutSection() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection className="mt-8">
+        {/* Carousel */}
+        <AnimatedSection>
           <AboutCarousel />
         </AnimatedSection>
 
-        <AnimatedSection className="mt-12">
-          <Card className="bg-gradient-to-br from-background via-background to-primary/5">
-            <CardHeader>
-              <CardTitle>Statistiques GitHub</CardTitle>
-              <CardDescription>Mon activité sur GitHub</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col md:flex-row gap-4 items-center justify-center flex-wrap">
-                <Image
-                  src="https://github-readme-stats.vercel.app/api?username=R1Sobriquet&show_icons=true&theme=radical&hide_border=true&bg_color=00000000"
-                  alt="GitHub Stats"
-                  width={495}
-                  height={195}
-                  className="rounded-lg"
-                  unoptimized
-                />
-                <Image
-                  src="https://github-readme-streak-stats.herokuapp.com/?user=R1Sobriquet&theme=radical&hide_border=true&background=00000000"
-                  alt="GitHub Streak"
-                  width={495}
-                  height={195}
-                  className="rounded-lg"
-                  unoptimized
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </AnimatedSection>
-
-        <AnimatedSection className="mt-12">
+        {/* Présentation */}
+        <AnimatedSection>
           <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
               <CardTitle>Présentation</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-4">
               <p className="leading-7">
                 Actuellement étudiant au Campus Ermitage à Agen en BTS SIO option SLAM, je suis en alternance chez MyDesyn où je développe des applications métier avec Windev et Webdev et Python.
               </p>
-              <p className="leading-7 mt-4">
+              <p className="leading-7">
                 Mon parcours diversifié m&apos;a permis de développer une approche polyvalente et une bonne capacité d&apos;adaptation. Je souhaite poursuivre mes études vers l&apos;Intelligence Artificielle après l&apos;obtention de mon BTS.
               </p>
             </CardContent>
           </Card>
         </AnimatedSection>
 
-        <AnimatedSection className="mt-12">
+        {/* Statistiques GitHub */}
+        <AnimatedSection>
+          <Card className="bg-gradient-to-br from-background via-background to-primary/5">
+            <CardHeader>
+              <CardTitle>Statistiques GitHub</CardTitle>
+              <CardDescription>Mon activité sur GitHub</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-col md:flex-row gap-6 items-center justify-center flex-wrap">
+                <div className="bg-muted/30 rounded-lg p-1">
+                  <Image
+                    src="https://github-readme-stats.vercel.app/api?username=R1Sobriquet&show_icons=true&theme=radical&hide_border=true&bg_color=00000000"
+                    alt="GitHub Stats"
+                    width={495}
+                    height={195}
+                    className="rounded-lg"
+                    loading="lazy"
+                    unoptimized
+                  />
+                </div>
+                <div className="bg-muted/30 rounded-lg p-1">
+                  <Image
+                    src="https://github-readme-streak-stats.herokuapp.com/?user=R1Sobriquet&theme=radical&hide_border=true&background=00000000"
+                    alt="GitHub Streak"
+                    width={495}
+                    height={195}
+                    className="rounded-lg"
+                    loading="lazy"
+                    unoptimized
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </AnimatedSection>
+
+        {/* Mon parcours académique */}
+        <AnimatedSection>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl">Mon parcours académique</h3>
+            <p className="text-muted-foreground mt-2">Formation en BTS SIO au sein du Campus Ermitage</p>
+          </div>
+
           <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
               <CardTitle>Campus Ermitage & Campus Numérique 47</CardTitle>
