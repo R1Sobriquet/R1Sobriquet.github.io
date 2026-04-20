@@ -16,7 +16,7 @@ export default function InternshipsSection() {
       period: "Décembre 2024 - Présent",
       duration: "En cours",
       location: "Agen, France",
-      banner: "https://mydesyn.fr/wp-content/uploads/2020/10/FACTURE_M_2022_200_BLANC.png",
+      banner: "https://mydesyn.fr/img/logo-mydesyn.png",
       description:
         "Alternance dans une entreprise spécialisée dans le développement d'applications métier avec Windev, Webdev et Windev Mobile.",
       organization: {
