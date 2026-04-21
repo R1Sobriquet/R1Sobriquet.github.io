@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react"
+import { Mail, Phone, Linkedin, Github } from "lucide-react"
 import Link from "next/link"
 import { useToast } from "@/hooks/use-toast"
 import { useForm } from "react-hook-form"
@@ -128,7 +128,7 @@ export default function ContactSection() {
                     href="mailto:erwannn.pro@gmail.com"
                     className="text-sm text-muted-foreground hover:text-primary hover:underline transition-colors"
                   >
-                    erwannn.pro@gmail.com
+                    erwannn.pro [at] gmail.com
                   </Link>
                 </div>
               </div>
@@ -145,14 +145,6 @@ export default function ContactSection() {
                   </Link>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <MapPin className="h-6 w-6 text-muted-foreground" />
-                <div>
-                  <h3 className="font-medium">Localisation</h3>
-                  <p className="text-sm text-muted-foreground mt-1">25 Rue des Augustins, Agen</p>
-                </div>
-              </div>
-
               <div className="mt-6 pt-6 border-t">
                 <h3 className="font-medium mb-4">Réseaux professionnels</h3>
                 <div className="grid grid-cols-2 gap-3">

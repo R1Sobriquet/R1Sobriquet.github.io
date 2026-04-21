@@ -32,7 +32,7 @@ export default function CertificationsSection() {
       title: "Certification Stormshield",
       issuer: "Stormshield",
       date: "2024",
-      score: "En cours",
+      score: "À venir",
       description: "Certification sur les solutions de cybersécurité et pare-feu Stormshield.",
       logo: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=200&h=200&fit=crop",
       officialLink: "https://www.stormshield.com/",
@@ -41,7 +41,7 @@ export default function CertificationsSection() {
       title: "Cisco Python Certification",
       issuer: "Cisco Networking Academy",
       date: "2024",
-      score: "En cours",
+      score: "Obtenu",
       description: "Certification en programmation Python pour le réseau et l'automatisation.",
       logo: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=200&h=200&fit=crop",
       officialLink: "https://www.netacad.com/",
@@ -50,7 +50,7 @@ export default function CertificationsSection() {
       title: "EBIOS Risk Manager",
       issuer: "ANSSI",
       date: "2024",
-      score: "En cours",
+      score: "Obtenu",
       description: "Certification sur la méthode EBIOS Risk Manager pour l'analyse des risques cyber.",
       logo: "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=200&h=200&fit=crop",
       officialLink: "https://www.ssi.gouv.fr/ebios",
@@ -147,7 +147,7 @@ export default function CertificationsSection() {
     },
     {
       title: "Initiation à React",
-      provider: "D2Comm",
+      provider: "D2Com",
       date: "Septembre 2024",
       duration: "2 semaines",
       description: "Formation interne sur le développement d'applications avec React.",
@@ -196,7 +196,15 @@ export default function CertificationsSection() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <Badge variant="outline">{certification.date}</Badge>
-                        {certification.score && <Badge>{certification.score}</Badge>}
+                        {certification.score && (
+                          certification.score === "À venir" ? (
+                            <Badge variant="outline" className="bg-blue-500/10 text-blue-700 dark:text-blue-400">
+                              {certification.score}
+                            </Badge>
+                          ) : (
+                            <Badge>{certification.score}</Badge>
+                          )
+                        )}
                       </div>
                       <p className="text-sm text-muted-foreground mt-2">{certification.description}</p>
                     </div>

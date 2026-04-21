@@ -53,7 +53,7 @@ export function AboutCarousel() {
           <li>
             <div className="font-semibold">Stage - Développement Web</div>
             <div className="text-sm text-muted-foreground">Septembre - Décembre 2024</div>
-            <div className="text-sm">D2Comm, Le Passage d&apos;Agen, Développement React</div>
+            <div className="text-sm">D2Com, Le Passage d&apos;Agen, Développement React</div>
           </li>
           <li>
             <div className="font-semibold">Agent de centre d&apos;appels</div>
