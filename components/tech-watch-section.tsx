@@ -8,8 +8,75 @@ import Link from "next/link"
 import { ExternalLink, Calendar } from "lucide-react"
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
 
+const MONTH_MAP: Record<string, number> = {
+  janvier: 0,
+  février: 1,
+  fevrier: 1,
+  mars: 2,
+  avril: 3,
+  mai: 4,
+  juin: 5,
+  juillet: 6,
+  août: 7,
+  aout: 7,
+  septembre: 8,
+  octobre: 9,
+  novembre: 10,
+  décembre: 11,
+  decembre: 11,
+}
+
+function parseFrenchDate(d: string): number {
+  const parts = d.trim().toLowerCase().split(/\s+/)
+  const month = MONTH_MAP[parts[0]] ?? 0
+  const year = parseInt(parts[1] ?? "0", 10)
+  return year * 12 + month
+}
+
 export default function TechWatchSection() {
   const techNews = [
+    {
+      id: "news16",
+      title: "Panorama de la cybermenace 2025 : ANSSI dresse le bilan",
+      date: "Mars 2026",
+      source: "ANSSI / CERT-FR",
+      category: "securite",
+      summary:
+        "L'ANSSI publie le 11 mars 2026 son Panorama de la cybermenace 2025. Malgré une légère baisse des événements de sécurité, l'activité reste soutenue : secteurs les plus ciblés — éducation et recherche (34 %), ministères et collectivités territoriales (24 %), santé (10 %). Le rapport alerte également sur les risques liés à l'IA agentique sur les postes de travail.",
+      link: "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2026-CTI-002.pdf",
+      tags: ["ANSSI", "Cybermenace", "CERT-FR", "IA agentique"],
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=300&fit=crop",
+      impact:
+        "En tant que développeur travaillant sur des projets web (EsportApp, LeedCar) et applicatifs métier (MyDesyn), ce panorama me permet de prioriser les risques les plus présents (ransomware, compromission de la supply chain logicielle) et d'appliquer directement la méthode EBIOS Risk Manager obtenue en certification. La vigilance sur les outils d'IA agentique devient un nouveau point d'attention dans mes workflows.",
+    },
+    {
+      id: "news17",
+      title: "Revue data de mars 2026 : agents IA, analytics conversationnelle et modèles sémantiques",
+      date: "Mars 2026",
+      source: "Datassence",
+      category: "intelligence-artificielle",
+      summary:
+        "Selon Datassence, mars 2026 consolide trois tendances majeures pour les Data Analysts : l'orchestration d'écosystèmes agentiques multi-agents, l'analytics conversationnelle (Databricks Genie) qui permet d'interroger les données en langage naturel, et la montée des modèles sémantiques — Gartner déclare 2026 « Année du Contexte ». L'IA passe d'outils isolés à des architectures industrielles.",
+      link: "https://www.datassence.fr/2026/04/15/revue-data-du-mois-mars-2026/",
+      tags: ["Data Analyst", "Agents IA", "BI conversationnelle", "Modèles sémantiques"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop",
+      impact:
+        "Ces tendances alignent directement mon orientation vers le métier de Data Analyst. J'intègre progressivement des dimensions sémantique et multi-agents à mon pipeline d'enrichissement de données chez MyDesyn, et j'étudie les outils de BI conversationnelle pour préparer mes études supérieures post-BTS.",
+    },
+    {
+      id: "news18",
+      title: "Cyber Resilience Act : nouvelle obligation de sécurité pour les éditeurs de logiciels",
+      date: "Février 2026",
+      source: "Union européenne / ANSSI",
+      category: "securite",
+      summary:
+        "Le Cyber Resilience Act (CRA) entre en application : tout produit numérique mis sur le marché européen doit désormais respecter un socle de sécurité dès la conception (security-by-design), avec documentation des risques et notification des vulnérabilités. Les éditeurs de logiciels sont directement concernés, incluant les ESN développant des applications métier pour leurs clients.",
+      link: "https://www.donneespersonnelles.fr/actualite-cybersecurite-2026",
+      tags: ["CRA", "Conformité", "Security-by-design", "UE"],
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=300&fit=crop",
+      impact:
+        "Le CRA impacte MyDesyn et ses clients : les applications WinDev, WebDev ou Python que je développe devront intégrer des pratiques de security-by-design, une documentation des risques (cohérente avec EBIOS) et une gestion structurée des vulnérabilités. Cette obligation réglementaire valorise mes compétences cybersécurité et renforce leur utilité concrète dans mes projets professionnels.",
+    },
     {
       id: "news1",
       title: "ANSSI : Recommandations pour sécuriser les applications web en 2025",
@@ -222,6 +289,10 @@ export default function TechWatchSection() {
     },
   ]
 
+  const sortedNews = [...techNews].sort(
+    (a, b) => parseFrenchDate(b.date) - parseFrenchDate(a.date)
+  )
+
   return (
     <section id="tech-watch" className="py-12">
       <div className="container px-4 md:px-6">
@@ -285,7 +356,7 @@ export default function TechWatchSection() {
 
             <TabsContent value="all" className="mt-6">
               <StaggerContainer className="grid gap-6 md:grid-cols-2">
-                {techNews.map((news) => (
+                {sortedNews.map((news) => (
                   <StaggerItem key={news.id}>
                     <TechNewsCard news={news} />
                   </StaggerItem>
@@ -297,7 +368,7 @@ export default function TechWatchSection() {
               (category) => (
                 <TabsContent key={category} value={category} className="mt-6">
                   <StaggerContainer className="grid gap-6 md:grid-cols-2">
-                    {techNews
+                    {sortedNews
                       .filter((news) => news.category === category)
                       .map((news) => (
                         <StaggerItem key={news.id}>

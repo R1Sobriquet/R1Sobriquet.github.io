@@ -3,13 +3,16 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
 import { CodeBlock } from "@/components/code-block"
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/animated-section"
 import { AnimatedProgress } from "@/components/animated-progress"
 import { SkillRadarChart } from "@/components/skill-radar-chart"
+import { getProjectsBySkill } from "@/lib/projects-data"
+import { Github, ArrowRight, Network, ShieldCheck } from "lucide-react"
+import Link from "next/link"
 
 export default function SkillsSection() {
-  // Helper function to get level label
   const getLevelLabel = (level: number): string => {
     if (level >= 80) return "Avancé"
     if (level >= 60) return "Intermédiaire"
@@ -38,6 +41,18 @@ export default function SkillsSection() {
     { name: "WebDev", level: 70 },
     { name: "Git", level: 90 },
     { name: "SQL", level: 85 },
+  ]
+
+  const networkSystemSkills = [
+    "Mise en place de réseaux virtuels (notions de base)",
+    "Configuration de services DHCP/DNS sous Linux",
+    "Gestion primaire de l'administration d'un domaine",
+  ]
+
+  const cybersecuritySkills = [
+    "Sécurisation de bases de données et gestion des accès",
+    "Protection des données sensibles (gestion des .env et chiffrement)",
+    "Prévention des vulnérabilités Web courantes (OWASP Top 10)",
   ]
 
   const softSkills = [
@@ -123,7 +138,7 @@ POUR i = 1 À 10
 	unClient.sNom = "Client " + i
 	unClient.sEmail = "client" + i + "@exemple.com"
 	unClient.dDateCreation = DateSys()
-	
+
 	// Ajout de l'objet dans le tableau
 	Ajoute(tabClients, unClient)
 FIN
@@ -135,12 +150,83 @@ FIN`,
     },
   ]
 
-  // Combine all skills for radar chart
   const allSkills = [
     ...programmingSkills.slice(0, 5),
     ...frameworkSkills.slice(0, 4),
     ...toolSkills.slice(0, 3),
   ]
+
+  const renderSkillWithHoverCard = (skill: { name: string; level: number }) => {
+    const relatedProjects = getProjectsBySkill(skill.name)
+
+    const skillRow = (
+      <div className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
+        <div className="flex items-center justify-between">
+          <span className="font-medium">{skill.name}</span>
+          <div className="flex items-center gap-2">
+            <Badge variant="outline" className="text-xs">
+              {getLevelLabel(skill.level)}
+            </Badge>
+            <span className="text-sm text-muted-foreground">{skill.level}%</span>
+          </div>
+        </div>
+        <AnimatedProgress value={skill.level} />
+      </div>
+    )
+
+    if (relatedProjects.length === 0) {
+      return skillRow
+    }
+
+    return (
+      <HoverCard openDelay={150} closeDelay={100}>
+        <HoverCardTrigger asChild>{skillRow}</HoverCardTrigger>
+        <HoverCardContent className="w-80" align="start">
+          <div className="space-y-3">
+            <div>
+              <h4 className="text-sm font-semibold">Projets utilisant {skill.name}</h4>
+              <p className="text-xs text-muted-foreground mt-1">
+                {relatedProjects.length} projet{relatedProjects.length > 1 ? "s" : ""} associé
+                {relatedProjects.length > 1 ? "s" : ""}
+              </p>
+            </div>
+            <ul className="space-y-2">
+              {relatedProjects.map((project) => (
+                <li
+                  key={project.id}
+                  className="flex items-center justify-between gap-2 p-2 rounded-md hover:bg-accent transition-colors"
+                >
+                  <Link
+                    href="#projects"
+                    className="flex-1 text-sm font-medium hover:text-primary hover:underline truncate"
+                  >
+                    {project.title}
+                  </Link>
+                  {project.github && (
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      aria-label={`Code GitHub de ${project.title}`}
+                    >
+                      <Github className="h-4 w-4" />
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="#projects"
+              className="flex items-center gap-1 text-xs font-medium text-primary hover:underline pt-1 border-t"
+            >
+              Voir tous les projets <ArrowRight className="h-3 w-3" />
+            </Link>
+          </div>
+        </HoverCardContent>
+      </HoverCard>
+    )
+  }
 
   return (
     <section id="skills" className="py-12">
@@ -151,6 +237,9 @@ FIN`,
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mes compétences</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                 Les technologies et outils que je maîtrise
+              </p>
+              <p className="mx-auto max-w-[700px] text-xs text-muted-foreground italic">
+                Astuce : survolez une compétence technique pour découvrir les projets associés.
               </p>
             </div>
           </div>
@@ -166,18 +255,7 @@ FIN`,
               <CardContent>
                 <div className="space-y-4">
                   {programmingSkills.map((skill) => (
-                    <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
-                      <div className="flex items-center justify-between">
-                        <span className="font-medium">{skill.name}</span>
-                        <div className="flex items-center gap-2">
-                          <Badge variant="outline" className="text-xs">
-                            {getLevelLabel(skill.level)}
-                          </Badge>
-                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                        </div>
-                      </div>
-                      <AnimatedProgress value={skill.level} />
-                    </div>
+                    <div key={skill.name}>{renderSkillWithHoverCard(skill)}</div>
                   ))}
                 </div>
               </CardContent>
@@ -193,18 +271,7 @@ FIN`,
               <CardContent>
                 <div className="space-y-4">
                   {frameworkSkills.map((skill) => (
-                    <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
-                      <div className="flex items-center justify-between">
-                        <span className="font-medium">{skill.name}</span>
-                        <div className="flex items-center gap-2">
-                          <Badge variant="outline" className="text-xs">
-                            {getLevelLabel(skill.level)}
-                          </Badge>
-                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                        </div>
-                      </div>
-                      <AnimatedProgress value={skill.level} />
-                    </div>
+                    <div key={skill.name}>{renderSkillWithHoverCard(skill)}</div>
                   ))}
                 </div>
               </CardContent>
@@ -220,19 +287,58 @@ FIN`,
               <CardContent>
                 <div className="space-y-4">
                   {toolSkills.map((skill) => (
-                    <div key={skill.name} className="space-y-2 p-2 rounded-lg transition-all duration-300 hover:bg-accent/50 hover:scale-105 cursor-pointer">
-                      <div className="flex items-center justify-between">
-                        <span className="font-medium">{skill.name}</span>
-                        <div className="flex items-center gap-2">
-                          <Badge variant="outline" className="text-xs">
-                            {getLevelLabel(skill.level)}
-                          </Badge>
-                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                        </div>
-                      </div>
-                      <AnimatedProgress value={skill.level} />
-                    </div>
+                    <div key={skill.name}>{renderSkillWithHoverCard(skill)}</div>
                   ))}
+                </div>
+              </CardContent>
+            </Card>
+          </StaggerItem>
+
+          <StaggerItem>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Network className="h-5 w-5 text-primary" />
+                  <CardTitle>Réseau et Système</CardTitle>
+                </div>
+                <CardDescription>Notions de base acquises en formation BTS SIO</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {networkSystemSkills.map((skill) => (
+                    <li key={skill} className="flex items-start gap-2 p-2 rounded-lg hover:bg-accent/50 transition-colors">
+                      <span className="text-primary mt-1">•</span>
+                      <span className="text-sm">{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 pt-3 border-t">
+                  <Badge variant="outline" className="text-xs">Niveau basique</Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </StaggerItem>
+
+          <StaggerItem>
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="h-5 w-5 text-primary" />
+                  <CardTitle>Cybersécurité</CardTitle>
+                </div>
+                <CardDescription>Orientation Web et Data</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {cybersecuritySkills.map((skill) => (
+                    <li key={skill} className="flex items-start gap-2 p-2 rounded-lg hover:bg-accent/50 transition-colors">
+                      <span className="text-primary mt-1">•</span>
+                      <span className="text-sm">{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 pt-3 border-t">
+                  <Badge variant="outline" className="text-xs">Niveau intermédiaire</Badge>
                 </div>
               </CardContent>
             </Card>

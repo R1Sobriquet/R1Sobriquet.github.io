@@ -18,19 +18,19 @@ export default function InternshipsSection() {
       location: "Agen, France",
       banner: "https://mydesyn.fr/img/logo-mydesyn.png",
       description:
-        "Alternance dans une entreprise spécialisée dans le développement d'applications métier avec Windev, Webdev et Windev Mobile.",
+        "Alternance dans une ESN experte depuis plus de 15 ans en développement d'applications métier sur-mesure. Silver Partner PC Soft avec expertise sur WinDev, WebDev, WinDev Mobile, Python, Angular, Spring Boot et n8n.",
       organization: {
         name: "MyDesyn",
         sector: "Services informatiques",
         size: "PME",
         description:
-          "Entreprise spécialisée en conception d'applications métier Windev, Webdev et Windev Mobile. MyDesyn intervient à chaque étape du projet : étude de faisabilité, conception, développement, maintenance et formation.",
+          "ESN experte depuis plus de 15 ans, Silver Partner officiel PC Soft. MyDesyn conçoit des applications métier sur-mesure fiables, évolutives et parfaitement alignées sur les processus clients. Expertise sur 5 technologies : PC Soft (WinDev, WebDev, WinDev Mobile), Python, Angular, Spring Boot et n8n. Accompagnement structuré de l'analyse au déploiement avec maintenance et amélioration continue.",
       },
       services: [
-        "Développement d'applications métier avec Windev, Webdev et Windev Mobile",
-        "Maintenance et évolution d'applications existantes",
-        "Participation aux audits et diagnostics d'applications",
-        "Contribution à la refonte UX/UI d'interfaces utilisateur",
+        "Développement sur-mesure d'applications de gestion et d'outils internes",
+        "Refonte et modernisation d'applications existantes",
+        "Automatisation et intégration de processus via n8n",
+        "Maintenance, évolutions et optimisations continues",
       ],
       achievements: [
         { label: "Applications développées", value: "3+", description: "Applications métier complètes" },
@@ -42,11 +42,11 @@ export default function InternshipsSection() {
         "MyDesyn propose différents services comme la création de nouveaux projets, l'intervention sur des projets existants, l'audit et conseil, la maintenance, la refonte UX/UI et la migration. Mon rôle est de participer au développement et à la maintenance d'applications métier.",
       constraints:
         "Les projets doivent respecter les délais clients tout en assurant une qualité optimale. Les applications développées doivent être fiables, performantes et répondre précisément aux besoins métiers des utilisateurs.",
-      technologies: ["Windev", "Webdev", "Windev Mobile", "SQL", "HFSQL"],
+      technologies: ["WinDev", "WebDev", "WinDev Mobile", "Python", "Angular", "Spring Boot", "n8n", "HFSQL"],
     },
     {
       id: "internship2",
-      company: "D2Comm",
+      company: "D2Com",
       position: "Développeur Web (Stage)",
       period: "Septembre - Décembre 2024",
       duration: "3 mois",
@@ -55,7 +55,7 @@ export default function InternshipsSection() {
       description:
         "Stage de développement web axé sur React pour la création d'interfaces utilisateur modernes et réactives.",
       organization: {
-        name: "D2Comm",
+        name: "D2Com",
         sector: "Communication et développement web",
         size: "PME",
         description:
@@ -71,10 +71,10 @@ export default function InternshipsSection() {
         { label: "Composants React", value: "25+", description: "Composants réutilisables créés" },
         { label: "Pages développées", value: "12", description: "Pages web responsive" },
         { label: "Performance", value: "+30%", description: "Amélioration temps de chargement" },
-        { label: "Projets web", value: "3", description: "Sites web complets" },
+        { label: "Projets web", value: "2", description: "Sites web complets" },
       ],
       analysis:
-        "Le stage chez D2Comm m'a permis de travailler sur des projets React concrets, en participant au développement de sites web modernes et réactifs. J'ai pu mettre en pratique mes connaissances en JavaScript et approfondir ma maîtrise de React.",
+        "Le stage chez D2Com m'a permis de travailler sur des projets React concrets, en participant au développement de sites web modernes et réactifs. J'ai pu mettre en pratique mes connaissances en JavaScript et approfondir ma maîtrise de React.",
       constraints:
         "Les projets devaient respecter les délais clients et s'adapter à différents types d'appareils (responsive design). Une attention particulière était portée à l'expérience utilisateur et aux performances des applications.",
       technologies: ["React", "JavaScript", "HTML/CSS", "Bootstrap", "Git"],

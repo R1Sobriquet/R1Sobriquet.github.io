@@ -100,8 +100,8 @@ export default function ProfessionalRealizationsSection() {
     {
       id: "real2",
       number: "2",
-      title: "Application Web React - D2Comm",
-      organization: "D2Comm",
+      title: "Application Web React - D2Com",
+      organization: "D2Com",
       period: "Septembre - Décembre 2024",
       location: "Le Passage d'Agen, France",
       modality: "Seul(e)",
@@ -129,7 +129,7 @@ export default function ProfessionalRealizationsSection() {
       resources: {
         documentaires: [
           "Documentation React officielle",
-          "Guide de style D2Comm",
+          "Guide de style D2Com",
           "Spécifications API REST",
           "Principes d'accessibilité web",
         ],

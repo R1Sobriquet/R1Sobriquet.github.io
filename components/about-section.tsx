@@ -22,7 +22,7 @@ export default function AboutSection() {
       type: "Stage",
       title: "Stage - Développement Web",
       period: "Septembre - Décembre 2024",
-      location: "D2Comm, Le Passage d'Agen",
+      location: "D2Com, Le Passage d'Agen",
       description: "Développement de composants React pour des sites web modernes et responsives",
       icon: <Briefcase className="h-4 w-4" />,
       badgeColor: "bg-blue-500/10 text-blue-700 dark:text-blue-400",
@@ -113,7 +113,7 @@ export default function AboutSection() {
                 Actuellement étudiant au Campus Ermitage à Agen en BTS SIO option SLAM, je suis en alternance chez MyDesyn où je développe des applications métier avec Windev, Webdev et Python.
               </p>
               <p className="leading-7">
-                Mon parcours diversifié m&apos;a permis de développer une approche polyvalente et une bonne capacité d&apos;adaptation. Je souhaite poursuivre mes études vers l&apos;Intelligence Artificielle après l&apos;obtention de mon BTS.
+                Mon parcours diversifié m&apos;a permis de développer une approche polyvalente et une bonne capacité d&apos;adaptation. Je souhaite poursuivre mes études vers le métier de Data Analyst après l&apos;obtention de mon BTS.
               </p>
             </CardContent>
           </Card>
@@ -177,7 +177,7 @@ export default function AboutSection() {
             </CardHeader>
             <CardContent>
               <div className="flex flex-col md:flex-row gap-6 items-center justify-center flex-wrap">
-                <div className="bg-muted/30 rounded-lg p-1">
+                <div className="bg-slate-900 dark:bg-muted/30 rounded-lg p-3 border border-border">
                   <Image
                     src="https://github-readme-stats.vercel.app/api?username=R1Sobriquet&show_icons=true&theme=radical&hide_border=true&bg_color=00000000"
                     alt="GitHub Stats"
@@ -188,7 +188,7 @@ export default function AboutSection() {
                     unoptimized
                   />
                 </div>
-                <div className="bg-muted/30 rounded-lg p-1">
+                <div className="bg-slate-900 dark:bg-muted/30 rounded-lg p-3 border border-border">
                   <Image
                     src="https://github-readme-streak-stats.herokuapp.com/?user=R1Sobriquet&theme=radical&hide_border=true&background=00000000"
                     alt="GitHub Streak"
