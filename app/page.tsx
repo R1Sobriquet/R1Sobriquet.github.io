@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hero from "@/components/hero";
 import AboutSection from "@/components/about-section";
 import SkillsSection from "@/components/skills-section";
@@ -19,6 +19,10 @@ export default function Home() {
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [activeTab]);
 
   // Ordre de navigation
   const navOrder = ["documents", "about", "internships", "skills", "projects", "certifications", "tech-watch", "contact"];

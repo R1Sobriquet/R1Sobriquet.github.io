@@ -306,9 +306,9 @@ FIN`,
               <CardContent>
                 <ul className="space-y-3">
                   {networkSystemSkills.map((skill) => (
-                    <li key={skill} className="flex items-start gap-2 p-2 rounded-lg hover:bg-accent/50 transition-colors">
-                      <span className="text-primary mt-1">•</span>
-                      <span className="text-sm">{skill}</span>
+                    <li key={skill} className="flex items-start gap-3 p-2 rounded-lg hover:bg-accent/50 transition-colors">
+                      <span className="text-primary mt-0.5 flex-shrink-0">•</span>
+                      <span className="text-sm flex-1">{skill}</span>
                     </li>
                   ))}
                 </ul>
@@ -331,9 +331,9 @@ FIN`,
               <CardContent>
                 <ul className="space-y-3">
                   {cybersecuritySkills.map((skill) => (
-                    <li key={skill} className="flex items-start gap-2 p-2 rounded-lg hover:bg-accent/50 transition-colors">
-                      <span className="text-primary mt-1">•</span>
-                      <span className="text-sm">{skill}</span>
+                    <li key={skill} className="flex items-start gap-3 p-2 rounded-lg hover:bg-accent/50 transition-colors">
+                      <span className="text-primary mt-0.5 flex-shrink-0">•</span>
+                      <span className="text-sm flex-1">{skill}</span>
                     </li>
                   ))}
                 </ul>
