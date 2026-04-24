@@ -12,6 +12,8 @@ import TechWatchSection from "@/components/tech-watch-section";
 import DocumentsSection from "@/components/documents-section";
 import Navbar from "@/components/navbar";
 import NavigationArrow from "@/components/navigation-arrow";
+import { SessionTimer } from "@/components/session-timer";
+import { SeasonalTheme } from "@/components/seasonal-theme";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("documents");
@@ -32,6 +34,8 @@ export default function Home() {
 
   return (
     <div>
+      <SeasonalTheme />
+      <SessionTimer />
       <Navbar onTabChange={handleTabChange} activeTab={activeTab} />
 
       <div className="container mx-auto px-4 py-8">
