@@ -63,7 +63,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-12">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 sm:px-6 md:px-8">
         <AnimatedSection>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -75,7 +75,7 @@ export default function ContactSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid gap-6 lg:grid-cols-2 mt-8">
+        <div className="grid gap-4 sm:gap-5 md:gap-6 lg:grid-cols-2 mt-6 sm:mt-8">
           <Card className="bg-gradient-to-br from-background via-background to-primary/5">
             <CardHeader>
               <CardTitle>Formulaire de contact</CardTitle>

@@ -118,7 +118,7 @@ export default function InternshipsSection() {
 
   return (
     <section id="internships" className="py-12 bg-muted/30">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 sm:px-6 md:px-8">
         <AnimatedSection>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">

@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function DocumentsSection() {
   return (
     <section id="documents" className="py-12 bg-muted/30">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 sm:px-6 md:px-8">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">

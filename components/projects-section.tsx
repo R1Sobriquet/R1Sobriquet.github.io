@@ -15,7 +15,7 @@ import { projects, type Project } from "@/lib/projects-data"
 export default function ProjectsSection() {
   return (
     <section id="projects" className="py-12">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 sm:px-6 md:px-8">
         <AnimatedSection>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -36,7 +36,7 @@ export default function ProjectsSection() {
           </TabsList>
 
           <TabsContent value="all" className="mt-6">
-            <StaggerContainer className="grid gap-6 md:grid-cols-2">
+            <StaggerContainer className="grid gap-4 sm:gap-5 md:gap-6 grid-cols-1 sm:grid-cols-2">
               {projects.map((project) => (
                 <StaggerItem key={project.id}>
                   <ProjectCard project={project} />
@@ -46,7 +46,7 @@ export default function ProjectsSection() {
           </TabsContent>
 
           <TabsContent value="web" className="mt-6">
-            <StaggerContainer className="grid gap-6 md:grid-cols-2">
+            <StaggerContainer className="grid gap-4 sm:gap-5 md:gap-6 grid-cols-1 sm:grid-cols-2">
               {projects
                 .filter((p) => p.category === "web")
                 .map((project) => (
@@ -58,7 +58,7 @@ export default function ProjectsSection() {
           </TabsContent>
 
           <TabsContent value="mobile" className="mt-6">
-            <StaggerContainer className="grid gap-6 md:grid-cols-2">
+            <StaggerContainer className="grid gap-4 sm:gap-5 md:gap-6 grid-cols-1 sm:grid-cols-2">
               {projects
                 .filter((p) => p.category === "mobile")
                 .map((project) => (
@@ -70,7 +70,7 @@ export default function ProjectsSection() {
           </TabsContent>
 
           <TabsContent value="desktop" className="mt-6">
-            <StaggerContainer className="grid gap-6 md:grid-cols-2">
+            <StaggerContainer className="grid gap-4 sm:gap-5 md:gap-6 grid-cols-1 sm:grid-cols-2">
               {projects
                 .filter((p) => p.category === "desktop")
                 .map((project) => (

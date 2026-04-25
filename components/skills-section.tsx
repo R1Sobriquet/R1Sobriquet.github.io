@@ -230,7 +230,7 @@ FIN`,
 
   return (
     <section id="skills" className="py-12">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 sm:px-6 md:px-8">
         <AnimatedSection>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -245,7 +245,7 @@ FIN`,
           </div>
         </AnimatedSection>
 
-        <StaggerContainer className="grid gap-6 md:grid-cols-2 mt-8">
+        <StaggerContainer className="grid gap-4 sm:gap-5 md:gap-6 grid-cols-1 md:grid-cols-2 mt-8">
           <StaggerItem>
             <Card>
               <CardHeader>
