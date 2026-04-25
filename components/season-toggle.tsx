@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Sparkles, Droplet, Leaf, Snowflake } from "lucide-react"
+import { Sparkles, Sun, Leaf, Snowflake } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -13,7 +13,7 @@ import { useSeason, type Season } from "@/components/seasonal-theme-provider"
 
 const SEASON_CONFIG: Record<Exclude<Season, "auto">, { icon: React.ReactNode; label: string }> = {
   spring: { icon: <Sparkles className="h-4 w-4" />, label: "Printemps" },
-  summer: { icon: <Droplet className="h-4 w-4" />, label: "Été" },
+  summer: { icon: <Sun className="h-4 w-4" />, label: "Été" },
   autumn: { icon: <Leaf className="h-4 w-4" />, label: "Automne" },
   winter: { icon: <Snowflake className="h-4 w-4" />, label: "Hiver" },
 }
