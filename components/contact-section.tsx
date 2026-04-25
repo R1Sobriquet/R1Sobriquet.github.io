@@ -110,6 +110,9 @@ export default function ContactSection() {
                 <Button type="submit" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? "Envoi en cours..." : "Envoyer le message"}
                 </Button>
+                <p className="text-xs text-muted-foreground text-center leading-relaxed pt-1">
+                  En envoyant ce message, vous acceptez que les informations saisies soient utilisées exclusivement pour répondre à votre demande. Aucune donnée n&apos;est cédée à des tiers.
+                </p>
               </form>
             </CardContent>
           </Card>
