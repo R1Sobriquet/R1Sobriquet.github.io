@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "./mode-toggle"
+import { SeasonToggle } from "./season-toggle"
 import { Menu, X } from "lucide-react"
 
 interface NavbarProps {
@@ -67,10 +68,12 @@ export default function Navbar({ onTabChange, activeTab }: NavbarProps) {
               </li>
             ))}
           </ul>
+          <SeasonToggle />
           <ModeToggle />
         </nav>
 
         <div className="flex md:hidden items-center gap-2">
+          <SeasonToggle />
           <ModeToggle />
           <Button
             variant="ghost"

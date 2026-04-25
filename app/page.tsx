@@ -13,7 +13,7 @@ import DocumentsSection from "@/components/documents-section";
 import Navbar from "@/components/navbar";
 import NavigationArrow from "@/components/navigation-arrow";
 import { SessionTimer } from "@/components/session-timer";
-import { SeasonalTheme } from "@/components/seasonal-theme";
+import { SeasonalThemeProvider } from "@/components/seasonal-theme-provider";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("documents");
@@ -33,12 +33,12 @@ export default function Home() {
   const prevTab = currentIndex > 0 ? navOrder[currentIndex - 1] : null;
 
   return (
-    <div>
-      <SeasonalTheme />
-      <SessionTimer />
-      <Navbar onTabChange={handleTabChange} activeTab={activeTab} />
+    <SeasonalThemeProvider>
+      <div>
+        <SessionTimer />
+        <Navbar onTabChange={handleTabChange} activeTab={activeTab} />
 
-      <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8">
         {activeTab === "documents" && (
           <>
             <Hero onContactClick={() => setActiveTab("contact")} />
@@ -77,7 +77,8 @@ export default function Home() {
             scrollToTop={true}
           />
         )}
+        </div>
       </div>
-    </div>
+    </SeasonalThemeProvider>
   );
 }
