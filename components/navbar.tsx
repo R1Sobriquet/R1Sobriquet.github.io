@@ -1,11 +1,15 @@
 "use client"
 
 import { useState } from "react"
+import dynamic from "next/dynamic"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "./mode-toggle"
-import { SeasonToggle } from "./season-toggle"
 import { Menu, X } from "lucide-react"
+
+const SeasonToggle = dynamic(() => import("./season-toggle").then((mod) => ({ default: mod.SeasonToggle })), {
+  ssr: false,
+})
 
 interface NavbarProps {
   onTabChange?: (tab: string) => void;
