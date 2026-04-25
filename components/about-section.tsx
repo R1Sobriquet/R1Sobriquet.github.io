@@ -85,7 +85,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="py-16">
-      <div className="container px-4 md:px-6 space-y-16">
+      <div className="container px-4 sm:px-6 md:px-8 space-y-16">
 
         {/* 1. En-tête enrichi */}
         <AnimatedSection>
@@ -176,25 +176,25 @@ export default function AboutSection() {
               <CardDescription>Mon activité sur GitHub</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col md:flex-row gap-6 items-center justify-center flex-wrap">
-                <div className="bg-slate-900 dark:bg-muted/30 rounded-lg p-3 border border-border">
+              <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 items-center justify-center">
+                <div className="bg-slate-900 dark:bg-muted/30 rounded-lg p-2 sm:p-3 border border-border w-full max-w-[495px]">
                   <Image
                     src="https://github-readme-stats.vercel.app/api?username=R1Sobriquet&show_icons=true&theme=radical&hide_border=true&bg_color=00000000"
                     alt="GitHub Stats"
                     width={495}
                     height={195}
-                    className="rounded-lg"
+                    className="rounded-lg w-full h-auto"
                     loading="lazy"
                     unoptimized
                   />
                 </div>
-                <div className="bg-slate-900 dark:bg-muted/30 rounded-lg p-3 border border-border">
+                <div className="bg-slate-900 dark:bg-muted/30 rounded-lg p-2 sm:p-3 border border-border w-full max-w-[495px]">
                   <Image
                     src="https://github-readme-streak-stats.herokuapp.com/?user=R1Sobriquet&theme=radical&hide_border=true&background=00000000"
                     alt="GitHub Streak"
                     width={495}
                     height={195}
-                    className="rounded-lg"
+                    className="rounded-lg w-full h-auto"
                     loading="lazy"
                     unoptimized
                   />

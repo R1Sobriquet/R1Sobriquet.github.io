@@ -158,7 +158,7 @@ export default function CertificationsSection() {
 
   return (
     <section id="certifications" className="py-12">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 sm:px-6 md:px-8">
         <AnimatedSection>
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -174,7 +174,7 @@ export default function CertificationsSection() {
 
         <div className="mt-8">
           <h3 className="text-2xl font-bold mb-4">Certifications</h3>
-          <StaggerContainer className="grid gap-6 md:grid-cols-3">
+          <StaggerContainer className="grid gap-4 sm:gap-5 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {certifications.map((certification, index) => (
               <StaggerItem key={index}>
                 <Card className="h-full flex flex-col">
@@ -225,7 +225,7 @@ export default function CertificationsSection() {
 
         <div className="mt-12">
           <h3 className="text-2xl font-bold mb-4">Attestations supplémentaires</h3>
-          <StaggerContainer className="grid gap-6 md:grid-cols-3">
+          <StaggerContainer className="grid gap-4 sm:gap-5 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {attestations.map((attestation, index) => (
               <StaggerItem key={index}>
                 <Card className="h-full flex flex-col">
@@ -332,7 +332,7 @@ export default function CertificationsSection() {
 
         <div className="mt-12">
           <h3 className="text-2xl font-bold mb-4">Formations complémentaires</h3>
-          <StaggerContainer className="grid gap-6 md:grid-cols-3">
+          <StaggerContainer className="grid gap-4 sm:gap-5 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {additionalTrainings.map((training, index) => (
               <StaggerItem key={index}>
                 <Card className="h-full flex flex-col">

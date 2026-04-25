@@ -50,16 +50,16 @@ export default function Navbar({ onTabChange, activeTab }: NavbarProps) {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <button 
-          onClick={() => handleTabClick('documents')} 
-          className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+      <div className="container flex h-14 sm:h-16 items-center justify-between px-4 sm:px-6">
+        <button
+          onClick={() => handleTabClick('documents')}
+          className="flex items-center space-x-2 hover:opacity-80 transition-opacity flex-shrink-0"
         >
-          <span className="font-bold text-xl">Erwann LE ROUZIC</span>
+          <span className="font-bold text-base sm:text-lg md:text-xl truncate max-w-[180px] sm:max-w-none">Erwann LE ROUZIC</span>
         </button>
 
-        <nav className="hidden md:flex items-center gap-6" role="navigation" aria-label="Navigation principale">
-          <ul className="flex items-center gap-6 list-none m-0 p-0">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6" role="navigation" aria-label="Navigation principale">
+          <ul className="flex items-center gap-3 xl:gap-4 list-none m-0 p-0">
             {navItems.map((item) => (
               <li key={item.id}>
                 <button
@@ -76,25 +76,26 @@ export default function Navbar({ onTabChange, activeTab }: NavbarProps) {
           <ModeToggle />
         </nav>
 
-        <div className="flex md:hidden items-center gap-2">
+        <div className="flex lg:hidden items-center gap-1.5 sm:gap-2">
           <SeasonToggle />
           <ModeToggle />
           <Button
             variant="ghost"
             size="icon"
+            className="h-9 w-9 sm:h-10 sm:w-10"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-expanded={isMenuOpen}
             aria-label="Menu de navigation"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
           </Button>
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="container md:hidden py-4 border-t">
+        <div className="container lg:hidden py-4 px-4 sm:px-6 border-t bg-background/95 backdrop-blur">
           <nav role="navigation" aria-label="Navigation mobile">
-            <ul className="flex flex-col space-y-4 list-none m-0 p-0">
+            <ul className="flex flex-col space-y-3 list-none m-0 p-0">
               {navItems.map((item) => (
                 <li key={item.id}>
                   <button
