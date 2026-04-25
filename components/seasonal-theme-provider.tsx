@@ -28,8 +28,8 @@ const SEASON_VARS: Record<Exclude<Season, "auto">, { light: string; dark: string
   },
   summer: {
     label: "Été",
-    light: "--primary: 195 75% 44%; --ring: 195 75% 44%;",
-    dark: "--primary: 195 70% 52%; --ring: 195 70% 52%;",
+    light: "--primary: 35 85% 55%; --ring: 35 85% 55%;",
+    dark: "--primary: 35 80% 62%; --ring: 35 80% 62%;",
   },
   autumn: {
     label: "Automne",
