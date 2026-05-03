@@ -21,24 +21,24 @@ export default function SkillsSection() {
 
   const programmingSkills = [
     { name: "HTML/CSS", level: 85 },
-    { name: "JavaScript", level: 75 },
-    { name: "TypeScript", level: 70 },
+    { name: "JavaScript", level: 80 },
+    { name: "TypeScript", level: 73 },
     { name: "Python", level: 85 },
-    { name: "PHP", level: 65 },
+    { name: "PHP", level: 48 },
   ]
 
   const frameworkSkills = [
-    { name: "Next.js", level: 75 },
-    { name: "React", level: 75 },
+    { name: "Next.js", level: 78 },
+    { name: "React", level: 80 },
     { name: "Node.js", level: 70 },
     { name: "Tailwind CSS", level: 80 },
-    { name: "Bootstrap", level: 80 },
-    { name: "Symfony", level: 65 },
+    { name: "Bootstrap", level: 58 },
+    { name: "Symfony", level: 48 },
   ]
 
   const toolSkills = [
-    { name: "WinDev", level: 70 },
-    { name: "WebDev", level: 70 },
+    { name: "WinDev", level: 75 },
+    { name: "WebDev", level: 68 },
     { name: "Git", level: 90 },
     { name: "SQL", level: 85 },
   ]
