@@ -28,6 +28,15 @@ export default function AboutSection() {
       badgeColor: "bg-blue-500/10 text-blue-700 dark:text-blue-400",
     },
     {
+      type: "Formation",
+      title: "BTS SIO option SLAM",
+      period: "2024 - 2026",
+      location: "Campus Numérique 47, Agen",
+      description: "Services Informatiques aux Organisations — Solutions Logicielles et Applications Métiers",
+      icon: <GraduationCap className="h-4 w-4" />,
+      badgeColor: "bg-purple-500/10 text-purple-700 dark:text-purple-400",
+    },
+    {
       type: "Expérience",
       title: "Agent de centre d'appels",
       period: "Janvier - Mars 2024",
@@ -44,15 +53,6 @@ export default function AboutSection() {
       description: "Support utilisateur, maintenance du parc informatique et sensibilisation à la cybersécurité",
       icon: <Briefcase className="h-4 w-4" />,
       badgeColor: "bg-blue-500/10 text-blue-700 dark:text-blue-400",
-    },
-    {
-      type: "Formation",
-      title: "BTS SIO option SLAM",
-      period: "2024 - 2026",
-      location: "Campus Numérique 47, Agen",
-      description: "Services Informatiques aux Organisations — Solutions Logicielles et Applications Métiers",
-      icon: <GraduationCap className="h-4 w-4" />,
-      badgeColor: "bg-purple-500/10 text-purple-700 dark:text-purple-400",
     },
     {
       type: "Formation",
