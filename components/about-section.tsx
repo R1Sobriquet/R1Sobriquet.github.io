@@ -48,7 +48,7 @@ export default function AboutSection() {
     {
       type: "Formation",
       title: "BTS SIO option SLAM",
-      period: "2023 - 2025",
+      period: "2024 - 2026",
       location: "Campus Numérique 47, Agen",
       description: "Services Informatiques aux Organisations — Solutions Logicielles et Applications Métiers",
       icon: <GraduationCap className="h-4 w-4" />,
