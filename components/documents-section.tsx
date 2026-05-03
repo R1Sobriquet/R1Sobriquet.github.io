@@ -79,7 +79,7 @@ export default function DocumentsSection() {
               contexte, technologies utilisées et compétences mobilisées.
             </p>
             <Button asChild variant="secondary" className="w-full" size="lg">
-              <Link href="/docs/dossier_realisations_professionnelles_-_e6.pdf" download>
+              <Link href="/docs/dossier_realisations_professionnelles_-_e6 .pdf" download>
                 <Download className="h-4 w-4 mr-2" />
                 Télécharger les réalisations
               </Link>
