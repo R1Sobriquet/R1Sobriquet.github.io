@@ -256,25 +256,25 @@ export const projects: Project[] = [
   },
   {
     id: "project12",
-    title: "Jeu mobile (En développement)",
-    description: "Application mobile d'un jeu simple - Projet à venir.",
+    title: "Paper Push Simulator",
+    description: "Jeu mobile satirique idle game sur la bureaucratie développé avec React Native.",
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
-    technologies: ["React Native", "Mobile", "Game Dev"],
+    technologies: ["React Native", "Expo", "TypeScript", "Zustand", "AsyncStorage"],
     category: "mobile",
-    github: null,
+    github: "https://github.com/R1Sobriquet/Paper-Push-Simulator",
     demo: null,
     context:
-      "Projet en cours de conception. Application mobile ludique pour découvrir le développement de jeux mobiles.",
+      "Projet mobile de développement d'un jeu idle game satirique critiquant avec humour la bureaucratie. Le joueur accomplit des tâches administratives répétitives en cliquant sur un tampon pour valider des formulaires.",
     problem:
-      "Apprentissage du développement mobile et des mécaniques de jeu.",
+      "Créer un jeu mobile engageant avec mécaniques de progression, sauvegarde persistante et calcul des gains hors ligne, tout en offrant une expérience fluide sur iOS, Android et Web.",
     solution:
-      "Développement d'une application mobile simple avec React Native pour se familiariser avec le développement de jeux.",
+      "Développement avec React Native et Expo pour le multiplateforme, Zustand pour la gestion d'état avec persistance AsyncStorage, animations avec Reanimated, feedback haptique. Système d'améliorations progressives (par clic et par seconde) avec calcul des gains offline plafonné à 8h.",
     skills: [
       "Concevoir et développer une solution applicative",
-      "Développement mobile",
-      "Créativité et innovation",
+      "Développement mobile multiplateforme",
+      "Gestion d'état et persistance de données",
+      "Animations et expérience utilisateur mobile",
     ],
-    isComingSoon: true,
   },
 ]
 
